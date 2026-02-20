@@ -9,13 +9,10 @@ export async function createCaseStudy(data: FormData) {
       data: {
         title: data.get('title') as string,
         slug: data.get('slug') as string,
-        clientName: data.get('clientName') as string,
+        outcomeMetrics: data.get('outcomeMetrics') as string || '[]',
+        bodySections: data.get('bodySections') as string || '[]',
         industryId: (data.get('industryId') as string) || null,
-        cityId: (data.get('cityId') as string) || null,
-        problem: data.get('problem') as string,
-        solution: data.get('solution') as string,
-        outcomeMetrics: data.get('outcomeMetrics') as string,
-        bodySections: data.get('bodySections') as string,
+        cities: data.get('cityId') ? { connect: { id: data.get('cityId') as string } } : undefined,
       }
     });
     revalidatePath('/admin/case-studies');
@@ -33,13 +30,10 @@ export async function updateCaseStudy(id: string, data: FormData) {
       data: {
         title: data.get('title') as string,
         slug: data.get('slug') as string,
-        clientName: data.get('clientName') as string,
+        outcomeMetrics: data.get('outcomeMetrics') as string || '[]',
+        bodySections: data.get('bodySections') as string || '[]',
         industryId: (data.get('industryId') as string) || null,
-        cityId: (data.get('cityId') as string) || null,
-        problem: data.get('problem') as string,
-        solution: data.get('solution') as string,
-        outcomeMetrics: data.get('outcomeMetrics') as string,
-        bodySections: data.get('bodySections') as string,
+        cities: data.get('cityId') ? { set: [{ id: data.get('cityId') as string }] } : { set: [] },
       }
     });
     revalidatePath('/admin/case-studies');

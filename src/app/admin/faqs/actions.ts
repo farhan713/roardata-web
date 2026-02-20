@@ -9,8 +9,8 @@ export async function createFAQ(data: FormData) {
       data: {
         question: data.get('question') as string,
         answer: data.get('answer') as string,
-        serviceId: (data.get('serviceId') as string) || null,
-        cityId: (data.get('cityId') as string) || null,
+        services: data.get('serviceId') ? { connect: { id: data.get('serviceId') as string } } : undefined,
+        cities: data.get('cityId') ? { connect: { id: data.get('cityId') as string } } : undefined,
       }
     });
     revalidatePath('/admin/faqs');
@@ -28,8 +28,8 @@ export async function updateFAQ(id: string, data: FormData) {
       data: {
         question: data.get('question') as string,
         answer: data.get('answer') as string,
-        serviceId: (data.get('serviceId') as string) || null,
-        cityId: (data.get('cityId') as string) || null,
+        services: data.get('serviceId') ? { set: [{ id: data.get('serviceId') as string }] } : { set: [] },
+        cities: data.get('cityId') ? { set: [{ id: data.get('cityId') as string }] } : { set: [] },
       }
     });
     revalidatePath('/admin/faqs');

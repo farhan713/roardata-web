@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import CaseStudyForm from './CaseStudyForm';
+import CaseStudyForm from './CaseStudyFormClient';
 import { notFound } from 'next/navigation';
 
 export default async function CaseStudyEditPage({ params }: { params: Promise<{ id: string }> }) {
@@ -11,13 +11,19 @@ export default async function CaseStudyEditPage({ params }: { params: Promise<{ 
     let cities = [];
 
     if (!isNew) {
-        caseStudy = await prisma.caseStudy.findUnique({
-            where: { id: id }
+        const csData = await prisma.caseStudy.findUnique({
+            where: { id: id },
+            include: { cities: true }
         });
 
-        if (!caseStudy) {
+        if (!csData) {
             notFound();
         }
+
+        caseStudy = {
+            ...csData,
+            cityId: csData.cities[0]?.id || null
+        };
     }
 
     // Fetch relations for dropdowns

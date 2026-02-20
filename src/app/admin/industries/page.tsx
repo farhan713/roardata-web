@@ -32,12 +32,12 @@ export default async function AdminIndustriesPage() {
                             <tr>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Industry Name</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Slug</th>
-                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider hidden md:table-cell">Headline</th>
+                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider hidden md:table-cell">Overview</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-800/50">
-                            {industries.map((ind: { id: string; name: string; slug: string; heroHeadline: string }) => (
+                            {industries.map((ind: { id: string; name: string; slug: string; overview: string }) => (
                                 <tr key={ind.id} className="hover:bg-slate-800/50 transition-colors">
                                     <td className="px-6 py-4 font-medium text-slate-200">
                                         {ind.name}
@@ -46,7 +46,7 @@ export default async function AdminIndustriesPage() {
                                         /{ind.slug}
                                     </td>
                                     <td className="px-6 py-4 hidden md:table-cell truncate max-w-xs">
-                                        {ind.heroHeadline}
+                                        {ind.overview}
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <div className="flex items-center justify-end gap-3">

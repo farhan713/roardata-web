@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 export default async function AdminFAQsPage() {
     const faqs = await prisma.fAQ.findMany({
         orderBy: { createdAt: 'desc' },
-        include: { service: true, city: true }
+        include: { services: true, cities: true }
     });
 
     return (
@@ -44,16 +44,16 @@ export default async function AdminFAQsPage() {
                                         {faq.question}
                                     </td>
                                     <td className="px-6 py-4 hidden lg:table-cell">
-                                        {faq.service ? (
+                                        {faq.services && faq.services.length > 0 ? (
                                             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                                                {faq.service.name}
+                                                {faq.services[0].name}
                                             </span>
                                         ) : '-'}
                                     </td>
                                     <td className="px-6 py-4 hidden lg:table-cell">
-                                        {faq.city ? (
+                                        {faq.cities && faq.cities.length > 0 ? (
                                             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-500/10 text-brand-400 border border-brand-500/20">
-                                                {faq.city.cityName}
+                                                {faq.cities[0].cityName}
                                             </span>
                                         ) : '-'}
                                     </td>

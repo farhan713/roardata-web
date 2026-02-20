@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import FAQForm from './FAQForm';
+import FAQForm from './FAQFormClient';
 import { notFound } from 'next/navigation';
 
 export default async function FAQEditPage({ params }: { params: Promise<{ id: string }> }) {
@@ -11,13 +11,20 @@ export default async function FAQEditPage({ params }: { params: Promise<{ id: st
     let cities = [];
 
     if (!isNew) {
-        faq = await prisma.fAQ.findUnique({
-            where: { id: id }
+        const faqData = await prisma.fAQ.findUnique({
+            where: { id: id },
+            include: { services: true, cities: true }
         });
 
-        if (!faq) {
+        if (!faqData) {
             notFound();
         }
+
+        faq = {
+            ...faqData,
+            serviceId: faqData.services[0]?.id || null,
+            cityId: faqData.cities[0]?.id || null
+        };
     }
 
     // Fetch relations for dropdowns

@@ -32,7 +32,7 @@ export default async function AdminCaseStudiesPage() {
                         <thead className="text-xs uppercase bg-slate-950/50 text-slate-500 border-b border-slate-800">
                             <tr>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Title</th>
-                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Client</th>
+                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Slug</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider hidden md:table-cell">Industry</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider text-right">Actions</th>
                             </tr>
@@ -43,8 +43,8 @@ export default async function AdminCaseStudiesPage() {
                                     <td className="px-6 py-4 font-medium text-slate-200">
                                         {cs.title}
                                     </td>
-                                    <td className="px-6 py-4 text-slate-300">
-                                        {cs.clientName}
+                                    <td className="px-6 py-4 font-mono text-xs text-brand-400">
+                                        /{cs.slug}
                                     </td>
                                     <td className="px-6 py-4 hidden md:table-cell">
                                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">

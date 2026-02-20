@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import InsightForm from './InsightForm';
+import InsightForm from './InsightFormClient';
 import { notFound } from 'next/navigation';
 
 export default async function InsightEditPage({ params }: { params: Promise<{ id: string }> }) {
@@ -9,13 +9,19 @@ export default async function InsightEditPage({ params }: { params: Promise<{ id
     let insight = null;
 
     if (!isNew) {
-        insight = await prisma.insightArticle.findUnique({
+        const insightData = await prisma.insightArticle.findUnique({
             where: { id: id }
         });
 
-        if (!insight) {
+        if (!insightData) {
             notFound();
         }
+
+        insight = {
+            ...insightData,
+            metaTitle: insightData.metaTitle || undefined,
+            metaDescription: insightData.metaDescription || undefined
+        };
     }
 
     return (

@@ -9,10 +9,11 @@ export async function createIndustry(data: FormData) {
       data: {
         name: data.get('name') as string,
         slug: data.get('slug') as string,
-        heroHeadline: data.get('heroHeadline') as string,
-        heroSubheadline: data.get('heroSubheadline') as string,
         overview: data.get('overview') as string,
-        features: data.get('features') as string,
+        commonProblems: data.get('commonProblems') as string || '[]',
+        useCases: data.get('useCases') as string || '[]',
+        kpis: data.get('kpis') as string || '[]',
+        dataSources: data.get('dataSources') as string || '[]',
       }
     });
     revalidatePath('/admin/industries');
@@ -30,10 +31,11 @@ export async function updateIndustry(id: string, data: FormData) {
       data: {
         name: data.get('name') as string,
         slug: data.get('slug') as string,
-        heroHeadline: data.get('heroHeadline') as string,
-        heroSubheadline: data.get('heroSubheadline') as string,
         overview: data.get('overview') as string,
-        features: data.get('features') as string,
+        commonProblems: data.get('commonProblems') as string || '[]',
+        useCases: data.get('useCases') as string || '[]',
+        kpis: data.get('kpis') as string || '[]',
+        dataSources: data.get('dataSources') as string || '[]',
       }
     });
     revalidatePath('/admin/industries');

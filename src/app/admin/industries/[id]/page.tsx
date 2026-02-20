@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import IndustryForm from './IndustryForm';
+import IndustryForm from './IndustryFormClient';
 import { notFound } from 'next/navigation';
 
 export default async function IndustryEditPage({ params }: { params: Promise<{ id: string }> }) {

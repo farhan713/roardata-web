@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createService, updateService, deleteService } from './actions';
+import { createService, updateService, deleteService } from '../actions';
 import { Loader, Save, Trash2 } from 'lucide-react';
 
 export default function ServiceForm({
@@ -34,7 +34,7 @@ export default function ServiceForm({
         if (result.success) {
             router.push('/admin/services');
         } else {
-            setError(result.error);
+            setError(result.error || 'An error occurred');
             setIsSaving(false);
         }
     }
@@ -49,7 +49,7 @@ export default function ServiceForm({
         if (result.success) {
             router.push('/admin/services');
         } else {
-            setError(result.error);
+            setError(result.error || 'An error occurred');
             setIsDeleting(false);
         }
     }

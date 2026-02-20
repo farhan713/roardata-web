@@ -1,0 +1,64 @@
+
+> roardata-web@0.1.0 lint
+> eslint
+
+
+C:\Users\pooja\Desktop\roardata\roardata-web\prisma\seed.ts
+   32:9  warning  'training' is assigned a value but never used    @typescript-eslint/no-unused-vars
+   98:9  warning  'finance' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  113:9  warning  'caseStudy1' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  131:9  warning  'insight1' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  145:9  warning  'faq1' is assigned a value but never used        @typescript-eslint/no-unused-vars
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\app\[slug]\page.tsx
+   48:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  115:18  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  175:65  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  202:67  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  227:67  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  258:70  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  268:67  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  278:70  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\app\admin\page.tsx
+  27:70  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\app\case-studies\[slug]\page.tsx
+    8:8   warning  'RelatedModules' is defined but never used  @typescript-eslint/no-unused-vars
+   50:14  warning  'e' is defined but never used               @typescript-eslint/no-unused-vars
+   81:73  error    Unexpected any. Specify a different type    @typescript-eslint/no-explicit-any
+   93:65  error    Unexpected any. Specify a different type    @typescript-eslint/no-explicit-any
+  106:51  error    Unexpected any. Specify a different type    @typescript-eslint/no-explicit-any
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\app\case-studies\page.tsx
+  45:70  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\app\industries\[slug]\page.tsx
+   67:14  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  108:46  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  150:70  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  160:68  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\app\insights\[slug]\page.tsx
+   53:14  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  114:55  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  133:61  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  141:65  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\app\page.tsx
+   35:21  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   95:72  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  117:52  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\app\terms\page.tsx
+  26:49   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  26:55   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  26:160  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  26:169  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\pooja\Desktop\roardata\roardata-web\src\components\SchemaOrg.tsx
+  4:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  4:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 37 problems (27 errors, 10 warnings)
+

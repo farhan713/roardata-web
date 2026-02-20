@@ -42,6 +42,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function DynamicSlugPage({ params }: PageProps) {
     const { slug } = await params
 
+    // Prevent the dynamic route from catching the /admin path
+    if (slug === 'admin' || slug.startsWith('admin/')) {
+        notFound()
+    }
+
     // 1. Determine if it's a City Page or a Service/Pillar Page
     const isCityPage = slug.startsWith('power-bi-consultant-')
 

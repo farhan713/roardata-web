@@ -1,65 +1,153 @@
-import Image from "next/image";
+import React from 'react'
+import { PrismaClient } from '@prisma/client'
+import HeroSection from '@/components/HeroSection'
+import PageContainer from '@/components/PageContainer'
+import RelatedModules from '@/components/RelatedModules'
+import CtaModule from '@/components/CtaModule'
+import Link from 'next/link'
+import { CheckCircle2, BarChart, Database, Zap } from 'lucide-react'
 
-export default function Home() {
+const prisma = new PrismaClient()
+
+export default async function Home() {
+  const [services, industries, cities, caseStudies] = await Promise.all([
+    prisma.service.findMany({ take: 3 }),
+    prisma.industry.findMany({ take: 6 }),
+    prisma.city.findMany({ take: 4 }),
+    prisma.caseStudy.findMany({
+      take: 2,
+      include: { industry: true }
+    })
+  ])
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="flex flex-col min-h-screen">
+      <HeroSection
+        headline="Power BI Consulting Specialists in Australia"
+        subheadline="We transform your messy data into beautiful, lightning-fast dashboards that drive real business decisions."
+      />
+
+      <PageContainer className="py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6 tracking-tight">Why Choose ROAR DATA?</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              We don't just build dashboards. We build robust, scalable analytics engines that become the central nervous system of your business.
+            </p>
+            <ul className="space-y-4">
+              {['Australian based team of certified experts', 'No vendor lock-in, just clean architecture', 'Focus on adoption and business outcomes'].map((item, i) => (
+                <li key={i} className="flex items-start">
+                  <CheckCircle2 className="w-6 h-6 text-primary mr-3 shrink-0" />
+                  <span className="text-foreground font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="glass-panel p-6 rounded-2xl flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4">
+                <BarChart className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold mb-2">Visualisation</h3>
+              <p className="text-sm text-muted-foreground">Stunning, intuitive reports</p>
+            </div>
+            <div className="glass-panel p-6 rounded-2xl flex flex-col items-center text-center translate-y-8">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4">
+                <Database className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold mb-2">Data Modelling</h3>
+              <p className="text-sm text-muted-foreground">Robust star schemas</p>
+            </div>
+            <div className="glass-panel p-6 rounded-2xl flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold mb-2">Performance</h3>
+              <p className="text-sm text-muted-foreground">Lightning-fast DAX</p>
+            </div>
+          </div>
+        </div>
+      </PageContainer>
+
+      <PageContainer>
+        <RelatedModules
+          title="Our Premium Services"
+          items={services.map(s => ({
+            title: s.name,
+            href: `/${s.slug}`,
+            description: s.heroSubheadline
+          }))}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        <RelatedModules
+          title="Industries We Transform"
+          items={industries.map(i => ({
+            title: i.name,
+            href: `/industries/${i.slug}`,
+            description: i.overview
+          }))}
+        />
+
+        <section className="py-20 border-t border-border mt-16">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">Proven Results</h2>
+              <p className="text-muted-foreground max-w-2xl">See how we've helped Australian businesses achieve operational excellence through data.</p>
+            </div>
+            <Link href="/case-studies" className="text-primary font-semibold hover:underline mt-4 md:mt-0">
+              View all case studies &rarr;
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {caseStudies.map((cs) => {
+              const metrics = JSON.parse(cs.outcomeMetrics || '[]')
+              return (
+                <div key={cs.id} className="glass-panel rounded-2xl overflow-hidden group">
+                  <div className="p-8">
+                    <div className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">
+                      {cs.industry?.name}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-6 group-hover:text-primary transition-colors">
+                      <Link href={`/case-studies/${cs.slug}`}>
+                        {cs.title}
+                      </Link>
+                    </h3>
+                    <div className="grid grid-cols-2 gap-4 pt-6 border-t border-border">
+                      {metrics.slice(0, 2).map((m: any, i: number) => (
+                        <div key={i}>
+                          <div className="text-2xl font-bold text-foreground mb-1">{m.value}</div>
+                          <div className="text-sm text-muted-foreground">{m.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+
+        <section className="py-16 text-center">
+          <h2 className="text-2xl font-bold mb-8">Serving Businesses Across Australia</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {cities.map(city => (
+              <Link
+                key={city.id}
+                href={`/${city.slug}`}
+                className="px-6 py-3 rounded-full border border-border hover:border-primary hover:bg-primary/5 transition-colors font-medium text-muted-foreground hover:text-foreground"
+              >
+                {city.cityName}
+              </Link>
+            ))}
+          </div>
+        </section>
+      </PageContainer>
+
+      <CtaModule
+        headline="Ready to Dominate Your Data?"
+        subheadline="Schedule a free strategy session with a senior Power BI architect to discuss your business objectives."
+      />
     </div>
-  );
+  )
 }

@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Service {
+  id               String           @id @default(cuid())
+  name             String
+  slug             String           @unique
+  heroHeadline     String
+  heroSubheadline  String
+  bodySections     String           // JSON string
+  
+  metaTitle        String?
+  metaDescription  String?
+  ogImage          String?
+
+  faqs             FAQ[]            @relation("ServiceFAQs")
+  industries       Industry[]       @relation("ServiceIndustries")
+  cities           City[]           @relation("ServiceCities")
+  
+  InsightArticle   InsightArticle[] @relation("ServiceInsights")
+  CaseStudy        CaseStudy[]      @relation("ServiceCaseStudies")
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model City {
+  id               String           @id @default(cuid())
+  cityName         String
+  slug             String           @unique
+  heroHeadline     String
+  heroSubheadline  String
+  uniqueLocalCopy  String
+
+  metaTitle        String?
+  metaDescription  String?
+  ogImage          String?
+
+  industries       Industry[]       @relation("CityIndustries")
+  services         Service[]        @relation("ServiceCities")
+  caseStudies      CaseStudy[]      @relation("CityCaseStudies")
+  faqs             FAQ[]            @relation("CityFAQs")
+  
+  InsightArticle   InsightArticle[] @relation("CityInsights")
+
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model Industry {
+  id               String           @id @default(cuid())
+  name             String
+  slug             String           @unique
+  overview         String
+  commonProblems   String           // JSON array
+  useCases         String           // JSON array
+  kpis             String           // JSON array
+  dataSources      String           // JSON array
+
+  metaTitle        String?
+  metaDescription  String?
+  ogImage          String?
+
+  services         Service[]        @relation("ServiceIndustries")
+  cities           City[]           @relation("CityIndustries")
+  caseStudies      CaseStudy[]      @relation("IndustryCaseStudies")
+  insights         InsightArticle[] @relation("IndustryInsights")
+  faqs             FAQ[]            @relation("IndustryFAQs")
+
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model InsightArticle {
+  id               String           @id @default(cuid())
+  title            String
+  slug             String           @unique
+  summary          String
+  body             String           // JSON string
+  publishedAt      DateTime         @default(now())
+  
+  metaTitle        String?
+  metaDescription  String?
+  ogImage          String?
+
+  authorId         String?
+  author           TeamMember?      @relation(fields: [authorId], references: [id])
+
+  industries       Industry[]       @relation("IndustryInsights")
+  services         Service[]        @relation("ServiceInsights")
+  cities           City[]           @relation("CityInsights")
+
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model CaseStudy {
+  id               String           @id @default(cuid())
+  title            String
+  slug             String           @unique
+  outcomeMetrics   String           // JSON array of metrics
+  bodySections     String           // JSON string
+  
+  metaTitle        String?
+  metaDescription  String?
+  ogImage          String?
+
+  industryId       String?
+  industry         Industry?        @relation("IndustryCaseStudies", fields: [industryId], references: [id])
+  
+  servicesUsed     Service[]        @relation("ServiceCaseStudies")
+  cities           City[]           @relation("CityCaseStudies")
+
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model FAQ {
+  id               String           @id @default(cuid())
+  question         String
+  answer           String
+
+  services         Service[]        @relation("ServiceFAQs")
+  cities           City[]           @relation("CityFAQs")
+  industries       Industry[]       @relation("IndustryFAQs")
+
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model TeamMember {
+  id               String           @id @default(cuid())
+  name             String
+  role             String
+  bio              String
+  avatarImage      String?
+  
+  insights         InsightArticle[]
+
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}

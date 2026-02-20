@@ -2,14 +2,15 @@ import { prisma } from '@/lib/prisma';
 import ServiceForm from './ServiceForm';
 import { notFound } from 'next/navigation';
 
-export default async function ServiceEditPage({ params }: { params: { id: string } }) {
-    const isNew = params.id === 'new';
+export default async function ServiceEditPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const isNew = id === 'new';
 
     let service = null;
 
     if (!isNew) {
         service = await prisma.service.findUnique({
-            where: { id: params.id }
+            where: { id: id }
         });
 
         if (!service) {

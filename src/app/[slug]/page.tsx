@@ -17,6 +17,16 @@ interface PageProps {
     params: { slug: string }
 }
 
+export async function generateStaticParams() {
+    const services = await prisma.service.findMany({ select: { slug: true } })
+    const cities = await prisma.city.findMany({ select: { slug: true } })
+
+    return [
+        ...services.map((s) => ({ slug: s.slug })),
+        ...cities.map((c) => ({ slug: c.slug }))
+    ]
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params
     let item = null

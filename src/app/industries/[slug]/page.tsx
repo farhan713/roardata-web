@@ -15,6 +15,11 @@ interface PageProps {
     params: { slug: string }
 }
 
+export async function generateStaticParams() {
+    const industries = await prisma.industry.findMany({ select: { slug: true } })
+    return industries.map((i) => ({ slug: i.slug }))
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params
     const industry = await prisma.industry.findUnique({ where: { slug } })

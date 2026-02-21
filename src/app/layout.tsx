@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SchemaOrg from "@/components/SchemaOrg";
 import Navigation from "@/components/Navigation";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -38,6 +27,8 @@ export const metadata: Metadata = {
   },
 };
 
+import ClientPadding from "@/components/ClientPadding";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,14 +45,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col pt-24`}
-      >
+      <body className="antialiased min-h-screen flex flex-col">
         <SchemaOrg schema={orgSchema} />
         <Navigation />
-        <main className="flex-grow">
+        <ClientPadding>
           {children}
-        </main>
+        </ClientPadding>
       </body>
     </html>
   );

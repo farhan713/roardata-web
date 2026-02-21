@@ -34,32 +34,32 @@ export default function AdminLoginPage() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4">
+        <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
             <div className="w-full max-w-md">
 
                 {/* Logo / Branding */}
                 <div className="mb-10 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl mb-6">
-                        <Lock className="w-8 h-8 text-brand-500" />
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary border border-border shadow-xl mb-6">
+                        <Lock className="w-8 h-8 text-primary" />
                     </div>
-                    <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">
+                    <h1 className="text-3xl font-bold text-black mb-2 tracking-tight">
                         ROAR DATA Admin
                     </h1>
-                    <p className="text-slate-400">
+                    <p className="text-black/70">
                         Enter the secure password to manage content
                     </p>
                 </div>
 
                 {/* Login Form */}
-                <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+                <div className="bg-secondary border border-border rounded-2xl p-8 shadow-2xl relative overflow-hidden">
                     {/* Subtle top gradient line */}
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-600 via-brand-400 to-brand-600 opacity-50" />
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary/50 to-primary opacity-50" />
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="space-y-2">
                             <label
                                 htmlFor="password"
-                                className="text-sm font-medium text-slate-300"
+                                className="text-sm font-medium text-black"
                             >
                                 Admin Password
                             </label>
@@ -69,13 +69,13 @@ export default function AdminLoginPage() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="••••••••••••"
-                                className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 transition-all"
+                                className="w-full px-4 py-3 bg-white border border-border rounded-xl text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                                 required
                             />
                         </div>
 
                         {error && (
-                            <div className="p-3 rounded-lg bg-red-950/50 border border-red-900/50 text-red-500 text-sm">
+                            <div className="p-3 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm font-semibold">
                                 {error}
                             </div>
                         )}
@@ -83,7 +83,7 @@ export default function AdminLoginPage() {
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-brand-500 hover:bg-brand-400 focus:ring-4 focus:ring-brand-500/20 text-slate-950 font-bold rounded-xl transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                            className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-primary hover:bg-primary/90 focus:ring-4 focus:ring-primary/20 text-white font-bold rounded-xl transition-all disabled:opacity-70 disabled:cursor-not-allowed"
                         >
                             {isLoading ? (
                                 <Loader className="w-5 h-5 animate-spin" />

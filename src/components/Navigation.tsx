@@ -2,7 +2,9 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import { Menu, X, BarChart2 } from 'lucide-react'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import PageContainer from './PageContainer'
 
@@ -14,6 +16,7 @@ const navLinks = [
 ]
 
 export default function Navigation() {
+    const pathname = usePathname()
     const [isOpen, setIsOpen] = React.useState(false)
     const [hasScrolled, setHasScrolled] = React.useState(false)
 
@@ -25,20 +28,28 @@ export default function Navigation() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    if (pathname?.startsWith('/admin')) {
+        return null;
+    }
+
     return (
         <header
             className={cn(
-                'fixed top-0 w-full z-50 transition-all duration-300',
-                hasScrolled ? 'glass-panel py-3' : 'bg-transparent py-5'
+                'fixed top-0 w-full z-50 transition-all duration-300 bg-white md:bg-transparent',
+                hasScrolled ? 'glass-panel py-3' : 'py-5'
             )}
         >
             <PageContainer>
                 <div className="flex items-center justify-between">
-                    <Link href="/" className="flex items-center space-x-2 group">
-                        <div className="bg-primary p-2 rounded-lg group-hover:bg-primary/90 transition-colors">
-                            <BarChart2 className="w-6 h-6 text-primary-foreground" />
-                        </div>
-                        <span className="text-xl font-bold tracking-tight">ROAR DATA</span>
+                    <Link href="/" className="flex items-center group">
+                        <Image
+                            src="/roarlogo.png"
+                            alt="ROAR DATA Logo"
+                            width={360}
+                            height={96}
+                            className="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105"
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Nav */}
@@ -54,7 +65,7 @@ export default function Navigation() {
                         ))}
                         <Link
                             href="/#contact"
-                            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2"
+                            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[#003366] text-white shadow hover:bg-[#003366]/90 h-9 px-4 py-2"
                         >
                             Book Consultation
                         </Link>
@@ -85,7 +96,7 @@ export default function Navigation() {
                         ))}
                         <Link
                             href="/#contact"
-                            className="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-primary text-primary-foreground h-11 px-8"
+                            className="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-[#003366] text-white h-11 px-8"
                             onClick={() => setIsOpen(false)}
                         >
                             Book Consultation

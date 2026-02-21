@@ -33,15 +33,15 @@ export default async function CaseStudyEditPage({ params }: { params: Promise<{ 
     return (
         <div className="max-w-4xl">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-white tracking-tight">
+                <h1 className="text-3xl font-bold text-black tracking-tight">
                     {isNew ? 'Create New Case Study' : `Edit: ${caseStudy?.title}`}
                 </h1>
-                <p className="text-slate-400 mt-1">
+                <p className="text-black/70 mt-1">
                     {isNew ? 'Document a new client success story.' : 'Update the case study details below.'}
                 </p>
             </div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl">
+            <div className="bg-white border border-border rounded-2xl p-6 md:p-8 shadow-sm">
                 <CaseStudyForm initialData={caseStudy} industries={industries} cities={cities} isEditing={!isNew} />
             </div>
         </div>

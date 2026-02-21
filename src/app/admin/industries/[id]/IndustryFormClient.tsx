@@ -57,99 +57,99 @@ export default function IndustryForm({
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-                <div className="p-4 bg-red-950/50 border border-red-900 rounded-lg text-red-500 text-sm">
+                <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg text-destructive text-sm">
                     {error}
                 </div>
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">Industry Name</label>
+                    <label className="text-sm font-medium text-black/80">Industry Name</label>
                     <input
                         name="name"
                         defaultValue={initialData?.name}
                         required
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors"
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">URL Slug</label>
+                    <label className="text-sm font-medium text-black/80">URL Slug</label>
                     <input
                         name="slug"
                         defaultValue={initialData?.slug}
                         required
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors font-mono text-sm"
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                     />
                 </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">Common Problems (JSON Array)</label>
+                    <label className="text-sm font-medium text-black/80">Common Problems (JSON Array)</label>
                     <textarea
                         name="commonProblems"
                         defaultValue={initialData?.commonProblems || '[]'}
                         required
                         rows={4}
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors font-mono text-sm"
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">Use Cases (JSON Array)</label>
+                    <label className="text-sm font-medium text-black/80">Use Cases (JSON Array)</label>
                     <textarea
                         name="useCases"
                         defaultValue={initialData?.useCases || '[]'}
                         required
                         rows={4}
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors font-mono text-sm"
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                     />
                 </div>
             </div>
 
             <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-300">Overview copy</label>
+                <label className="text-sm font-medium text-black/80">Overview copy</label>
                 <textarea
                     name="overview"
                     defaultValue={initialData?.overview}
                     required
                     rows={6}
-                    className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors resize-none"
+                    className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors resize-none"
                 />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">KPIs (JSON Array)</label>
+                    <label className="text-sm font-medium text-black/80">KPIs (JSON Array)</label>
                     <textarea
                         name="kpis"
                         defaultValue={initialData?.kpis || '[]'}
                         required
                         rows={4}
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors font-mono text-sm"
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">Data Sources (JSON Array)</label>
+                    <label className="text-sm font-medium text-black/80">Data Sources (JSON Array)</label>
                     <textarea
                         name="dataSources"
                         defaultValue={initialData?.dataSources || '[]'}
                         required
                         rows={4}
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors font-mono text-sm"
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                     />
                 </div>
             </div>
 
-            <div className="flex items-center justify-between pt-6 border-t border-slate-800">
+            <div className="flex items-center justify-between pt-6 border-t border-border">
                 {isEditing ? (
                     <button
                         type="button"
                         onClick={handleDelete}
                         disabled={isDeleting || isSaving}
-                        className="flex items-center gap-2 px-4 py-2.5 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors disabled:opacity-50"
+                        className="flex items-center gap-2 px-4 py-2.5 text-destructive hover:bg-destructive/10 rounded-lg transition-colors disabled:opacity-50"
                     >
                         {isDeleting ? <Loader className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />}
                         Delete Industry
@@ -160,14 +160,14 @@ export default function IndustryForm({
                     <button
                         type="button"
                         onClick={() => router.push('/admin/industries')}
-                        className="px-6 py-2.5 text-slate-300 hover:text-white transition-colors"
+                        className="px-6 py-2.5 text-black/60 hover:text-black transition-colors"
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
                         disabled={isSaving || isDeleting}
-                        className="flex items-center gap-2 px-6 py-2.5 bg-brand-500 hover:bg-brand-400 text-slate-950 font-semibold rounded-lg transition-colors disabled:opacity-70"
+                        className="flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-colors disabled:opacity-70"
                     >
                         {isSaving ? <Loader className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                         {isEditing ? 'Save Changes' : 'Create Industry'}

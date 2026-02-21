@@ -26,10 +26,10 @@ export default function HeroSection({
     return (
         <section className="relative overflow-hidden pt-20 pb-32 lg:pt-32 lg:pb-40">
             {/* Premium Gradient Background */}
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-100 via-background to-background dark:from-brand-950/40 dark:via-background dark:to-background"></div>
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-100 via-background to-background"></div>
 
             {/* Animated subtle shapes */}
-            <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 blur-3xl opacity-30 dark:opacity-20 pointer-events-none -z-10">
+            <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 blur-3xl opacity-30 pointer-events-none -z-10">
                 <div className="aspect-square h-[600px] w-[600px] rounded-full bg-gradient-to-tr from-brand-300 to-brand-500 animate-[spin_20s_linear_infinite]" />
             </div>
 

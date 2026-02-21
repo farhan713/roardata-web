@@ -26,6 +26,11 @@ export async function authenticateAdmin(password: string) {
 }
 
 export async function logoutAdmin() {
-  (await cookies()).delete('roardata_admin_auth');
+  (await cookies()).set({
+    name: 'roardata_admin_auth',
+    value: '',
+    path: '/admin',
+    maxAge: 0,
+  });
   return { success: true };
 }

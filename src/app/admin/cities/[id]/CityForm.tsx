@@ -57,73 +57,73 @@ export default function CityForm({
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-                <div className="p-4 bg-red-950/50 border border-red-900 rounded-lg text-red-500 text-sm">
+                <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg text-destructive text-sm">
                     {error}
                 </div>
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">City Name</label>
+                    <label className="text-sm font-medium text-black/80">City Name</label>
                     <input
                         name="cityName"
                         defaultValue={initialData?.cityName}
                         required
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors"
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-300">URL Slug</label>
+                    <label className="text-sm font-medium text-black/80">URL Slug</label>
                     <input
                         name="slug"
                         defaultValue={initialData?.slug}
                         required
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors font-mono text-sm"
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                     />
                 </div>
             </div>
 
             <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-300">Hero Headline</label>
+                <label className="text-sm font-medium text-black/80">Hero Headline</label>
                 <input
                     name="heroHeadline"
                     defaultValue={initialData?.heroHeadline}
                     required
-                    className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors"
+                    className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                 />
             </div>
 
             <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-300">Hero Subheadline</label>
+                <label className="text-sm font-medium text-black/80">Hero Subheadline</label>
                 <textarea
                     name="heroSubheadline"
                     defaultValue={initialData?.heroSubheadline}
                     required
                     rows={3}
-                    className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors resize-none"
+                    className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors resize-none"
                 />
             </div>
 
             <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-300">Unique Local Copy</label>
+                <label className="text-sm font-medium text-black/80">Unique Local Copy</label>
                 <textarea
                     name="uniqueLocalCopy"
                     defaultValue={initialData?.uniqueLocalCopy}
                     required
                     rows={10}
-                    className="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-500 transition-colors"
+                    className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                 />
-                <p className="text-xs text-slate-500 mt-1">Provide specific copy addressing this exact location for SEO.</p>
+                <p className="text-xs text-black/50 mt-1">Provide specific copy addressing this exact location for SEO.</p>
             </div>
 
-            <div className="flex items-center justify-between pt-6 border-t border-slate-800">
+            <div className="flex items-center justify-between pt-6 border-t border-border">
                 {isEditing ? (
                     <button
                         type="button"
                         onClick={handleDelete}
                         disabled={isDeleting || isSaving}
-                        className="flex items-center gap-2 px-4 py-2.5 text-red-500 hover:bg-red-500/10 rounded-lg transition-colors disabled:opacity-50"
+                        className="flex items-center gap-2 px-4 py-2.5 text-destructive hover:bg-destructive/10 rounded-lg transition-colors disabled:opacity-50"
                     >
                         {isDeleting ? <Loader className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />}
                         Delete City
@@ -134,14 +134,14 @@ export default function CityForm({
                     <button
                         type="button"
                         onClick={() => router.push('/admin/cities')}
-                        className="px-6 py-2.5 text-slate-300 hover:text-white transition-colors"
+                        className="px-6 py-2.5 text-black/80 hover:text-white transition-colors"
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
                         disabled={isSaving || isDeleting}
-                        className="flex items-center gap-2 px-6 py-2.5 bg-brand-500 hover:bg-brand-400 text-slate-950 font-semibold rounded-lg transition-colors disabled:opacity-70"
+                        className="flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-colors disabled:opacity-70"
                     >
                         {isSaving ? <Loader className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                         {isEditing ? 'Save Changes' : 'Create City'}

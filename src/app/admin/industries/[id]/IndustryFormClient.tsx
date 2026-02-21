@@ -9,7 +9,7 @@ export default function IndustryForm({
     initialData,
     isEditing
 }: {
-    initialData: { id?: string; name?: string; slug?: string; overview?: string; commonProblems?: string; useCases?: string; kpis?: string; dataSources?: string } | null,
+    initialData: { id?: string; name?: string; slug?: string; overview?: string; commonProblems?: string; useCases?: string; kpis?: string; dataSources?: string; dashboardEmbedCode?: string | null } | null,
     isEditing: boolean
 }) {
     const router = useRouter();
@@ -141,6 +141,20 @@ export default function IndustryForm({
                         className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                     />
                 </div>
+            </div>
+
+            <div className="space-y-2">
+                <label className="text-sm font-medium text-black/80 flex justify-between">
+                    <span>Power BI Dashboard Embed Code (Raw HTML)</span>
+                    <span className="text-muted-foreground text-xs font-normal">Optional. Paste &lt;iframe&gt; code here.</span>
+                </label>
+                <textarea
+                    name="dashboardEmbedCode"
+                    defaultValue={initialData?.dashboardEmbedCode || ''}
+                    rows={4}
+                    placeholder={`<iframe title="Report Section" width="100%" height="600" src="..." frameborder="0" allowFullScreen="true"></iframe>`}
+                    className="w-full px-4 py-3 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm h-32"
+                />
             </div>
 
             <div className="flex items-center justify-between pt-6 border-t border-border">

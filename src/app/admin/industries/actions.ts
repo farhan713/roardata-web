@@ -14,6 +14,7 @@ export async function createIndustry(data: FormData) {
         useCases: data.get('useCases') as string || '[]',
         kpis: data.get('kpis') as string || '[]',
         dataSources: data.get('dataSources') as string || '[]',
+        dashboardEmbedCode: data.get('dashboardEmbedCode') as string || null,
       }
     });
     revalidatePath('/admin/industries');
@@ -36,6 +37,7 @@ export async function updateIndustry(id: string, data: FormData) {
         useCases: data.get('useCases') as string || '[]',
         kpis: data.get('kpis') as string || '[]',
         dataSources: data.get('dataSources') as string || '[]',
+        dashboardEmbedCode: data.get('dashboardEmbedCode') as string || null,
       }
     });
     revalidatePath('/admin/industries');

@@ -62,6 +62,7 @@ model Industry {
   useCases         String           // JSON array
   kpis             String           // JSON array
   dataSources      String           // JSON array
+  dashboardEmbedCode String?
 
   metaTitle        String?
   metaDescription  String?

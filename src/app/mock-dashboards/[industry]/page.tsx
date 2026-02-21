@@ -1,15 +1,41 @@
 import { notFound } from 'next/navigation'
 import HealthcareDashboard from './HealthcareDashboard'
 import FinanceDashboard from './FinanceDashboard'
-
+import AerospaceAndDefenceDashboard from './AerospaceAndDefenceDashboard'
+import AgricultureDashboard from './AgricultureDashboard'
+import AutomotiveDashboard from './AutomotiveDashboard'
+import BankingDashboard from './BankingDashboard'
+import ConstructionDashboard from './ConstructionDashboard'
+import EducationDashboard from './EducationDashboard'
+import EnergyAndUtilitiesDashboard from './EnergyAndUtilitiesDashboard'
+import EnvironmentalServicesAndWasteManagementDashboard from './EnvironmentalServicesAndWasteManagementDashboard'
+import EventManagementDashboard from './EventManagementDashboard'
+import FinancialServicesDashboard from './FinancialServicesDashboard'
+import FmcgFastMovingConsumerGoodsDashboard from './FmcgFastMovingConsumerGoodsDashboard'
+import GovernmentAndPublicSectorDashboard from './GovernmentAndPublicSectorDashboard'
+import HospitalityDashboard from './HospitalityDashboard'
+import InsuranceDashboard from './InsuranceDashboard'
+import LegalServicesDashboard from './LegalServicesDashboard'
+import LogisticsAndSupplyChainDashboard from './LogisticsAndSupplyChainDashboard'
+import ManufacturingDashboard from './ManufacturingDashboard'
+import MediaAndEntertainmentDashboard from './MediaAndEntertainmentDashboard'
+import MiningAndNaturalResourcesDashboard from './MiningAndNaturalResourcesDashboard'
+import NonprofitAndNgosDashboard from './NonprofitAndNgosDashboard'
+import PharmaceuticalsDashboard from './PharmaceuticalsDashboard'
+import ProfessionalServicesDashboard from './ProfessionalServicesDashboard'
+import RealEstateDashboard from './RealEstateDashboard'
+import RetailDashboard from './RetailDashboard'
+import SportsAndRecreationDashboard from './SportsAndRecreationDashboard'
+import TechnologyDashboard from './TechnologyDashboard'
+import TelecommunicationsDashboard from './TelecommunicationsDashboard'
+import TransportationDashboard from './TransportationDashboard'
+import TravelAndTourismDashboard from './TravelAndTourismDashboard'
 interface PageProps {
     params: { industry: string }
 }
 
 export default async function MockDashboardPage({ params }: PageProps) {
     const { industry } = await params
-
-    // Normalize the slug for component matching
     const slug = industry.toLowerCase()
 
     switch (slug) {
@@ -17,8 +43,65 @@ export default async function MockDashboardPage({ params }: PageProps) {
             return <HealthcareDashboard />
         case 'finance':
             return <FinanceDashboard />
+        case 'aerospace-and-defence':
+            return <AerospaceAndDefenceDashboard />
+        case 'agriculture':
+            return <AgricultureDashboard />
+        case 'automotive':
+            return <AutomotiveDashboard />
+        case 'banking':
+            return <BankingDashboard />
+        case 'construction':
+            return <ConstructionDashboard />
+        case 'education':
+            return <EducationDashboard />
+        case 'energy-and-utilities':
+            return <EnergyAndUtilitiesDashboard />
+        case 'environmental-services-and-waste-management':
+            return <EnvironmentalServicesAndWasteManagementDashboard />
+        case 'event-management':
+            return <EventManagementDashboard />
+        case 'financial-services':
+            return <FinancialServicesDashboard />
+        case 'fmcg-fast-moving-consumer-goods':
+            return <FmcgFastMovingConsumerGoodsDashboard />
+        case 'government-and-public-sector':
+            return <GovernmentAndPublicSectorDashboard />
+        case 'hospitality':
+            return <HospitalityDashboard />
+        case 'insurance':
+            return <InsuranceDashboard />
+        case 'legal-services':
+            return <LegalServicesDashboard />
+        case 'logistics-and-supply-chain':
+            return <LogisticsAndSupplyChainDashboard />
+        case 'manufacturing':
+            return <ManufacturingDashboard />
+        case 'media-and-entertainment':
+            return <MediaAndEntertainmentDashboard />
+        case 'mining-and-natural-resources':
+            return <MiningAndNaturalResourcesDashboard />
+        case 'nonprofit-and-ngos':
+            return <NonprofitAndNgosDashboard />
+        case 'pharmaceuticals':
+            return <PharmaceuticalsDashboard />
+        case 'professional-services':
+            return <ProfessionalServicesDashboard />
+        case 'real-estate':
+            return <RealEstateDashboard />
+        case 'retail':
+            return <RetailDashboard />
+        case 'sports-and-recreation':
+            return <SportsAndRecreationDashboard />
+        case 'technology':
+            return <TechnologyDashboard />
+        case 'telecommunications':
+            return <TelecommunicationsDashboard />
+        case 'transportation':
+            return <TransportationDashboard />
+        case 'travel-and-tourism':
+            return <TravelAndTourismDashboard />
         default:
-            // If they create a new industry but we haven't built a custom React dashboard for it yet, gracefully fallback
             return (
                 <div className="w-full h-full min-h-[500px] flex flex-col items-center justify-center bg-white dark:bg-slate-900 border border-border rounded-xl shadow-sm text-center p-8">
                     <div className="w-16 h-16 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">

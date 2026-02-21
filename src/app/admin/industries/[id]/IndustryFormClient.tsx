@@ -148,11 +148,15 @@ export default function IndustryForm({
                     <span>Power BI Dashboard Embed Code (Raw HTML)</span>
                     <span className="text-muted-foreground text-xs font-normal">Optional. Paste &lt;iframe&gt; code here.</span>
                 </label>
+                <div className="text-xs text-slate-500 pb-2">
+                    <p><strong>External Power BI:</strong> Paste the exact `&lt;iframe src="https://app.powerbi.com/view..."&gt;&lt;/iframe&gt;` export.</p>
+                    <p><strong>Internal Mockup:</strong> Use `&lt;iframe src="/mock-dashboards/finance" width="100%" height="100%"&gt;&lt;/iframe&gt;` (Options: <code className="bg-slate-100 dark:bg-slate-800 px-1 rounded">healthcare</code>, <code className="bg-slate-100 dark:bg-slate-800 px-1 rounded">finance</code>, or your new slug for a generic 'Pending' screen).</p>
+                </div>
                 <textarea
                     name="dashboardEmbedCode"
                     defaultValue={initialData?.dashboardEmbedCode || ''}
                     rows={4}
-                    placeholder={`<iframe title="Report Section" width="100%" height="600" src="..." frameborder="0" allowFullScreen="true"></iframe>`}
+                    placeholder={`<iframe title="Native NextJS Dashboard Mockup" width="100%" height="100%" src="/mock-dashboards/finance" frameborder="0" allowFullScreen="true"></iframe>`}
                     className="w-full px-4 py-3 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm h-32"
                 />
             </div>

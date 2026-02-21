@@ -1,14 +1,14 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '@/lib/prisma'
+
+export const revalidate = 3600;
 import HeroSection from '@/components/HeroSection'
 import PageContainer from '@/components/PageContainer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import CtaModule from '@/components/CtaModule'
 import RelatedModules from '@/components/RelatedModules'
 import TableOfContents from '@/components/TableOfContents'
-
-const prisma = new PrismaClient()
 
 interface PageProps {
     params: { slug: string }

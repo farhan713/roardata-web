@@ -1,7 +1,5 @@
 import { MetadataRoute } from 'next'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { prisma } from '@/lib/prisma'
 const baseUrl = 'https://roardata.com.au'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

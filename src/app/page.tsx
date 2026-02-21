@@ -1,13 +1,13 @@
 import React from 'react'
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '@/lib/prisma'
+
+export const revalidate = 3600; // Cache for 1 hour on Vercel CDN
 import HeroSection from '@/components/HeroSection'
 import PageContainer from '@/components/PageContainer'
 import RelatedModules from '@/components/RelatedModules'
 import CtaModule from '@/components/CtaModule'
 import Link from 'next/link'
 import { CheckCircle2, BarChart, Database, Zap } from 'lucide-react'
-
-const prisma = new PrismaClient()
 
 export default async function Home() {
   const [services, industries, cities, caseStudies] = await Promise.all([

@@ -1,10 +1,10 @@
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '@/lib/prisma'
+
+export const revalidate = 3600;
 import HeroSection from '@/components/HeroSection'
 import PageContainer from '@/components/PageContainer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import RelatedModules from '@/components/RelatedModules'
-
-const prisma = new PrismaClient()
 
 export const metadata = {
     title: "Industry Specific Power BI Solutions | ROAR DATA",

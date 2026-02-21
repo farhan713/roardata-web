@@ -10,6 +10,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 import CtaModule from '@/components/CtaModule'
 import RelatedModules from '@/components/RelatedModules'
 import TableOfContents from '@/components/TableOfContents'
+import DashboardEmbed from '@/components/DashboardEmbed'
 
 interface PageProps {
     params: { slug: string }
@@ -93,13 +94,7 @@ export default async function IndustryPage({ params }: PageProps) {
                     <div className="lg:col-span-3 prose prose-slate dark:prose-invert max-w-none prose-headings:scroll-mt-32">
 
                         {industry.dashboardEmbedCode && (
-                            <div className="mb-16 not-prose">
-                                <h2 className="text-2xl font-bold tracking-tight mb-6">{industry.name} Dashboard Mockup</h2>
-                                <div
-                                    className="w-full aspect-[16/9] min-h-[600px] border border-border shadow-2xl rounded-xl overflow-hidden bg-muted flex items-center justify-center relative z-10"
-                                    dangerouslySetInnerHTML={{ __html: industry.dashboardEmbedCode }}
-                                />
-                            </div>
+                            <DashboardEmbed embedCode={industry.dashboardEmbedCode} industryName={industry.name} />
                         )}
 
                         <h2 id="overview">Overview</h2>

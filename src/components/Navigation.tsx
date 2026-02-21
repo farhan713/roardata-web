@@ -28,7 +28,7 @@ export default function Navigation() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    if (pathname?.startsWith('/admin')) {
+    if (pathname?.startsWith('/admin') || pathname?.startsWith('/mock-dashboards')) {
         return null;
     }
 

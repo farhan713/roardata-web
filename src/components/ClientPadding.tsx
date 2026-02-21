@@ -5,10 +5,10 @@ import { ReactNode } from "react";
 
 export default function ClientPadding({ children }: { children: ReactNode }) {
     const pathname = usePathname();
-    const isAdminRoute = pathname?.startsWith('/admin');
+    const hidePadding = pathname?.startsWith('/admin') || pathname?.startsWith('/mock-dashboards');
 
     return (
-        <main className={`flex-grow ${isAdminRoute ? '' : 'pt-24'}`}>
+        <main className={`flex-grow ${hidePadding ? '' : 'pt-24'}`}>
             {children}
         </main>
     );

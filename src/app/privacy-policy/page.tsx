@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
                     <p>We may use cookies and similar tracking technologies (like Google Analytics 4) to access or store information. You can refuse all cookies or indicate when a cookie is being sent, but some portions of our Service may not function properly.</p>
 
                     <h2>5. Contact Us</h2>
-                    <p>If you have questions or comments about this notice, you may email us at privacy@roardata.com.au or by post to our registered head office.</p>
+                    <p>If you have questions or comments about this notice, you may email us at contact@roardata.com.au or by post to our registered head office.</p>
 
                     <p className="text-sm text-muted-foreground mt-12">
                         Last Updated: {new Date().toLocaleDateString('en-AU')}

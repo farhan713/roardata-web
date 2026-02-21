@@ -19,8 +19,8 @@ export default function CtaModule({
     subheadline,
     primaryText = "Book a Free Consultation",
     primaryLink = "/#contact",
-    secondaryText = "Call 1300 ROAR DATA",
-    secondaryLink = "tel:1300762732"
+    secondaryText = "Call +61 433 345 000",
+    secondaryLink = "tel:+61433345000"
 }: CtaModuleProps) {
     return (
         <section className="py-24 relative overflow-hidden mt-16 rounded-3xl mx-4 sm:mx-8 lg:mx-auto max-w-7xl">
@@ -75,6 +75,13 @@ export default function CtaModule({
                     >
                         <Phone className="mr-2 w-5 h-5" />
                         {secondaryText}
+                    </Link>
+
+                    <Link
+                        href="mailto:contact@roardata.com.au"
+                        className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 font-semibold text-white border border-white/30 hover:bg-white/10 rounded-lg transition-colors"
+                    >
+                        Email Us
                     </Link>
                 </motion.div>
             </div>

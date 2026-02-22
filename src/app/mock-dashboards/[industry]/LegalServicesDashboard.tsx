@@ -80,34 +80,21 @@ export default function LegalServicesDashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 flex-grow">
         <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Volume Trend Matrix</h4>
-          <div className="flex-grow min-h-[250px] w-full">
+          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Unified Synthesized Telemetry</h4>
+          <div className="flex-grow min-h-[400px] w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+              <ComposedChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: -20 }}>
+                <CartesianGrid stroke="#f5f5f5" vertical={false} />
                 <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
                 <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Area type="monotone" dataKey="metricA" stroke="#14b8a6" fill="#2dd4bf" fillOpacity={0.6} />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Comparative Distribution</h4>
-          <div className="flex-grow min-h-[250px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
-                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Bar dataKey="metricB" fill="#14b8a6" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="metricC" fill="#cbd5e1" radius={[4, 4, 0, 0]} />
-              </BarChart>
+                <Legend iconType="circle" />
+                <Area type="monotone" dataKey="metricA" fill="#cbd5e1" stroke="#94a3b8" />
+                <Bar dataKey="metricB" barSize={20} fill="#6366f1" radius={[4, 4, 0, 0]} />
+                <Line type="monotone" dataKey="metricC" stroke="#f59e0b" strokeWidth={3} />
+              </ComposedChart>
             </ResponsiveContainer>
           </div>
         </div>

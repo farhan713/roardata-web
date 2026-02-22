@@ -136,44 +136,15 @@ function processFiles() {
     content = content.replace(regexImports, targetImport);
 
     // Extremely safe exact tail replacement:
-    // We know the generated file ALWAYS ends precisely like this:
-    const originalTail = `
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Volume Trend Matrix</h4>
-          <div className="flex-grow min-h-[250px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
-                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Area type="monotone" dataKey="metricA" stroke="#14b8a6" fill="#2dd4bf" fillOpacity={0.6} />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
+    // We locate the universal chart layout opener and slice off the bottom half of the file, completely bypassing any randomized color hex codes.
+    const splitToken = '<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">';
+    const splitIndex = content.indexOf(splitToken);
 
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Comparative Distribution</h4>
-          <div className="flex-grow min-h-[250px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
-                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Bar dataKey="metricB" fill="#14b8a6" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="metricC" fill="#cbd5e1" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}`;
-    content = content.replace(originalTail.trim(), targetUI.trim());
+    if (splitIndex !== -1) {
+      content = content.substring(0, splitIndex) + targetUI.trim() + '\n';
+    } else {
+      console.warn(`[WARN] Could not locate chart split token in ${file}`);
+    }
 
     if (index % 2 === 0) content = content.replace(/#indigo/g, '#6366f1');
     else content = content.replace(/#indigo/g, '#0f766e');

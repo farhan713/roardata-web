@@ -82,32 +82,32 @@ export default function BankingDashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
         <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Volume Trend Matrix</h4>
-          <div className="flex-grow min-h-[250px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
+          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Omnidirectional Performance</h4>
+          <div className="flex-grow min-h-[250px] w-full flex items-center justify-center">
+            <ResponsiveContainer width="100%" height={250}>
+              <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
+                <PolarGrid stroke="#e2e8f0" />
+                <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 10 }} />
+                <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: '#64748b', fontSize: 10 }} />
+                <Radar name="Target A" dataKey="metricA" stroke="#3b82f6" fill="#60a5fa" fillOpacity={0.5} />
+                <Radar name="Target B" dataKey="metricB" stroke="#8b5cf6" fill="#a78bfa" fillOpacity={0.5} />
                 <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Area type="monotone" dataKey="metricA" stroke="#f97316" fill="#fb923c" fillOpacity={0.6} />
-              </AreaChart>
+              </RadarChart>
             </ResponsiveContainer>
           </div>
         </div>
-
         <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Comparative Distribution</h4>
+          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Continuous Value Mapping</h4>
           <div className="flex-grow min-h-[250px] w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
+              <LineChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
                 <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
                 <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Bar dataKey="metricB" fill="#f97316" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="metricC" fill="#cbd5e1" radius={[4, 4, 0, 0]} />
-              </BarChart>
+                <Line type="monotone" dataKey="metricA" stroke="#f43f5e" strokeWidth={3} dot={{ strokeWidth: 2, r: 4 }} activeDot={{ r: 6 }} />
+                <Line type="monotone" dataKey="metricC" stroke="#eab308" strokeWidth={3} dot={{ strokeWidth: 2, r: 4 }} activeDot={{ r: 6 }} />
+              </LineChart>
             </ResponsiveContainer>
           </div>
         </div>

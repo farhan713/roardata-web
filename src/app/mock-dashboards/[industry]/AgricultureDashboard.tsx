@@ -82,22 +82,23 @@ export default function AgricultureDashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
         <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Volume Trend Matrix</h4>
-          <div className="flex-grow min-h-[250px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
+          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Distribution Variance</h4>
+          <div className="flex-grow min-h-[250px] w-full flex items-center justify-center">
+            <ResponsiveContainer width="100%" height={250}>
+              <PieChart>
+                <Pie data={chartData.slice(0, 4)} cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5} dataKey="metricA">
+                  <Cell fill="#0ea5e9" />
+                  <Cell fill="#8b5cf6" />
+                  <Cell fill="#ec4899" />
+                  <Cell fill="#f59e0b" />
+                </Pie>
                 <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Area type="monotone" dataKey="metricA" stroke="#8b5cf6" fill="#a78bfa" fillOpacity={0.6} />
-              </AreaChart>
+              </PieChart>
             </ResponsiveContainer>
           </div>
         </div>
-
         <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Comparative Distribution</h4>
+          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Volume Aggregation</h4>
           <div className="flex-grow min-h-[250px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
@@ -105,8 +106,10 @@ export default function AgricultureDashboard() {
                 <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
                 <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Bar dataKey="metricB" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="metricC" fill="#cbd5e1" radius={[4, 4, 0, 0]} />
+                <Legend iconType="circle" />
+                <Bar dataKey="metricB" stackId="a" fill="#3b82f6" />
+                <Bar dataKey="metricC" stackId="a" fill="#10b981" />
+                <Bar dataKey="metricA" stackId="a" fill="#f43f5e" />
               </BarChart>
             </ResponsiveContainer>
           </div>

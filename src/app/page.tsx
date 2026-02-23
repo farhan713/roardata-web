@@ -2,7 +2,8 @@ import React from 'react'
 import { prisma } from '@/lib/prisma'
 
 export const revalidate = 3600; // Cache for 1 hour on Vercel CDN
-import HeroSection from '@/components/HeroSection'
+import HomeHero from '@/components/HomeHero'
+import HomeIntegrations from '@/components/HomeIntegrations'
 import PageContainer from '@/components/PageContainer'
 import RelatedModules from '@/components/RelatedModules'
 import CtaModule from '@/components/CtaModule'
@@ -22,10 +23,8 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <HeroSection
-        headline="Power BI Consulting Specialists in Australia"
-        subheadline="We transform your messy data into beautiful, lightning-fast dashboards that drive real business decisions."
-      />
+      <HomeHero />
+      <HomeIntegrations />
 
       <PageContainer className="py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

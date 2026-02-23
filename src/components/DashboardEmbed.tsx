@@ -23,7 +23,7 @@ export default function DashboardEmbed({ embedCode, industryName }: DashboardEmb
     return (
         <div className="mb-16 not-prose">
             <h2 className="text-2xl font-bold tracking-tight mb-6">{industryName} Dashboard Mockup</h2>
-            <div className="w-full aspect-[16/9] min-h-[600px] border border-border shadow-2xl rounded-xl overflow-hidden bg-white dark:bg-slate-900 flex items-center justify-center relative z-10">
+            <div className="w-full aspect-[16/9] min-h-[600px] rounded-2xl overflow-hidden flex items-center justify-center relative z-10 group bg-transparent">
                 {!isMounted ? (
                     <div className="flex flex-col items-center justify-center space-y-4 animate-in fade-in duration-500">
                         <div className="w-12 h-12 relative">
@@ -34,11 +34,22 @@ export default function DashboardEmbed({ embedCode, industryName }: DashboardEmb
                     </div>
                 ) : (
                     <div
-                        className="w-full h-full animate-in fade-in zoom-in-95 duration-700"
+                        className="w-full h-full animate-in fade-in zoom-in-95 duration-700 dashboard-iframe-wrapper"
                         dangerouslySetInnerHTML={{ __html: embedCode }}
                     />
                 )}
             </div>
+
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                .dashboard-iframe-wrapper iframe {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 600px;
+                    border: none;
+                    border-radius: 1rem;
+                }
+            `}} />
         </div>
     );
 }

@@ -120,7 +120,7 @@ export default async function IndustryPage({ params }: PageProps) {
                                 <h3 className="text-lg font-semibold mt-4 mb-2">{kpiGroup.group}</h3>
                                 <div className="flex flex-wrap gap-2 not-prose">
                                     {kpiGroup.metrics?.map((metric: string, j: number) => (
-                                        <span key={j} className="px-3 py-1 bg-brand-100 dark:bg-brand-900 border border-brand-200 dark:border-brand-800 rounded-md text-sm font-medium">
+                                        <span key={j} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-medium">
                                             {metric}
                                         </span>
                                     ))}

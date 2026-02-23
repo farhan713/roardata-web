@@ -82,4 +82,66 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-brand-400;
   }
+
+  .animate-marquee-up {
+    animation: marqueeUp var(--duration, 30s) linear infinite;
+  }
+
+  .animate-marquee-down {
+    animation: marqueeDown var(--duration, 30s) linear infinite;
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes marqueeUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marqueeDown {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

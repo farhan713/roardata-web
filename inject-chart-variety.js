@@ -16,140 +16,359 @@ function findDashboards(dir) {
   });
 }
 
-const theme1Imports = "import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';";
-const theme1UI = `
+function generateDashboardContent(industryName, themeIndex) {
+  const dataTheme1 = `
+const chartData = [
+  { name: "Mar", metricA: 78, metricB: 45, metricC: 22 },
+  { name: "Apr", metricA: 82, metricB: 50, metricC: 25 },
+  { name: "May", metricA: 76, metricB: 48, metricC: 20 },
+  { name: "Jun", metricA: 85, metricB: 55, metricC: 28 },
+  { name: "Jul", metricA: 88, metricB: 52, metricC: 30 },
+  { name: "Aug", metricA: 84, metricB: 49, metricC: 27 },
+  { name: "Sept", metricA: 90, metricB: 60, metricC: 35 }
+];`;
+
+  const chartUI1 = `
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Omnidirectional Performance</h4>
-          <div className="flex-grow min-h-[250px] w-full flex items-center justify-center">
-            <ResponsiveContainer width="100%" height={250}>
-              <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
-                <PolarGrid stroke="#e2e8f0" />
-                <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 10 }} />
-                <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: '#64748b', fontSize: 10 }} />
-                <Radar name="Target A" dataKey="metricA" stroke="#3b82f6" fill="#60a5fa" fillOpacity={0.5} />
-                <Radar name="Target B" dataKey="metricB" stroke="#8b5cf6" fill="#a78bfa" fillOpacity={0.5} />
-                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-              </RadarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Continuous Value Mapping</h4>
-          <div className="flex-grow min-h-[250px] w-full">
+        {/* Line Chart Panel */}
+        <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl flex flex-col relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+          <h4 className="text-white font-bold text-lg mb-1 tracking-tight z-10">Supply chain trends</h4>
+          <p className="text-xs text-slate-400 mb-6 z-10">OTIF, lead time and inventory health</p>
+          <div className="flex-grow min-h-[280px] w-full z-10 ml-[-20px]">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
-                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Line type="monotone" dataKey="metricA" stroke="#f43f5e" strokeWidth={3} dot={{ strokeWidth: 2, r: 4 }} activeDot={{ r: 6 }} />
-                <Line type="monotone" dataKey="metricC" stroke="#eab308" strokeWidth={3} dot={{ strokeWidth: 2, r: 4 }} activeDot={{ r: 6 }} />
+              <LineChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ffffff0a" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} />
+                <Tooltip 
+                  contentStyle={{ backgroundColor: '#0f111a', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.5)' }} 
+                  itemStyle={{ color: '#e2e8f0' }}
+                />
+                <Line type="monotone" dataKey="metricA" stroke="#2dd4bf" strokeWidth={3} dot={false} activeDot={{ r: 6, strokeWidth: 0, fill: '#2dd4bf' }} />
+                <Line type="monotone" dataKey="metricB" stroke="#fbbf24" strokeWidth={3} dot={false} />
+                <Line type="monotone" dataKey="metricC" stroke="#818cf8" strokeWidth={3} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}`;
 
-const theme2Imports = "import { PieChart, Pie, Cell, BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';";
-const theme2UI = `
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Distribution Variance</h4>
-          <div className="flex-grow min-h-[250px] w-full flex items-center justify-center">
-            <ResponsiveContainer width="100%" height={250}>
-              <PieChart>
-                <Pie data={chartData.slice(0, 4)} cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5} dataKey="metricA">
-                  <Cell fill="#0ea5e9" />
-                  <Cell fill="#8b5cf6" />
-                  <Cell fill="#ec4899" />
-                  <Cell fill="#f59e0b" />
-                </Pie>
-                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Volume Aggregation</h4>
-          <div className="flex-grow min-h-[250px] w-full">
+        {/* Bar Chart Panel */}
+        <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl flex flex-col relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+          <h4 className="text-white font-bold text-lg mb-1 tracking-tight z-10">Top supplier risks</h4>
+          <p className="text-xs text-slate-400 mb-6 z-10">Click a bar to focus (10 suppliers)</p>
+          <div className="flex-grow min-h-[280px] w-full z-10 ml-[-20px]">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
-                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Legend iconType="circle" />
-                <Bar dataKey="metricB" stackId="a" fill="#3b82f6" />
-                <Bar dataKey="metricC" stackId="a" fill="#10b981" />
-                <Bar dataKey="metricA" stackId="a" fill="#f43f5e" />
+              <BarChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorMetricA" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#fbbf24" stopOpacity={1}/>
+                    <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.8}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ffffff0a" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} />
+                <Tooltip 
+                  cursor={{ fill: 'rgba(255,255,255,0.05)' }}
+                  contentStyle={{ backgroundColor: '#0f111a', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.5)' }} 
+                />
+                <Bar dataKey="metricA" fill="url(#colorMetricA)" radius={[4, 4, 0, 0]} barSize={28} />
               </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
       </div>
-    </div>
-  );
-}`;
+  `;
 
-const theme3Imports = "import { ComposedChart, LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';";
-const theme3UI = `
-      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 flex-grow">
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col">
-          <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-6">Unified Synthesized Telemetry</h4>
-          <div className="flex-grow min-h-[400px] w-full">
+  const chartUI2 = `
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">
+        {/* Area Chart Panel */}
+        <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl flex flex-col relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+          <h4 className="text-white font-bold text-lg mb-1 tracking-tight z-10">Workforce Dynamics</h4>
+          <p className="text-xs text-slate-400 mb-6 z-10">Monthly capacity utilization</p>
+          <div className="flex-grow min-h-[280px] w-full z-10 ml-[-20px]">
             <ResponsiveContainer width="100%" height="100%">
-              <ComposedChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: -20 }}>
-                <CartesianGrid stroke="#f5f5f5" vertical={false} />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
-                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                <Legend iconType="circle" />
-                <Area type="monotone" dataKey="metricA" fill="#cbd5e1" stroke="#94a3b8" />
-                <Bar dataKey="metricB" barSize={20} fill="#indigo" radius={[4, 4, 0, 0]} />
-                <Line type="monotone" dataKey="metricC" stroke="#f59e0b" strokeWidth={3} />
+              <AreaChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorArea" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ffffff0a" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} />
+                <Tooltip 
+                  contentStyle={{ backgroundColor: '#0f111a', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }} 
+                />
+                <Area type="monotone" dataKey="metricA" stroke="#3b82f6" fillOpacity={1} fill="url(#colorArea)" strokeWidth={3} />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Stacked Chart Panel */}
+        <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl flex flex-col relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+          <h4 className="text-white font-bold text-lg mb-1 tracking-tight z-10">Revenue Streams</h4>
+          <p className="text-xs text-slate-400 mb-6 z-10">Categorized by segment</p>
+          <div className="flex-grow min-h-[280px] w-full z-10 ml-[-20px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ffffff0a" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} />
+                <Tooltip 
+                  cursor={{ fill: 'rgba(255,255,255,0.05)' }}
+                  contentStyle={{ backgroundColor: '#0f111a', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }} 
+                />
+                <Bar dataKey="metricA" stackId="a" fill="#10b981" barSize={20} radius={[0, 0, 4, 4]} />
+                <Bar dataKey="metricB" stackId="a" fill="#3b82f6" barSize={20} />
+                <Bar dataKey="metricC" stackId="a" fill="#f43f5e" barSize={20} radius={[4, 4, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+  `;
+
+  const chartUI3 = `
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 flex-grow">
+        {/* Full Width Composed Chart */}
+        <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl flex flex-col relative overflow-hidden group">
+          <div className="absolute top-0 left-1/2 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2" />
+          <h4 className="text-white font-bold text-lg mb-1 tracking-tight z-10">Cross-Platform Telemetry</h4>
+          <p className="text-xs text-slate-400 mb-6 z-10">Synthesized data across entire ecosystem</p>
+          <div className="flex-grow min-h-[350px] w-full z-10 ml-[-20px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <ComposedChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorAreaFull" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#818cf8" stopOpacity={0.2}/>
+                    <stop offset="95%" stopColor="#818cf8" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ffffff0a" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} />
+                <Tooltip 
+                  cursor={{ fill: 'rgba(255,255,255,0.05)' }}
+                  contentStyle={{ backgroundColor: '#0f111a', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }} 
+                />
+                <Area type="monotone" dataKey="metricB" stroke="none" fill="url(#colorAreaFull)" />
+                <Bar dataKey="metricA" barSize={12} fill="#6366f1" radius={[4, 4, 0, 0]} />
+                <Line type="monotone" dataKey="metricC" stroke="#2dd4bf" strokeWidth={3} dot={false} />
               </ComposedChart>
             </ResponsiveContainer>
           </div>
         </div>
       </div>
+  `;
+
+  const uiString = themeIndex === 0 ? chartUI1 : (themeIndex === 1 ? chartUI2 : chartUI3);
+
+  // Generate slightly random metric values based on the industry hash to make them look distinct
+  const hash = industryName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const v1 = (70 + (hash % 25)).toFixed(1);
+  const v2 = (60 + ((hash * 2) % 30)).toFixed(0);
+  const v3 = (85 + ((hash * 3) % 15)).toFixed(1);
+  const v4 = (90 + ((hash * 4) % 9)).toFixed(1);
+
+  return `'use client';
+
+import React from 'react';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ComposedChart } from 'recharts';
+import { Truck, Box, ShieldCheck, Activity, LineChart as LineChartIcon, TrainTrack, Database, Server, Component, Settings, Search, LayoutDashboard, Share2, Bell, MoreVertical, Menu } from 'lucide-react';
+
+${dataTheme1}
+
+export default function ${industryName.replace(/ /g, '')}Dashboard() {
+  return (
+    // Outer wrap to force the exact mock dashboard container styling (dark theme isolated)
+    <div className="w-full h-full min-h-[700px] flex rounded-xl overflow-hidden bg-[#0b101e] font-sans text-slate-300 isolate border border-white/5 shadow-2xl shadow-indigo-500/10">
+      
+      {/* Main Dashboard Area */}
+      <div className="flex-grow flex flex-col animate-in fade-in duration-700 w-full overflow-hidden">
+        
+        {/* Top macOS style Header */}
+        <div className="h-14 border-b border-white/10 flex items-center justify-between px-6 bg-[#0f111a]/50 backdrop-blur-md hidden md:flex">
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-rose-500"></div>
+              <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+              <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+            </div>
+            <div className="text-white font-bold text-lg tracking-tight flex items-center gap-2">
+              <span className="text-emerald-400">Roar</span>Data
+            </div>
+            <div className="h-4 w-px bg-white/10 ml-4 hidden md:block"></div>
+            <div className="hidden md:flex text-xs font-medium text-slate-400 ml-4 gap-6">
+              <span className="text-white cursor-pointer px-2 py-1 bg-white/5 rounded-md">Overview</span>
+              <span className="cursor-pointer hover:text-white transition-colors">Supply chain</span>
+              <span className="cursor-pointer hover:text-white transition-colors">Compliance</span>
+              <span className="cursor-pointer hover:text-white transition-colors">R&D</span>
+              <span className="cursor-pointer hover:text-white transition-colors">Security</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 text-slate-400">
+            <Search size={16} className="hover:text-white cursor-pointer" />
+            <Share2 size={16} className="hover:text-white cursor-pointer" />
+            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 text-white flex items-center justify-center text-xs font-bold shadow-md shadow-indigo-500/20 cursor-pointer">
+              RD
+            </div>
+          </div>
+        </div>
+
+        {/* Dashboard Content */}
+        <div className="flex-grow p-4 md:p-6 flex flex-col gap-6 overflow-y-auto overflow-x-hidden custom-scrollbar">
+          
+          <div className="md:hidden flex items-center justify-between mb-2">
+            <div className="text-white font-bold text-lg tracking-tight flex items-center gap-2">
+              <span className="text-emerald-400">Roar</span>Data
+            </div>
+            <Menu className="text-slate-400 cursor-pointer" size={20} />
+          </div>
+
+          {/* Top 4 KPI Cards */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            
+            <div className="bg-[#131b2f] p-4 md:p-5 rounded-2xl border border-white/5 flex flex-col shadow-xl">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Metrics OTIF</span>
+                <div className="w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+                  <Truck size={16} />
+                </div>
+              </div>
+              <div className="flex items-end gap-3 mt-auto">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-tight">${v1}%</h3>
+              </div>
+              <div className="flex items-center gap-2 mt-3">
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-1.5 py-0.5 rounded whitespace-nowrap">↑ 1.4%</span>
+                <span className="text-[9px] md:text-[10px] text-slate-500 font-medium truncate">vs last month</span>
+              </div>
+            </div>
+
+            <div className="bg-[#131b2f] p-4 md:p-5 rounded-2xl border border-amber-500/20 flex flex-col shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 blur-2xl rounded-full" />
+              <div className="flex justify-between items-start mb-4 relative z-10">
+                <span className="text-[10px] md:text-[11px] font-bold text-amber-500 uppercase tracking-wider">Lead Time</span>
+                <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
+                  <LayoutDashboard size={16} />
+                </div>
+              </div>
+              <div className="flex items-end gap-3 mt-auto relative z-10">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-amber-500 tracking-tight">${v2}d</h3>
+              </div>
+              <div className="flex items-center gap-2 mt-3 relative z-10">
+                <span className="text-[10px] font-bold text-rose-400 bg-rose-400/10 px-1.5 py-0.5 rounded whitespace-nowrap">↓ 2.1%</span>
+                <span className="text-[9px] md:text-[10px] text-slate-500 font-medium truncate">vs last month</span>
+              </div>
+            </div>
+
+            <div className="bg-[#131b2f] p-4 md:p-5 rounded-2xl border border-white/5 flex flex-col shadow-xl hidden md:flex">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Compliance</span>
+                <div className="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                  <ShieldCheck size={16} />
+                </div>
+              </div>
+              <div className="flex items-end gap-3 mt-auto">
+                <h3 className="text-3xl lg:text-4xl font-black text-white tracking-tight">${v3}%</h3>
+              </div>
+              <div className="flex items-center gap-2 mt-3">
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-1.5 py-0.5 rounded whitespace-nowrap">↑ 0.6%</span>
+                <span className="text-[10px] text-slate-500 font-medium truncate">vs industry audit</span>
+              </div>
+            </div>
+
+            <div className="bg-[#131b2f] p-4 md:p-5 rounded-2xl border border-white/5 flex flex-col shadow-xl hidden md:flex">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">System Uptime</span>
+                <div className="w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
+                  <Activity size={16} />
+                </div>
+              </div>
+              <div className="flex items-end gap-3 mt-auto">
+                <h3 className="text-3xl lg:text-4xl font-black text-white tracking-tight">${v4}%</h3>
+              </div>
+              <div className="flex items-center gap-2 mt-3">
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-1.5 py-0.5 rounded whitespace-nowrap">↑ 0.8%</span>
+                <span className="text-[10px] text-slate-500 font-medium truncate">vs last month</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Dynamic Charts Area */}
+          ${uiString}
+
+        </div>
+      </div>
+      
+      {/* Right Sidebar (Mobile Mockup equivalent on desktop) */}
+      <div className="w-80 border-l border-white/5 bg-[#0f111a] hidden xl:flex flex-col relative shrink-0">
+        {/* Fake Phone Notch */}
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-full z-20"></div>
+        
+        <div className="px-6 pt-12 pb-6 flex items-center justify-between border-b border-white/5">
+          <div className="font-bold text-white text-lg">${industryName}</div>
+          <Menu className="text-slate-400 cursor-pointer" size={20} />
+        </div>
+        
+        <div className="flex-grow overflow-y-auto p-6 flex flex-col gap-6 custom-scrollbar">
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-[10px] font-bold w-fit border border-emerald-500/20">Live Sync</span>
+              <span className="px-3 py-1 bg-white/5 text-slate-300 rounded-full text-[10px] font-bold w-fit border border-white/5">Mock Data</span>
+            </div>
+            <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+              This panel demonstrates responsive layouts. Elements stack gracefully on smaller viewports.
+            </p>
+          </div>
+
+          <div className="bg-[#131b2f] p-4 rounded-xl border border-white/5 flex flex-col">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Total Yield</span>
+            <div className="h-2 bg-white/5 rounded-full overflow-hidden w-full mb-2">
+              <div className="h-full bg-emerald-400 w-[78%] rounded-full shadow-[0_0_10px_rgba(52,211,153,0.5)]"></div>
+            </div>
+            <div className="flex justify-between text-[10px] text-slate-500">
+              <span>0M</span>
+              <span className="text-white font-medium">7.8M / 10M</span>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 p-5 rounded-xl border border-indigo-500/20 flex flex-col relative overflow-hidden group mt-auto">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-500/20 blur-2xl rounded-full" />
+            <h4 className="text-white font-bold text-sm mb-1 relative z-10">AI Insights</h4>
+            <p className="text-xs text-indigo-200 mt-1 mb-4 relative z-10 leading-relaxed">System detected a 14% anomaly in recent supply chain latency. Recommended action: Route optimization.</p>
+            <button className="bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold py-2 px-4 rounded-lg transition-colors w-fit relative z-10">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+      
     </div>
   );
-}`;
-
+}
+`;
+}
 
 function processFiles() {
   findDashboards(targetDir);
 
   files.forEach((file, index) => {
-    let content = fs.readFileSync(file, 'utf8');
+    const fileName = path.basename(file);
+    const rawName = fileName.replace('Dashboard.tsx', '');
+    const industryName = rawName.replace(/([A-Z])/g, ' $1').trim();
+
     const modulo = index % 3;
+    const newContent = generateDashboardContent(industryName, modulo);
 
-    let targetImport = modulo === 0 ? theme1Imports : (modulo === 1 ? theme2Imports : theme3Imports);
-    let targetUI = modulo === 0 ? theme1UI : (modulo === 1 ? theme2UI : theme3UI);
-
-    // Safe import replacement
-    let regexImports = /import\s+\{[^}]+\}\s+from\s+'recharts';/;
-    content = content.replace(regexImports, targetImport);
-
-    // Extremely safe exact tail replacement:
-    // We locate the universal chart layout opener and slice off the bottom half of the file, completely bypassing any randomized color hex codes.
-    const splitToken = '<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow">';
-    const splitIndex = content.indexOf(splitToken);
-
-    if (splitIndex !== -1) {
-      content = content.substring(0, splitIndex) + targetUI.trim() + '\n';
-    } else {
-      console.warn(`[WARN] Could not locate chart split token in ${file}`);
-    }
-
-    if (index % 2 === 0) content = content.replace(/#indigo/g, '#6366f1');
-    else content = content.replace(/#indigo/g, '#0f766e');
-
-    fs.writeFileSync(file, content);
+    fs.writeFileSync(file, newContent);
   });
   console.log("Varieties successfully injected!");
 }

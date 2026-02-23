@@ -3,7 +3,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Phone } from 'lucide-react'
+import { ArrowRight, Phone, Mail } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 interface CtaModuleProps {
     headline: string
@@ -69,20 +70,36 @@ export default function CtaModule({
                         <div className="absolute inset-0 h-full w-full bg-white/20 scale-0 group-hover:scale-100 rounded-lg transition-transform duration-300 ease-out z-0" />
                     </Link>
 
-                    <Link
-                        href={secondaryLink}
-                        className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 font-semibold text-white border border-white/30 hover:bg-white/10 rounded-lg transition-colors"
-                    >
-                        <Phone className="mr-2 w-5 h-5" />
-                        {secondaryText}
-                    </Link>
+                    <div className="flex items-center justify-center gap-4 w-full sm:w-auto">
+                        <Link
+                            href={secondaryLink}
+                            className="inline-flex items-center justify-center w-14 h-14 text-white border border-white/30 hover:bg-white/10 rounded-lg transition-colors group"
+                            title={secondaryText}
+                            aria-label="Call Us"
+                        >
+                            <Phone className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                        </Link>
 
-                    <Link
-                        href="mailto:contact@roardata.com.au"
-                        className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 font-semibold text-white border border-white/30 hover:bg-white/10 rounded-lg transition-colors"
-                    >
-                        Email Us
-                    </Link>
+                        <Link
+                            href="https://api.whatsapp.com/send/?phone=61433345000&text&type=phone_number&app_absent=0"
+                            className="inline-flex items-center justify-center w-14 h-14 text-white border border-white/30 hover:bg-[#25D366] hover:border-[#25D366] rounded-lg transition-colors group"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="WhatsApp"
+                            aria-label="WhatsApp"
+                        >
+                            <FaWhatsapp className="w-7 h-7 group-hover:scale-110 transition-transform" />
+                        </Link>
+
+                        <Link
+                            href="mailto:contact@roardata.com.au"
+                            className="inline-flex items-center justify-center w-14 h-14 text-white border border-white/30 hover:bg-white/10 rounded-lg transition-colors group"
+                            title="Email Us"
+                            aria-label="Email Us"
+                        >
+                            <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                        </Link>
+                    </div>
                 </motion.div>
             </div>
         </section>

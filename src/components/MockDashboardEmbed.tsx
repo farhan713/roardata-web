@@ -30,16 +30,30 @@ const badgeColorMap: Record<string, string> = {
     emerald: 'text-emerald-400 bg-emerald-400/10',
     rose: 'text-rose-400 bg-rose-400/10',
     amber: 'text-amber-500 bg-amber-500/10',
+    indigo: 'text-indigo-400 bg-indigo-400/10',
+    cyan: 'text-cyan-400 bg-cyan-400/10',
+    fuchsia: 'text-fuchsia-400 bg-fuchsia-400/10',
+};
+
+const bgMap: Record<string, string> = {
+    emerald: 'from-emerald-950/40 via-[#0a0f1a] to-[#0a0f1a]',
+    amber: 'from-amber-950/40 via-[#0a0f1a] to-[#0a0f1a]',
+    rose: 'from-rose-950/40 via-[#0a0f1a] to-[#0a0f1a]',
+    indigo: 'from-indigo-950/40 via-[#0a0f1a] to-[#0a0f1a]',
+    cyan: 'from-cyan-950/40 via-[#0a0f1a] to-[#0a0f1a]',
+    fuchsia: 'from-fuchsia-950/40 via-[#0a0f1a] to-[#0a0f1a]',
 };
 
 export default function MockDashboardEmbed({ industryKey }: { industryKey: string }) {
     const data = mockDashboardsData[industryKey] || mockDashboardsData['Agriculture'];
     const [activeTab, setActiveTab] = useState(data.tabs[0].name);
 
-    const activeTabData = data.tabs.find((t: any) => t.name === activeTab);
+    const activeTabData = data.tabs.find((t: any) => t.name === activeTab) || data.tabs[0];
+    const theme = data.theme || 'indigo';
+    const bgGradient = bgMap[theme] || bgMap['indigo'];
 
     return (
-        <div className="w-full h-full min-h-[700px] flex rounded-2xl overflow-hidden bg-[#0a0f1a] font-sans text-slate-300 isolate border border-white/10 shadow-2xl">
+        <div className={`w-full h-full min-h-[700px] flex rounded-2xl overflow-hidden bg-[#0a0f1a] bg-gradient-to-br ${bgGradient} font-sans text-slate-300 isolate border border-white/10 shadow-2xl`}>
 
             {/* Main Dashboard Area */}
             <div className="flex-grow flex flex-col w-full overflow-hidden">
@@ -91,10 +105,10 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
                 </div>
 
                 {/* Content Area */}
-                <div className="flex-grow p-4 md:p-6 flex flex-col gap-6 overflow-y-auto custom-scrollbar border-t border-transparent">
+                <div className="flex-grow p-4 md:p-6 flex flex-col gap-6 overflow-y-auto overflow-x-auto custom-scrollbar border-t border-transparent">
 
                     {/* KPI Cards (4 in a row) */}
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                    <div className="grid grid-cols-4 gap-4 md:gap-5 min-w-[700px] lg:min-w-full pb-2">
                         {data.kpis.map((kpi: any, idx: number) => {
                             const IconComp = iconMap[kpi.icon] || LayoutDashboard;
                             const colorClass = colorMap[kpi.color] || colorMap['emerald'];
@@ -103,7 +117,13 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
                             return (
                                 <div key={idx} className="bg-[#121827]/80 backdrop-blur-sm p-4 md:p-5 rounded-2xl border border-white/5 flex flex-col relative overflow-hidden group shadow-lg">
                                     {/* Subtle Glow inside the card */}
-                                    <div className={`absolute top-0 right-0 w-24 h-24 blur-3xl rounded-full opacity-10 -mr-10 -mt-10 ${kpi.color === 'amber' ? 'bg-amber-500' : kpi.color === 'rose' ? 'bg-rose-500' : 'bg-emerald-500'}`} />
+                                    <div className={`absolute top-0 right-0 w-32 h-32 blur-3xl rounded-full opacity-15 -mr-10 -mt-10 ${kpi.color === 'amber' ? 'bg-amber-500' :
+                                        kpi.color === 'rose' ? 'bg-rose-500' :
+                                            kpi.color === 'cyan' ? 'bg-cyan-500' :
+                                                kpi.color === 'fuchsia' ? 'bg-fuchsia-500' :
+                                                    kpi.color === 'indigo' ? 'bg-indigo-500' :
+                                                        'bg-emerald-500'
+                                        }`} />
 
                                     <div className="flex justify-between items-start mb-4 relative z-10">
                                         <span className="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider">{kpi.title}</span>

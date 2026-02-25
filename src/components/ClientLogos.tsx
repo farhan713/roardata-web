@@ -34,7 +34,7 @@ export default function ClientLogos() {
                         {marqueeItems.map((client, idx) => (
                             <div
                                 key={`${client.name}-${idx}`}
-                                className="relative w-32 h-14 md:w-48 md:h-20 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 filter brightness-0 hover:brightness-100 shrink-0"
+                                className="relative w-40 h-20 md:w-[220px] md:h-28 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 filter brightness-0 hover:brightness-100 shrink-0"
                                 title={client.name}
                             >
                                 <img

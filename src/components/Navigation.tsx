@@ -47,7 +47,7 @@ export default function Navigation() {
                             alt="ROAR DATA Logo"
                             width={360}
                             height={96}
-                            className="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105"
+                            className="h-20 md:h-24 w-auto object-contain transition-transform group-hover:scale-105"
                             priority
                         />
                     </Link>
@@ -58,14 +58,14 @@ export default function Navigation() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                                className="text-[15px] font-semibold text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 {link.label}
                             </Link>
                         ))}
                         <Link
                             href="/#contact"
-                            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[#003366] text-white shadow hover:bg-[#003366]/90 h-9 px-4 py-2"
+                            className="inline-flex items-center justify-center rounded-md text-[15px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[#003366] text-white shadow hover:bg-[#003366]/90 h-11 px-6 py-2"
                         >
                             Book Consultation
                         </Link>

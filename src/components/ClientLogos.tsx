@@ -14,26 +14,37 @@ const clients = [
 ]
 
 export default function ClientLogos() {
+    // Duplicate the array to create a seamless infinite scrolling effect
+    const marqueeItems = [...clients, ...clients, ...clients]
+
     return (
-        <section className="py-12 bg-gradient-to-b from-[#E9F0F9] to-white border-b border-slate-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <p className="text-center text-xs font-semibold text-slate-500 uppercase tracking-[0.2em] mb-8">
+        <section className="py-16 bg-gradient-to-b from-[#E9F0F9] to-white border-b border-slate-100 overflow-hidden">
+            <div className="max-w-[1400px] mx-auto">
+                <p className="text-center text-[11px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-12">
                     Trusted by industry leaders
                 </p>
-                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 md:gap-x-20">
-                    {clients.map((client) => (
-                        <div
-                            key={client.name}
-                            className="relative w-24 h-10 md:w-32 md:h-12 flex items-center justify-center opacity-40 hover:opacity-80 transition-opacity duration-300 filter brightness-0"
-                            title={client.name}
-                        >
-                            <img
-                                src={client.src}
-                                alt={client.name}
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-                    ))}
+
+                {/* Marquee Container */}
+                <div className="relative flex overflow-x-hidden group mask-image: linear-gradient(to_right,transparent,black_10%,black_90%,transparent)">
+
+                    <div
+                        className="flex items-center gap-16 md:gap-24 animate-marquee-left will-change-transform w-max pr-16 md:pr-24 group-hover:[animation-play-state:paused]"
+                        style={{ "--duration": "40s" } as React.CSSProperties}
+                    >
+                        {marqueeItems.map((client, idx) => (
+                            <div
+                                key={`${client.name}-${idx}`}
+                                className="relative w-32 h-14 md:w-48 md:h-20 flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 filter brightness-0 hover:brightness-100 shrink-0"
+                                title={client.name}
+                            >
+                                <img
+                                    src={client.src}
+                                    alt={client.name}
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

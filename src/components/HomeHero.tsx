@@ -34,7 +34,7 @@ export default function HomeHero() {
             <PageContainer className="relative z-10 w-full">
 
                 <div
-                    className="w-full lg:max-w-[440px] xl:max-w-[480px] mt-32 lg:mt-0 animate-fade-in-right will-change-transform"
+                    className="w-full lg:max-w-[440px] xl:max-w-[480px] mt-16 lg:mt-0 lg:-translate-y-16 animate-fade-in-right will-change-transform"
                 >
                     {/* Glassmorphism Card */}
                     <div className="bg-white/70 backdrop-blur-3xl rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.15)] border border-white/90 relative overflow-hidden">
@@ -59,10 +59,10 @@ export default function HomeHero() {
 
                             <div className="flex flex-col sm:flex-row items-center gap-4">
                                 <Link
-                                    href="/#contact"
+                                    href="#chatbot"
                                     className="inline-flex items-center justify-center rounded-full bg-[#1b62f8] px-8 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-[#144ecc] hover:shadow-lg transition-all duration-300 w-full sm:w-auto"
                                 >
-                                    Book Consultacy
+                                    Book Consultancy
                                 </Link>
 
                                 <Link

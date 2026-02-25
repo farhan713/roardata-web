@@ -48,6 +48,23 @@ export default function Chatbot() {
         }
     }
 
+    // Listen for hash changes so other components can open the chatbot
+    React.useEffect(() => {
+        const handleHashChange = () => {
+            if (window.location.hash === '#chatbot') {
+                setIsOpen(true)
+                // Clear the hash without scrolling so it can be triggered again
+                window.history.replaceState(null, '', window.location.pathname + window.location.search)
+            }
+        }
+
+        // Check on initial load
+        handleHashChange()
+
+        window.addEventListener('hashchange', handleHashChange)
+        return () => window.removeEventListener('hashchange', handleHashChange)
+    }, [])
+
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
             {isOpen && (

@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma'
 
 export const revalidate = 3600; // Cache for 1 hour on Vercel CDN
 import HomeHero from '@/components/HomeHero'
+import ClientLogos from '@/components/ClientLogos'
 import HomeIntegrations from '@/components/HomeIntegrations'
 import PageContainer from '@/components/PageContainer'
 import RelatedModules from '@/components/RelatedModules'
@@ -24,6 +25,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <HomeHero />
+      <ClientLogos />
       <HomeIntegrations />
 
       <PageContainer className="py-20">

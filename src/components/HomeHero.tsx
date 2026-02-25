@@ -58,12 +58,12 @@ export default function HomeHero() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4">
-                                <Link
+                                <a
                                     href="#chatbot"
                                     className="inline-flex items-center justify-center rounded-full bg-[#1b62f8] px-8 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-[#144ecc] hover:shadow-lg transition-all duration-300 w-full sm:w-auto"
                                 >
                                     Book Consultancy
-                                </Link>
+                                </a>
 
                                 <Link
                                     href="/case-studies"

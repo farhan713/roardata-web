@@ -99,10 +99,16 @@ export default function Chatbot() {
                         {step === 'GOAL' && (
                             <div className="flex flex-col gap-3 animate-in fade-in zoom-in-95 duration-300">
                                 <div className="bg-[#f0f4f8] dark:bg-slate-800 text-slate-800 dark:text-slate-200 p-3 rounded-2xl rounded-tl-sm text-sm border border-slate-200 dark:border-slate-700">
-                                    Got it! What is your primary goal right now?
+                                    Got it! What specific Power BI service are you interested in?
                                 </div>
                                 <div className="flex flex-col gap-2 mt-2">
-                                    {['Building new Dashboards', 'Data Modeling & Architecture', 'Performance Optimization', 'Other'].map(goal => (
+                                    {[
+                                        'Custom Dashboard Development',
+                                        'Data Modeling & DAX Optimization',
+                                        'Power BI Training & Adoption',
+                                        'Migration to Power BI',
+                                        'Other / General Inquiry'
+                                    ].map(goal => (
                                         <button
                                             key={goal}
                                             onClick={() => handleNextStep('Primary Goal', goal, 'CONTACT')}
@@ -111,6 +117,12 @@ export default function Chatbot() {
                                             {goal}
                                         </button>
                                     ))}
+                                    <button
+                                        onClick={() => setStep('INITIAL')}
+                                        className="mt-2 text-slate-500 text-xs py-2 px-4 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-center w-full"
+                                    >
+                                        &larr; Back to beginning
+                                    </button>
                                 </div>
                             </div>
                         )}
@@ -118,7 +130,7 @@ export default function Chatbot() {
                         {step === 'CONTACT' && (
                             <div className="flex flex-col gap-3 animate-in fade-in zoom-in-95 duration-300">
                                 <div className="bg-[#f0f4f8] dark:bg-slate-800 text-slate-800 dark:text-slate-200 p-3 rounded-2xl rounded-tl-sm text-sm border border-slate-200 dark:border-slate-700">
-                                    Great! Our senior architects would love to help. Could we get your details to reach out?
+                                    Great! Our senior Power BI architects would love to help. Could we get your details to reach out?
                                 </div>
                                 <form onSubmit={handleSubmit} className="flex flex-col gap-3 mt-2">
                                     <input
@@ -150,6 +162,13 @@ export default function Chatbot() {
                                         className="mt-2 bg-[#003366] text-white text-sm py-2.5 px-4 rounded-xl font-bold hover:bg-[#002244] transition-colors flex justify-center items-center gap-2 disabled:opacity-70"
                                     >
                                         {isSubmitting ? 'Sending...' : 'Submit Request'} <Send size={14} />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setStep('GOAL')}
+                                        className="text-slate-500 text-xs py-2 px-4 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-center w-full"
+                                    >
+                                        &larr; Back to services
                                     </button>
                                 </form>
                             </div>

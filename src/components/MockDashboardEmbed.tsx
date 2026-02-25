@@ -53,7 +53,7 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
     const bgGradient = bgMap[theme] || bgMap['indigo'];
 
     return (
-        <div className={`w-full h-full min-h-[700px] flex rounded-2xl overflow-hidden bg-[#0a0f1a] bg-gradient-to-br ${bgGradient} font-sans text-slate-300 isolate border border-white/10 shadow-2xl`}>
+        <div className={`w-full h-full min-h-[700px] flex overflow-hidden bg-[#0a0f1a] bg-gradient-to-br ${bgGradient} font-sans text-slate-300 isolate`}>
 
             {/* Main Dashboard Area */}
             <div className="flex-grow flex flex-col w-full overflow-hidden">
@@ -69,7 +69,7 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
                         </div>
 
                         {/* Tabs */}
-                        <div className="flex gap-2 items-end h-full pt-4 overflow-x-auto custom-scrollbar">
+                        <div className="flex gap-2 items-end h-full pt-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                             {data.tabs.map((tab: any) => (
                                 <button
                                     key={tab.name}

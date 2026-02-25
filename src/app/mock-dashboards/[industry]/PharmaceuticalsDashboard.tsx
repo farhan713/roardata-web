@@ -16,7 +16,7 @@ const chartData = [
 ];
 
 export default function PharmaceuticalsDashboard() {
-  const [activeTab, setActiveTab] = React.useState('Overview');
+const [activeTab, setActiveTab] = React.useState('Overview');
   const tabs = ['Overview', 'Supply chain', 'Compliance', 'R&D', 'Security'];
 
   return (
@@ -68,6 +68,10 @@ export default function PharmaceuticalsDashboard() {
             </div>
             <Menu className="text-slate-400 cursor-pointer" size={20} />
           </div>
+          {/* Content for Overview Tab */}
+          {activeTab === 'Overview' && (
+<div className="flex flex-col gap-6 w-full animate-in fade-in duration-500">
+
 
           {/* Top 4 KPI Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -173,7 +177,86 @@ export default function PharmaceuticalsDashboard() {
       </div>
   
 
-        </div>
+        
+</div>
+          )}
+
+          {/* Content for Supply chain Tab */}
+          {activeTab === 'Supply chain' && (
+             <div className="flex flex-col gap-6 w-full animate-in fade-in duration-500">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-[#131b2f] p-5 rounded-xl border border-white/5 flex flex-col shadow-xl">
+                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4">Supply chain Score</span>
+                        <h3 className="text-3xl font-black text-white tracking-tight">84/100</h3>
+                        <span className="text-[10px] text-slate-500 mt-2">Latest evaluation</span>
+                    </div>
+                </div>
+                <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl min-h-[300px] flex flex-col items-center justify-center">
+                    <div className="text-center text-slate-500">
+                        <p className="font-medium text-lg">Supply chain detailed reporting module</p>
+                        <p className="text-sm mt-2">Extended visualizations available in full version</p>
+                    </div>
+                </div>
+             </div>
+          )}
+    
+          {/* Content for Compliance Tab */}
+          {activeTab === 'Compliance' && (
+             <div className="flex flex-col gap-6 w-full animate-in fade-in duration-500">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-[#131b2f] p-5 rounded-xl border border-white/5 flex flex-col shadow-xl">
+                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4">Compliance Score</span>
+                        <h3 className="text-3xl font-black text-white tracking-tight">88/100</h3>
+                        <span className="text-[10px] text-slate-500 mt-2">Latest evaluation</span>
+                    </div>
+                </div>
+                <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl min-h-[300px] flex flex-col items-center justify-center">
+                    <div className="text-center text-slate-500">
+                        <p className="font-medium text-lg">Compliance detailed reporting module</p>
+                        <p className="text-sm mt-2">Extended visualizations available in full version</p>
+                    </div>
+                </div>
+             </div>
+          )}
+    
+          {/* Content for R&D Tab */}
+          {activeTab === 'R&D' && (
+             <div className="flex flex-col gap-6 w-full animate-in fade-in duration-500">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-[#131b2f] p-5 rounded-xl border border-white/5 flex flex-col shadow-xl">
+                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4">R&D Score</span>
+                        <h3 className="text-3xl font-black text-white tracking-tight">92/100</h3>
+                        <span className="text-[10px] text-slate-500 mt-2">Latest evaluation</span>
+                    </div>
+                </div>
+                <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl min-h-[300px] flex flex-col items-center justify-center">
+                    <div className="text-center text-slate-500">
+                        <p className="font-medium text-lg">R&D detailed reporting module</p>
+                        <p className="text-sm mt-2">Extended visualizations available in full version</p>
+                    </div>
+                </div>
+             </div>
+          )}
+    
+          {/* Content for Security Tab */}
+          {activeTab === 'Security' && (
+             <div className="flex flex-col gap-6 w-full animate-in fade-in duration-500">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-[#131b2f] p-5 rounded-xl border border-white/5 flex flex-col shadow-xl">
+                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4">Security Score</span>
+                        <h3 className="text-3xl font-black text-white tracking-tight">96/100</h3>
+                        <span className="text-[10px] text-slate-500 mt-2">Latest evaluation</span>
+                    </div>
+                </div>
+                <div className="bg-[#131b2f] p-6 rounded-2xl border border-white/5 shadow-2xl min-h-[300px] flex flex-col items-center justify-center">
+                    <div className="text-center text-slate-500">
+                        <p className="font-medium text-lg">Security detailed reporting module</p>
+                        <p className="text-sm mt-2">Extended visualizations available in full version</p>
+                    </div>
+                </div>
+             </div>
+          )}
+    </div>
       </div>
       
       {/* Right Sidebar (Mobile Mockup equivalent on desktop) */}

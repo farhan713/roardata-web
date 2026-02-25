@@ -14,7 +14,7 @@ export default async function Home() {
   const [services, industries, cities, caseStudies] = await Promise.all([
     prisma.service.findMany({ take: 3 }),
     prisma.industry.findMany({ take: 6 }),
-    prisma.city.findMany({ take: 4 }),
+    prisma.city.findMany(),
     prisma.caseStudy.findMany({
       take: 2,
       include: { industry: true }

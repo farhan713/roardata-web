@@ -16,6 +16,9 @@ const chartData = [
 ];
 
 export default function EnergyAndUtilitiesDashboard() {
+  const [activeTab, setActiveTab] = React.useState('Overview');
+  const tabs = ['Overview', 'Supply chain', 'Compliance', 'R&D', 'Security'];
+
   return (
     // Outer wrap to force the exact mock dashboard container styling (dark theme isolated)
     <div className="w-full h-full min-h-[700px] flex rounded-xl overflow-hidden bg-[#0b101e] font-sans text-slate-300 isolate border border-white/5 shadow-2xl shadow-indigo-500/10">
@@ -35,12 +38,16 @@ export default function EnergyAndUtilitiesDashboard() {
               <span className="text-emerald-400">Roar</span>Data
             </div>
             <div className="h-4 w-px bg-white/10 ml-4 hidden md:block"></div>
-            <div className="hidden md:flex text-xs font-medium text-slate-400 ml-4 gap-6">
-              <span className="text-white cursor-pointer px-2 py-1 bg-white/5 rounded-md">Overview</span>
-              <span className="cursor-pointer hover:text-white transition-colors">Supply chain</span>
-              <span className="cursor-pointer hover:text-white transition-colors">Compliance</span>
-              <span className="cursor-pointer hover:text-white transition-colors">R&D</span>
-              <span className="cursor-pointer hover:text-white transition-colors">Security</span>
+            <div className="hidden md:flex text-xs font-medium text-slate-400 ml-4 gap-6 whitespace-nowrap">
+              {tabs.map(tab => (
+                <span 
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`cursor-pointer transition-colors ${activeTab === tab ? 'text-white px-2 py-1 bg-white/5 rounded-md' : 'hover:text-white'}`}
+                >
+                  {tab}
+                </span>
+              ))}
             </div>
           </div>
           <div className="flex items-center gap-4 text-slate-400">

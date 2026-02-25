@@ -241,32 +241,6 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
                 </div>
             </div>
 
-            {/* Right Sidebar Mockup (Desktop Only) */}
-            <div className="w-[300px] bg-[#121622] hidden xl:flex flex-col relative shrink-0 border-l border-white/5">
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
-
-                <div className="px-6 pt-12 pb-5 flex items-center justify-between border-b border-white/5">
-                    <div className="font-bold text-white text-[15px]">{data.title.split(' ')[0]}</div>
-                    <Menu className="text-slate-500 hover:text-white transition-colors cursor-pointer" size={18} />
-                </div>
-
-                <div className="flex-grow p-6 flex flex-col gap-5 overflow-y-auto custom-scrollbar">
-                    <div className="bg-[#1a2035] p-4 rounded-xl border border-white/5 shadow-inner">
-                        <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-2 flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div> System Status</span>
-                        <h3 className="text-white font-bold mt-1">Operational</h3>
-                        <p className="text-xs text-slate-500 mt-1 leading-relaxed">All sync channels open. Telemetry data streaming securely.</p>
-                    </div>
-
-                    {/* Mock alert */}
-                    <div className="bg-indigo-500/10 p-4 rounded-xl border border-indigo-500/20 text-indigo-200 text-sm relative overflow-hidden group mt-auto mb-6">
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-500/20 blur-xl rounded-full" />
-                        <h4 className="text-indigo-100 font-bold text-[13px] mb-1">AI Recommendation</h4>
-                        <span className="text-xs leading-relaxed opacity-90 inline-block">Algorithm detected an optimization opportunity in resource allocation saving 4.2% daily.</span>
-                        <button className="mt-3 text-[11px] font-bold text-white bg-indigo-600 px-3 py-1.5 rounded-lg w-full hover:bg-indigo-500 transition-colors">Apply Strategy</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     );
 }

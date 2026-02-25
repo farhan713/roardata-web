@@ -13,8 +13,8 @@ import { CheckCircle2, BarChart, Database, Zap } from 'lucide-react'
 export default async function Home() {
   const [services, industries, cities, caseStudies] = await Promise.all([
     prisma.service.findMany({ take: 3 }),
-    prisma.industry.findMany({ take: 6 }),
-    prisma.city.findMany(),
+    prisma.industry.findMany({ take: 6, orderBy: { name: 'asc' } }),
+    prisma.city.findMany({ orderBy: { cityName: 'asc' } }),
     prisma.caseStudy.findMany({
       take: 2,
       include: { industry: true }
@@ -86,6 +86,12 @@ export default async function Home() {
             description: i.overview
           }))}
         />
+
+        <div className="flex justify-end mt-4 px-4 md:px-0">
+          <Link href="/industries" className="text-primary font-semibold hover:underline">
+            View all industries &rarr;
+          </Link>
+        </div>
 
         <section className="py-20 border-t border-border mt-16">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">

@@ -16,17 +16,17 @@ export default function HomeHero() {
                 <div
                     className="relative w-full h-full lg:rounded-[2rem] overflow-hidden shadow-2xl animate-fade-in-scale will-change-transform"
                 >
-                    <Image
-                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                        alt="Dashboard Preview"
-                        fill
-                        priority
-                        className="object-cover object-left"
-                        sizes="(max-width: 1024px) 100vw, 85vw"
+                    <video
+                        src="/roarvideo.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="object-cover object-left w-full h-full absolute inset-0 z-0"
                     />
 
-                    {/* A subtle gradient fading from the left edge over the image helps blend it into the background */}
-                    <div className="absolute inset-y-0 left-0 w-[40%] bg-gradient-to-r from-[#F4F7FC] to-transparent opacity-90 hidden lg:block" />
+                    {/* A subtle gradient fading from the left edge over the video helps blend it into the background */}
+                    <div className="absolute inset-y-0 left-0 w-[40%] bg-gradient-to-r from-[#F4F7FC] to-transparent opacity-90 hidden lg:block z-10" />
                 </div>
             </div>
 

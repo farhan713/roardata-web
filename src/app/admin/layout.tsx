@@ -36,6 +36,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
     const navItems = [
         { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+        { name: 'Chatbot Leads', href: '/admin/chatbot-leads', icon: MessageCircleQuestion },
         { name: 'Services', href: '/admin/services', icon: Briefcase },
         { name: 'Cities', href: '/admin/cities', icon: MapPin },
         { name: 'Industries', href: '/admin/industries', icon: Building2 },

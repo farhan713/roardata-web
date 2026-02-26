@@ -4,7 +4,9 @@ import React, { useState } from 'react'
 import { MessageSquare, X, Send, ChevronRight } from 'lucide-react'
 import { submitChatbotLead } from '@/actions/chatbot'
 
-type Step = 'INITIAL' | 'GOAL' | 'CONTACT' | 'SUCCESS'
+import { FaWhatsapp } from 'react-icons/fa'
+
+type Step = 'INITIAL' | 'GOAL' | 'EXPERT_CHAT' | 'CONTACT' | 'SUCCESS'
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false)
@@ -128,7 +130,7 @@ export default function Chatbot() {
                                     ].map(goal => (
                                         <button
                                             key={goal}
-                                            onClick={() => handleNextStep('Primary Goal', goal, 'CONTACT')}
+                                            onClick={() => handleNextStep('Primary Goal', goal, 'EXPERT_CHAT')}
                                             className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm py-2.5 px-4 rounded-xl font-medium hover:border-[#003366] transition-colors text-left"
                                         >
                                             {goal}
@@ -139,6 +141,37 @@ export default function Chatbot() {
                                         className="mt-2 text-slate-500 text-xs py-2 px-4 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-center w-full"
                                     >
                                         &larr; Back to beginning
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
+                        {step === 'EXPERT_CHAT' && (
+                            <div className="flex flex-col gap-3 animate-in fade-in zoom-in-95 duration-300">
+                                <div className="bg-[#f0f4f8] dark:bg-slate-800 text-slate-800 dark:text-slate-200 p-3 rounded-2xl rounded-tl-sm text-sm border border-slate-200 dark:border-slate-700">
+                                    Would you prefer to talk directly with an expert right now, or leave your details for us to reach out?
+                                </div>
+                                <div className="flex flex-col gap-2 mt-2">
+                                    <a
+                                        href="https://api.whatsapp.com/send/?phone=61433345000&text&type=phone_number&app_absent=0"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-[#25D366] text-white text-sm py-2.5 px-4 rounded-xl font-bold hover:bg-[#20b858] transition-colors flex justify-center items-center gap-2"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <FaWhatsapp size={16} /> Chat on WhatsApp
+                                    </a>
+                                    <button
+                                        onClick={() => setStep('CONTACT')}
+                                        className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm py-2.5 px-4 rounded-xl font-medium hover:border-[#003366] transition-colors text-center w-full"
+                                    >
+                                        Leave Details
+                                    </button>
+                                    <button
+                                        onClick={() => setStep('GOAL')}
+                                        className="mt-2 text-slate-500 text-xs py-2 px-4 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-center w-full"
+                                    >
+                                        &larr; Back to services
                                     </button>
                                 </div>
                             </div>
@@ -182,10 +215,10 @@ export default function Chatbot() {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => setStep('GOAL')}
+                                        onClick={() => setStep('EXPERT_CHAT')}
                                         className="text-slate-500 text-xs py-2 px-4 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-center w-full"
                                     >
-                                        &larr; Back to services
+                                        &larr; Back to options
                                     </button>
                                 </form>
                             </div>

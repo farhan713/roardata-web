@@ -21,18 +21,35 @@ industries.forEach((ind, index) => {
     let theme = themes[index % themes.length];
 
     // Base KPIs
+    // Use seeded randomness based on the industry name length/characters so it's consistent across runs
+    let hash = 0;
+    for (let i = 0; i < ind.length; i++) hash = ind.charCodeAt(i) + ((hash << 5) - hash);
+    const seed = Math.abs(hash);
+
+    const randomVal = (min, max) => Math.floor(min + (seed % (max - min)));
+
+    const icons = ['Activity', 'Box', 'ShieldCheck', 'Database', 'Truck', 'Wrench'];
+    const dynamicKPIs = [
+        { t: 'EFFICIENCY', getV: () => randomVal(75, 95) + '%', getI: () => icons[seed % 6], col: theme },
+        { t: 'PROCESSING', getV: () => randomVal(10, 50) + 'k/hr', getI: () => icons[(seed + 1) % 6], col: 'emerald' },
+        { t: 'RISK SCORE', getV: () => randomVal(1, 15) + '/100', getI: () => icons[(seed + 2) % 6], col: 'amber' },
+        { t: 'SYSTEM LOAD', getV: () => randomVal(40, 90) + '%', getI: () => icons[(seed + 3) % 6], col: 'rose' },
+        { t: 'THROUGHPUT', getV: () => randomVal(100, 999) + ' MB/s', getI: () => icons[(seed + 4) % 6], col: theme },
+        { t: 'UPTIME', getV: () => (99 + (seed % 100) / 100).toFixed(2) + '%', getI: () => icons[(seed + 5) % 6], col: 'cyan' },
+    ];
+
     let kpis = [
-        { title: 'OTIF / YIELD', value: Math.floor(Math.random() * 20 + 80) + '%', change: '+' + (Math.random() * 3).toFixed(1) + '%', subtext: 'vs last mo', icon: 'Activity', color: theme },
-        { title: 'LEAD TIME', value: Math.floor(Math.random() * 40 + 20) + 'd', change: '-' + (Math.random() * 3).toFixed(1) + '%', subtext: 'vs last mo', icon: 'Box', color: theme },
-        { title: 'COMPLIANCE', value: Math.floor(Math.random() * 15 + 85) + '%', change: '+' + (Math.random() * 2).toFixed(1) + '%', subtext: 'vs audit', icon: 'ShieldCheck', color: theme },
-        { title: 'UPTIME', value: Math.floor(Math.random() * 10 + 90) + '%', change: '+' + (Math.random() * 1).toFixed(1) + '%', subtext: 'vs last mo', icon: 'Database', color: theme }
+        { title: dynamicKPIs[seed % 6].t, value: dynamicKPIs[seed % 6].getV(), change: '+' + (Math.random() * 3).toFixed(1) + '%', subtext: 'vs last mo', icon: dynamicKPIs[seed % 6].getI(), color: dynamicKPIs[seed % 6].col },
+        { title: dynamicKPIs[(seed + 1) % 6].t, value: dynamicKPIs[(seed + 1) % 6].getV(), change: '-' + (Math.random() * 3).toFixed(1) + '%', subtext: 'vs last wk', icon: dynamicKPIs[(seed + 1) % 6].getI(), color: dynamicKPIs[(seed + 1) % 6].col },
+        { title: dynamicKPIs[(seed + 2) % 6].t, value: dynamicKPIs[(seed + 2) % 6].getV(), change: '+' + (Math.random() * 2).toFixed(1) + '%', subtext: 'vs target', icon: dynamicKPIs[(seed + 2) % 6].getI(), color: dynamicKPIs[(seed + 2) % 6].col },
+        { title: dynamicKPIs[(seed + 3) % 6].t, value: dynamicKPIs[(seed + 3) % 6].getV(), change: '+' + (Math.random() * 1).toFixed(1) + '%', subtext: 'yoy', icon: dynamicKPIs[(seed + 3) % 6].getI(), color: dynamicKPIs[(seed + 3) % 6].col }
     ];
 
     // Helper to generate a chart
     const generateChart = (type, title, subtext, metrics, colors) => {
         const dataPoints = Array.from({ length: 7 }, (_, i) => {
             const point = { name: 'M' + (i + 1) };
-            metrics.forEach(m => point[m] = Math.floor(Math.random() * 60) + 20);
+            metrics.forEach((m, mIdx) => point[m] = Math.floor(Math.random() * (50 + seed % 50)) + 20 + (mIdx * 10));
             return point;
         });
         return {
@@ -40,25 +57,27 @@ industries.forEach((ind, index) => {
         };
     };
 
+    const tabNames = ['Overview', 'Analytics', 'Operations', 'Insights', 'Reports'];
+
     let tabs = [
         {
-            name: 'Overview',
+            name: tabNames[seed % 5],
             charts: [
-                generateChart('LineChart', 'Performance Trends', 'Core metrics over the last 6 months', ['metricA', 'metricB'], ['#2dd4bf', '#fbbf24']),
-                generateChart('BarChart', 'Top Risks/Anomalies', 'Click a bar to focus (Top 7)', ['metricA'], ['url(#colorEmerald)'])
+                generateChart('LineChart', ind + ' Performance', 'Core metrics tracking', ['primary', 'secondary'], ['#2dd4bf', '#fbbf24']),
+                generateChart('BarChart', 'Regional Distribution', 'Click a bar to focus (Top 7)', ['volume'], ['url(#colorEmerald)'])
             ]
         },
         {
-            name: 'Supply chain',
+            name: tabNames[(seed + 1) % 5],
             charts: [
-                generateChart('AreaChart', 'Logistics Throughput', 'Daily volume processed', ['volume'], ['#818cf8']),
-                generateChart('BarChart', 'Vendor Delays', 'SLA breaches by vendor', ['delays'], ['url(#colorAmber)'])
+                generateChart('AreaChart', 'Resource Utilization', 'Daily volume processed', ['active'], ['#818cf8']),
+                generateChart('BarChart', 'Bottlenecks', 'SLA breaches and delays', ['delays'], ['url(#colorAmber)'])
             ]
         },
         {
-            name: 'Compliance',
+            name: tabNames[(seed + 2) % 5],
             charts: [
-                generateChart('LineChart', 'Audit Scores', 'Rolling compliance rate', ['score'], ['#34d399']),
+                generateChart('LineChart', 'Quality Scores', 'Rolling compliance rate', ['score'], ['#34d399']),
                 generateChart('AreaChart', 'Incident Reports', 'Monthly reported anomalies', ['incidents'], ['#f43f5e'])
             ]
         }

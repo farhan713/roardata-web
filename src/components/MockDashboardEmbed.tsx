@@ -105,10 +105,10 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
                 </div>
 
                 {/* Content Area */}
-                <div className="flex-grow p-4 md:p-6 flex flex-col gap-6 overflow-y-auto overflow-x-auto custom-scrollbar border-t border-transparent">
+                <div className="flex-grow p-4 md:p-6 flex flex-col gap-6 overflow-y-auto overflow-x-hidden custom-scrollbar border-t border-transparent">
 
-                    {/* KPI Cards (4 in a row) */}
-                    <div className="grid grid-cols-4 gap-4 md:gap-5 min-w-[700px] lg:min-w-full pb-2">
+                    {/* KPI Cards (Responsive grid) */}
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 w-full pb-2">
                         {data.kpis.map((kpi: any, idx: number) => {
                             const IconComp = iconMap[kpi.icon] || LayoutDashboard;
                             const colorClass = colorMap[kpi.color] || colorMap['emerald'];
@@ -135,10 +135,10 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
                                         <h3 className="text-2xl md:text-3xl lg:text-[2rem] font-black text-white tracking-tighter leading-none">{kpi.value}</h3>
                                     </div>
                                     <div className="flex items-center gap-2 mt-4 relative z-10">
-                                        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded whitespace-nowrap ${badgeClass}`}>
+                                        <span className={`text-[10px] md:text-xs font-bold px-1.5 py-0.5 rounded whitespace-nowrap ${badgeClass}`}>
                                             {kpi.change}
                                         </span>
-                                        <span className="text-[10px] text-slate-500 font-medium truncate">{kpi.subtext}</span>
+                                        <span className="text-[10px] md:text-xs text-slate-500 font-medium truncate">{kpi.subtext}</span>
                                     </div>
                                 </div>
                             );

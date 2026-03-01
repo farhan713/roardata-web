@@ -54,7 +54,7 @@ export default function DashboardEmbed({ embedCode, industryName }: DashboardEmb
 
     return (
         <div className="mb-16 not-prose w-full max-w-[1400px] mx-auto animate-in fade-in duration-700">
-            <h2 className="text-2xl font-bold tracking-tight mb-6">{industryName} Dynamic Reporting Environment</h2>
+            <h3 className="text-xl font-bold tracking-tight mb-6">{industryName} Dynamic Reporting Environment</h3>
 
             {/* The Mac OS / Browser Window Frame Mockup */}
             <div className="w-full rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-slate-700/50 bg-[#0B101E] flex flex-col relative z-20">

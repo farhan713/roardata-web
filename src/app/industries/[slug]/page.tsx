@@ -52,11 +52,11 @@ export default async function IndustryPage({ params }: PageProps) {
     }
 
     const tocItems = [
-        { id: 'overview', title: 'Industry Overview', level: 2 },
-        { id: 'common-problems', title: 'Common Data Bottlenecks', level: 2 },
-        { id: 'power-bi-use-cases', title: 'Top Use Cases', level: 2 },
-        { id: 'kpis', title: 'Essential KPIs & Metrics', level: 2 },
-        { id: 'data-sources', title: 'Common Systems Integration', level: 2 },
+        { id: 'common-problems', title: `Common ${industry.name} Reporting Challenges`, level: 2 },
+        { id: 'power-bi-use-cases', title: `${industry.name} Analytics Use Cases`, level: 2 },
+        { id: 'kpis', title: `Key ${industry.name} KPIs`, level: 2 },
+        { id: 'data-sources', title: `${industry.name} Data Integration`, level: 2 },
+        { id: 'dashboard', title: `${industry.name} KPI Dashboard Example`, level: 2 },
         { id: 'faqs', title: 'FAQs', level: 2 },
     ]
 
@@ -117,25 +117,25 @@ export default async function IndustryPage({ params }: PageProps) {
                         {kpis.map((kpiGroup: any, i: number) => (
                             <div key={i} className="mb-6">
                                 <h3 className="text-lg font-bold mt-4 mb-2">{kpiGroup.group}</h3>
-                                <ul className="list-disc pl-5 mt-2">
+                                <div className="flex flex-wrap gap-2 not-prose mt-2">
                                     {kpiGroup.metrics?.map((metric: string, j: number) => (
-                                        <li key={j} className="mb-1">
+                                        <span key={j} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-medium">
                                             {metric}
-                                        </li>
+                                        </span>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
                         ))}
 
                         <h2 id="data-sources">{industry.name} Data Integration</h2>
                         <p className="mb-4">Seamlessly connect and analyze data from your core {industry.name} systems.</p>
-                        <ul className="list-disc pl-5 mb-12">
+                        <div className="flex flex-wrap gap-2 not-prose mb-12 mt-4">
                             {dataSources.map((source: string, i: number) => (
-                                <li key={i} className="mb-1">
+                                <span key={i} className="px-4 py-2 bg-muted rounded-full text-sm font-medium">
                                     {source}
-                                </li>
+                                </span>
                             ))}
-                        </ul>
+                        </div>
 
                         <h2 id="dashboard">{industry.name} KPI Dashboard Example</h2>
                         <p className="mb-6">Explore interactive visualizations tailored for {industry.name} operations.</p>
@@ -150,7 +150,7 @@ export default async function IndustryPage({ params }: PageProps) {
 
                         <div id="contact" className="mt-20 not-prose">
                             <CtaModule
-                                headline={`Speak With a ${industry.name} Reporting Specialist`}
+                                headline={`Speak With a${/^[AEIOU]/i.test(industry.name) ? 'n' : ''} ${industry.name} Reporting Specialist`}
                                 subheadline="Discover how custom dashboards can drive growth for your organization."
                             />
                         </div>

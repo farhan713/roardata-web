@@ -119,7 +119,7 @@ export default async function IndustryPage({ params }: PageProps) {
                                 <h3 className="text-lg font-bold mt-4 mb-2">{kpiGroup.group}</h3>
                                 <ul className="list-disc pl-5 mt-2">
                                     {kpiGroup.metrics?.map((metric: string, j: number) => (
-                                        <li key={j} className="mb-1 text-slate-700 dark:text-slate-300">
+                                        <li key={j} className="mb-1">
                                             {metric}
                                         </li>
                                     ))}
@@ -128,17 +128,17 @@ export default async function IndustryPage({ params }: PageProps) {
                         ))}
 
                         <h2 id="data-sources">{industry.name} Data Integration</h2>
-                        <p className="mb-4 text-slate-700 dark:text-slate-300">Seamlessly connect and analyze data from your core {industry.name} systems.</p>
+                        <p className="mb-4">Seamlessly connect and analyze data from your core {industry.name} systems.</p>
                         <ul className="list-disc pl-5 mb-12">
                             {dataSources.map((source: string, i: number) => (
-                                <li key={i} className="mb-1 text-slate-700 dark:text-slate-300">
+                                <li key={i} className="mb-1">
                                     {source}
                                 </li>
                             ))}
                         </ul>
 
                         <h2 id="dashboard">{industry.name} KPI Dashboard Example</h2>
-                        <p className="mb-6 text-slate-700 dark:text-slate-300">Explore interactive visualizations tailored for {industry.name} operations.</p>
+                        <p className="mb-6">Explore interactive visualizations tailored for {industry.name} operations.</p>
                         {industry.dashboardEmbedCode && (
                             <DashboardEmbed embedCode={industry.dashboardEmbedCode} industryName={industry.name} />
                         )}

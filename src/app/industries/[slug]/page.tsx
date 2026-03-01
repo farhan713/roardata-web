@@ -75,7 +75,7 @@ export default async function IndustryPage({ params }: PageProps) {
     return (
         <>
             <HeroSection
-                headline={`Power BI for ${industry.name}`}
+                headline={`${industry.name} Analytics and KPI Dashboards in Australia & New Zealand`}
                 subheadline={industry.overview}
             />
 
@@ -93,49 +93,55 @@ export default async function IndustryPage({ params }: PageProps) {
 
                     <div className="lg:col-span-3 prose prose-slate dark:prose-invert max-w-none prose-headings:scroll-mt-32">
 
-                        {industry.dashboardEmbedCode && (
-                            <DashboardEmbed embedCode={industry.dashboardEmbedCode} industryName={industry.name} />
+                        {/* Removed the extra Overview H2 as it's repetitive with HeroSection */}
+
+                        <h2 id="common-problems">Common {industry.name} Reporting Challenges</h2>
+                        {commonProblems.length > 0 && (
+                            <div className="mb-8">
+                                {commonProblems.map((problem: string, i: number) => (
+                                    <h3 key={i} className="text-lg font-semibold mt-4 mb-2">{problem}</h3>
+                                ))}
+                            </div>
                         )}
 
-                        <h2 id="overview">Overview</h2>
-                        <p className="text-xl leading-relaxed">{industry.overview}</p>
+                        <h2 id="power-bi-use-cases">{industry.name} Analytics Use Cases</h2>
+                        {useCases.length > 0 && (
+                            <div className="mb-8">
+                                {useCases.map((useCase: string, i: number) => (
+                                    <h3 key={i} className="text-lg font-semibold mt-4 mb-2">{useCase}</h3>
+                                ))}
+                            </div>
+                        )}
 
-                        <h2 id="common-problems">Common Data Bottlenecks</h2>
-                        <ul className="mb-8">
-                            {commonProblems.map((problem: string, i: number) => (
-                                <li key={i}>{problem}</li>
-                            ))}
-                        </ul>
-
-                        <h2 id="power-bi-use-cases">Top Use Cases</h2>
-                        <ul className="mb-8">
-                            {useCases.map((useCase: string, i: number) => (
-                                <li key={i}>{useCase}</li>
-                            ))}
-                        </ul>
-
-                        <h2 id="kpis">Essential KPIs & Metrics</h2>
+                        <h2 id="kpis">Key {industry.name} KPIs</h2>
                         {kpis.map((kpiGroup: any, i: number) => (
                             <div key={i} className="mb-6">
-                                <h3 className="text-lg font-semibold mt-4 mb-2">{kpiGroup.group}</h3>
-                                <div className="flex flex-wrap gap-2 not-prose">
+                                <h3 className="text-lg font-bold mt-4 mb-2">{kpiGroup.group}</h3>
+                                <ul className="list-disc pl-5 mt-2">
                                     {kpiGroup.metrics?.map((metric: string, j: number) => (
-                                        <span key={j} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-medium">
+                                        <li key={j} className="mb-1 text-slate-700 dark:text-slate-300">
                                             {metric}
-                                        </span>
+                                        </li>
                                     ))}
-                                </div>
+                                </ul>
                             </div>
                         ))}
 
-                        <h2 id="data-sources">Common Systems Integration</h2>
-                        <div className="flex flex-wrap gap-2 not-prose mb-12">
+                        <h2 id="data-sources">{industry.name} Data Integration</h2>
+                        <p className="mb-4 text-slate-700 dark:text-slate-300">Seamlessly connect and analyze data from your core {industry.name} systems.</p>
+                        <ul className="list-disc pl-5 mb-12">
                             {dataSources.map((source: string, i: number) => (
-                                <span key={i} className="px-4 py-2 bg-muted rounded-full text-sm font-medium">
+                                <li key={i} className="mb-1 text-slate-700 dark:text-slate-300">
                                     {source}
-                                </span>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
+
+                        <h2 id="dashboard">{industry.name} KPI Dashboard Example</h2>
+                        <p className="mb-6 text-slate-700 dark:text-slate-300">Explore interactive visualizations tailored for {industry.name} operations.</p>
+                        {industry.dashboardEmbedCode && (
+                            <DashboardEmbed embedCode={industry.dashboardEmbedCode} industryName={industry.name} />
+                        )}
 
                         <h2 id="faqs">FAQs</h2>
                         <div className="not-prose mt-8 mb-12">
@@ -144,8 +150,8 @@ export default async function IndustryPage({ params }: PageProps) {
 
                         <div id="contact" className="mt-20 not-prose">
                             <CtaModule
-                                headline={`Transform ${industry.name} Operations`}
-                                subheadline="Get a tailored strategy blueprint for your organization."
+                                headline={`Speak With a ${industry.name} Reporting Specialist`}
+                                subheadline="Discover how custom dashboards can drive growth for your organization."
                             />
                         </div>
                     </div>

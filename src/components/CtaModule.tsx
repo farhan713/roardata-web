@@ -61,6 +61,14 @@ export default function CtaModule({
                 >
                     <Link
                         href={primaryLink}
+                        onClick={(e) => {
+                            if (primaryLink === '#book-consultation' || primaryLink === '#chatbot') {
+                                e.preventDefault();
+                                window.dispatchEvent(new Event('openBookModal'));
+                                // Also update the hash stealthily
+                                history.pushState(null, '', window.location.pathname + primaryLink);
+                            }
+                        }}
                         className="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 font-bold text-destructive-foreground bg-destructive hover:bg-destructive/90 rounded-lg shadow-xl shadow-destructive/20 transition-all overflow-hidden"
                     >
                         <span className="relative z-10 flex items-center">

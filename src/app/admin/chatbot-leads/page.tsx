@@ -35,11 +35,22 @@ export default async function ChatbotLeadsPage() {
                                 leads.map((lead) => {
                                     // Parse requirements JSON
                                     let reqs: any = {};
-                                    let goal = "Unknown";
+                                    let goal = "General Inquiry";
                                     try {
                                         if (lead.requirements) {
                                             reqs = JSON.parse(lead.requirements);
-                                            goal = reqs['Primary Goal'] || "General Inquiry";
+
+                                            // Handle the new Form standard (Array of Q&A objects)
+                                            if (Array.isArray(reqs)) {
+                                                const descObj = reqs.find(r => r.question === "Project Description");
+                                                if (descObj && descObj.answer) {
+                                                    goal = descObj.answer;
+                                                }
+                                            }
+                                            // Handle the legacy Chatbot standard (Key-Value object)
+                                            else if (reqs['Primary Goal']) {
+                                                goal = reqs['Primary Goal'];
+                                            }
                                         }
                                     } catch (e) { }
 

@@ -95,20 +95,28 @@ export default async function IndustryPage({ params }: PageProps) {
 
                         {/* Removed the extra Overview H2 as it's repetitive with HeroSection */}
 
-                        <h2 id="common-problems">Common {industry.name} Reporting Challenges</h2>
+                        <h2 id="common-problems" className="!mb-4" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>Common {industry.name} Reporting Challenges</h2>
+                        <div className="h-[2px] bg-slate-400 dark:bg-slate-500 w-3/4 max-w-[350px] mb-8"></div>
                         {commonProblems.length > 0 && (
-                            <div className="mb-8">
+                            <div className="mb-12 space-y-5">
                                 {commonProblems.map((problem: string, i: number) => (
-                                    <h3 key={i} className="text-lg font-semibold mt-4 mb-2">{problem}</h3>
+                                    <div key={i} className="flex items-start gap-4 not-prose">
+                                        <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
+                                        <h3 className="text-lg font-semibold m-0 leading-snug" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>{problem}</h3>
+                                    </div>
                                 ))}
                             </div>
                         )}
 
-                        <h2 id="power-bi-use-cases">{industry.name} Analytics Use Cases</h2>
+                        <h2 id="power-bi-use-cases" className="!mb-4" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>{industry.name} Analytics Use Cases</h2>
+                        <div className="h-[2px] bg-slate-400 dark:bg-slate-500 w-3/4 max-w-[350px] mb-8"></div>
                         {useCases.length > 0 && (
-                            <div className="mb-8">
+                            <div className="mb-12 space-y-5">
                                 {useCases.map((useCase: string, i: number) => (
-                                    <h3 key={i} className="text-lg font-semibold mt-4 mb-2">{useCase}</h3>
+                                    <div key={i} className="flex items-start gap-4 not-prose">
+                                        <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
+                                        <h3 className="text-lg font-semibold m-0 leading-snug" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>{useCase}</h3>
+                                    </div>
                                 ))}
                             </div>
                         )}

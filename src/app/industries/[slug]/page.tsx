@@ -125,13 +125,13 @@ export default async function IndustryPage({ params }: PageProps) {
                         {kpis.map((kpiGroup: any, i: number) => (
                             <div key={i} className="mb-6">
                                 <h3 className="text-lg font-bold mt-4 mb-2">{kpiGroup.group}</h3>
-                                <div className="flex flex-wrap gap-2 not-prose mt-2">
+                                <ul className="flex flex-wrap gap-2 not-prose mt-2 p-0 m-0 list-none">
                                     {kpiGroup.metrics?.map((metric: string, j: number) => (
-                                        <span key={j} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-medium">
+                                        <li key={j} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-medium m-0 leading-none flex items-center">
                                             {metric}
-                                        </span>
+                                        </li>
                                     ))}
-                                </div>
+                                </ul>
                             </div>
                         ))}
 

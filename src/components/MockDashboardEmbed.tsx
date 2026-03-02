@@ -59,17 +59,17 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
             <div className="flex-grow flex flex-col w-full overflow-hidden">
 
                 {/* Top Header */}
-                <div className="h-16 flex items-center justify-between px-6 bg-[#101423] border-b border-white/5 pb-0">
-                    <div className="flex flex-col md:flex-row items-center gap-6 h-full">
+                <div className="min-h-[4rem] flex flex-col md:flex-row md:items-center justify-between px-4 md:px-6 bg-[#101423] border-b border-white/5 pb-0">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6 w-full h-full pt-3 md:pt-0">
                         <h2 className="text-white font-bold text-xl tracking-tight hidden md:block">
                             {data.title}
                         </h2>
-                        <div className="md:hidden text-white font-bold tracking-tight mt-2">
+                        <div className="md:hidden text-white font-bold tracking-tight px-1">
                             {data.title.split(' ')[0]} Ops
                         </div>
 
                         {/* Tabs */}
-                        <div className="flex gap-2 items-end h-full pt-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                        <div className="flex gap-2 items-end h-full pt-2 md:pt-4 overflow-x-auto w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                             {data.tabs.map((tab: any) => (
                                 <button
                                     key={tab.name}

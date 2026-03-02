@@ -30,6 +30,7 @@ export const metadata: Metadata = {
 
 import ClientPadding from "@/components/ClientPadding";
 import Chatbot from "@/components/Chatbot";
+import BookConsultationModal from "@/components/BookConsultationModal";
 
 export default function RootLayout({
   children,
@@ -53,6 +54,9 @@ export default function RootLayout({
         <ClientPadding>
           {children}
         </ClientPadding>
+
+        <BookConsultationModal />
+
         {/* We are replacing the old <Chatbot /> custom static react component with Tawk.to */}
         <Script id="tawk-to-script" strategy="lazyOnload">
           {`

@@ -64,7 +64,7 @@ export default function Navigation() {
                             </Link>
                         ))}
                         <a
-                            href="#chatbot"
+                            href="#book-consultation"
                             className="inline-flex items-center justify-center rounded-md text-[15px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[#003366] text-white shadow hover:bg-[#003366]/90 h-11 px-6 py-2"
                         >
                             Book Consultation
@@ -95,7 +95,7 @@ export default function Navigation() {
                             </Link>
                         ))}
                         <a
-                            href="#chatbot"
+                            href="#book-consultation"
                             className="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-[#003366] text-white h-11 px-8"
                             onClick={() => setIsOpen(false)}
                         >

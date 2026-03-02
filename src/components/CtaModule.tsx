@@ -19,7 +19,7 @@ export default function CtaModule({
     headline,
     subheadline,
     primaryText = "Book a Free Consultation",
-    primaryLink = "/#contact",
+    primaryLink = "#book-consultation",
     secondaryText = "Call +61 433 345 000",
     secondaryLink = "tel:+61433345000"
 }: CtaModuleProps) {

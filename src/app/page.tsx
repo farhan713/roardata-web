@@ -10,6 +10,7 @@ import RelatedModules from '@/components/RelatedModules'
 import CtaModule from '@/components/CtaModule'
 import Link from 'next/link'
 import { CheckCircle2, BarChart, Database, Zap } from 'lucide-react'
+import { getIndustryIcon } from '@/lib/icons'
 
 export default async function Home() {
   const [services, industries, cities, caseStudies] = await Promise.all([
@@ -85,7 +86,8 @@ export default async function Home() {
           items={industries.map(i => ({
             title: i.name,
             href: `/industries/${i.slug}`,
-            description: i.overview
+            description: i.overview,
+            icon: getIndustryIcon(i.slug)
           }))}
         />
 

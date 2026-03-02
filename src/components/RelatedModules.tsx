@@ -30,22 +30,26 @@ export default function RelatedModules({ title, items }: RelatedModulesProps) {
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                        {item.icon && (
-                            <div className="text-primary mb-4 p-2.5 bg-primary/10 rounded-lg w-fit h-fit flex items-center justify-center">
-                                {item.icon}
+                        <div className="flex items-start gap-4">
+                            {item.icon && (
+                                <div className="text-primary p-2.5 bg-primary/10 rounded-lg shrink-0 flex items-center justify-center">
+                                    {item.icon}
+                                </div>
+                            )}
+
+                            <div className="flex-grow">
+                                <h3 className="font-semibold text-lg text-foreground mb-1 group-hover:text-primary transition-colors flex items-center justify-between">
+                                    <span className="line-clamp-2">{item.title}</span>
+                                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary shrink-0 ml-4" />
+                                </h3>
+
+                                {item.description && (
+                                    <p className="text-sm text-muted-foreground line-clamp-3">
+                                        {item.description}
+                                    </p>
+                                )}
                             </div>
-                        )}
-
-                        <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:text-primary transition-colors flex items-center justify-between">
-                            <span className="line-clamp-2">{item.title}</span>
-                            <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary shrink-0 ml-4" />
-                        </h3>
-
-                        {item.description && (
-                            <p className="text-sm text-muted-foreground line-clamp-3 mt-2">
-                                {item.description}
-                            </p>
-                        )}
+                        </div>
                     </Link>
                 ))}
             </div>

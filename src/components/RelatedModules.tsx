@@ -7,6 +7,7 @@ export interface RelatedItem {
     href: string
     description?: string
     image?: string
+    icon?: React.ReactNode
 }
 
 interface RelatedModulesProps {
@@ -28,6 +29,12 @@ export default function RelatedModules({ title, items }: RelatedModulesProps) {
                         className="group block h-full p-6 glass-panel rounded-xl hover:border-primary/50 hover:bg-muted/50 transition-all duration-300 relative overflow-hidden"
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                        {item.icon && (
+                            <div className="text-primary mb-4 p-2.5 bg-primary/10 rounded-lg w-fit h-fit flex items-center justify-center">
+                                {item.icon}
+                            </div>
+                        )}
 
                         <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:text-primary transition-colors flex items-center justify-between">
                             <span className="line-clamp-2">{item.title}</span>

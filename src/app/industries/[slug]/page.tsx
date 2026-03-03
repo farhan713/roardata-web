@@ -99,12 +99,15 @@ export default async function IndustryPage({ params }: PageProps) {
                         <div className="h-[2px] bg-slate-400 dark:bg-slate-500 w-3/4 max-w-[350px] mb-8"></div>
                         {commonProblems.length > 0 && (
                             <div className="mb-12 space-y-5">
-                                {commonProblems.map((problem: string, i: number) => (
-                                    <div key={i} className="flex items-start gap-4 not-prose">
-                                        <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
-                                        <h3 className="text-lg font-semibold m-0 leading-snug" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>{problem}</h3>
-                                    </div>
-                                ))}
+                                {commonProblems.map((problem: any, i: number) => {
+                                    const text = typeof problem === 'string' ? problem : (problem.title || problem.group || JSON.stringify(problem));
+                                    return (
+                                        <div key={i} className="flex items-start gap-4 not-prose">
+                                            <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
+                                            <h3 className="text-lg font-semibold m-0 leading-snug" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>{text}</h3>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         )}
 
@@ -112,37 +115,43 @@ export default async function IndustryPage({ params }: PageProps) {
                         <div className="h-[2px] bg-slate-400 dark:bg-slate-500 w-3/4 max-w-[350px] mb-8"></div>
                         {useCases.length > 0 && (
                             <div className="mb-12 space-y-5">
-                                {useCases.map((useCase: string, i: number) => (
-                                    <div key={i} className="flex items-start gap-4 not-prose">
-                                        <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
-                                        <h3 className="text-lg font-semibold m-0 leading-snug" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>{useCase}</h3>
-                                    </div>
-                                ))}
+                                {useCases.map((useCase: any, i: number) => {
+                                    const text = typeof useCase === 'string' ? useCase : (useCase.title || useCase.group || JSON.stringify(useCase));
+                                    return (
+                                        <div key={i} className="flex items-start gap-4 not-prose">
+                                            <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
+                                            <h3 className="text-lg font-semibold m-0 leading-snug" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>{text}</h3>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         )}
 
                         <h2 id="kpis">Key {industry.name} KPIs</h2>
-                        {kpis.map((kpiGroup: any, i: number) => (
+                        {Array.isArray(kpis) ? kpis.map((kpiGroup: any, i: number) => (
                             <div key={i} className="mb-6">
                                 <h3 className="text-lg font-bold mt-4 mb-2">{kpiGroup.group}</h3>
                                 <ul className="flex flex-wrap gap-2 not-prose mt-2 p-0 m-0 list-none">
-                                    {kpiGroup.metrics?.map((metric: string, j: number) => (
+                                    {Array.isArray(kpiGroup.metrics) ? kpiGroup.metrics.map((metric: any, j: number) => (
                                         <li key={j} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-medium m-0 leading-none flex items-center">
-                                            {metric}
+                                            {typeof metric === 'string' ? metric : (metric.title || metric.group || JSON.stringify(metric))}
                                         </li>
-                                    ))}
+                                    )) : null}
                                 </ul>
                             </div>
-                        ))}
+                        )) : null}
 
                         <h2 id="data-sources">{industry.name} Data Integration</h2>
                         <p className="mb-4">Seamlessly connect and analyze data from your core {industry.name} systems.</p>
                         <ul className="flex flex-wrap gap-2 not-prose mb-12 mt-4 p-0 m-0 list-none">
-                            {dataSources.map((source: string, i: number) => (
-                                <li key={i} className="px-4 py-2 bg-muted rounded-full text-sm font-medium m-0 flex items-center">
-                                    {source}
-                                </li>
-                            ))}
+                            {dataSources.map((source: any, i: number) => {
+                                const text = typeof source === 'string' ? source : (source.title || source.group || JSON.stringify(source));
+                                return (
+                                    <li key={i} className="px-4 py-2 bg-muted rounded-full text-sm font-medium m-0 flex items-center">
+                                        {text}
+                                    </li>
+                                )
+                            })}
                         </ul>
 
                         <h2 id="dashboard">{industry.name} KPI Dashboard Example</h2>

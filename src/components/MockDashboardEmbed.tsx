@@ -164,7 +164,7 @@ export default function MockDashboardEmbed({ industryKey }: { industryKey: strin
                                         )}
                                     </div>
 
-                                    <div className="flex-grow min-h-[260px] w-full z-10 ml-[-20px]">
+                                    <div className="flex-grow h-[260px] w-full z-10 ml-[-20px]">
                                         <ResponsiveContainer width="100%" height="100%">
                                             {chart.type === 'LineChart' ? (
                                                 <LineChart data={chart.data} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>

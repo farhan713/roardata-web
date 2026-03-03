@@ -95,12 +95,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
                                 <div className="pt-6 border-t border-border">
                                     <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Key Outcomes</h4>
                                     <div className="space-y-5">
-                                        {outcomeMetrics.map((m: any, i: number) => (
-                                            <div key={i}>
-                                                <div className="text-2xl font-bold tracking-tight text-primary mb-1">{m.value}</div>
-                                                <div className="text-sm text-foreground font-medium">{m.label}</div>
-                                            </div>
-                                        ))}
+                                        {outcomeMetrics.map((m: any, i: number) => {
+                                            return (
+                                                <div key={i}>
+                                                    <div className="text-2xl font-bold tracking-tight text-primary mb-1">{m.value}</div>
+                                                    <div className="text-sm text-foreground font-medium">{m.label}</div>
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             )}

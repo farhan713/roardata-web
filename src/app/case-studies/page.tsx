@@ -42,12 +42,14 @@ export default async function CaseStudiesIndex() {
                                         </Link>
                                     </h3>
                                     <div className="grid grid-cols-2 gap-4 mt-auto">
-                                        {metrics.slice(0, 2).map((m: any, i: number) => (
-                                            <div key={i}>
-                                                <div className="text-xl font-bold text-foreground mb-1">{m.value}</div>
-                                                <div className="text-xs text-muted-foreground">{m.label}</div>
-                                            </div>
-                                        ))}
+                                        {metrics.slice(0, 2).map((m: any, i: number) => {
+                                            return (
+                                                <div key={i}>
+                                                    <div className="text-xl font-bold text-foreground mb-1">{m.value}</div>
+                                                    <div className="text-xs text-muted-foreground">{m.label}</div>
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             </div>

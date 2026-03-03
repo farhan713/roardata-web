@@ -12,21 +12,24 @@ export default function HomeHero() {
             <div className="absolute top-[15%] right-[10%] w-[400px] h-[400px] rounded-full border-[1px] border-white/80 opacity-60 -z-10" />
 
             {/* The Dashboard acts as an absolute 'background' spanning mostly right side but fully under the left card on desktop */}
-            <div className="absolute inset-y-0 right-0 w-full lg:w-[85%] lg:py-12 lg:pr-12 pointer-events-none z-0">
-                <div
-                    className="relative w-full h-full lg:rounded-[2rem] overflow-hidden shadow-2xl animate-fade-in-scale will-change-transform"
-                >
-                    <video
-                        src="/roarvideo.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="object-cover object-left w-full h-full absolute inset-0 z-0"
-                    />
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="mx-auto w-full max-w-7xl h-full relative px-4 sm:px-6 lg:px-8">
+                    {/* The video container align right inside the 7xl container */}
+                    <div className="absolute inset-y-0 right-4 sm:right-6 lg:right-8 w-full lg:w-full lg:py-12">
+                        <div className="relative w-full h-full lg:rounded-[2rem] overflow-hidden shadow-2xl animate-fade-in-scale will-change-transform cursor-default pointer-events-auto">
+                            <video
+                                src="/roarvideo.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="object-cover object-center w-full h-full absolute inset-0 z-0"
+                            />
 
-                    {/* A subtle gradient fading from the left edge over the video helps blend it into the background */}
-                    <div className="absolute inset-y-0 left-0 w-[40%] bg-gradient-to-r from-[#F4F7FC] to-transparent opacity-90 hidden lg:block z-10" />
+                            {/* A subtle gradient fading from the left edge over the video helps blend it into the background */}
+                            <div className="absolute inset-y-0 left-0 w-[40%] bg-gradient-to-r from-[#F4F7FC] to-transparent opacity-90 hidden lg:block z-10 pointer-events-none" />
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -34,10 +34,10 @@ export default async function Home() {
           <div>
             <h2 className="text-3xl font-bold mb-6 tracking-tight">Why Choose ROAR DATA?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              We don't just build dashboards. We build robust, scalable analytics engines that become the central nervous system of your business.
+              Established online since 2005. Today, under new ownership, we build robust, scalable analytics engines that become the central nervous system of modern businesses.
             </p>
             <ul className="space-y-4">
-              {['Australian based team of certified experts', 'No vendor lock-in, just clean architecture', 'Focus on adoption and business outcomes'].map((item, i) => (
+              {['Australian-based certified data experts', 'No vendor lock-in - clean, future-proof architecture', 'Focused on measurable business outcomes'].map((item, i) => (
                 <li key={i} className="flex items-start">
                   <CheckCircle2 className="w-6 h-6 text-primary mr-3 shrink-0" />
                   <span className="text-foreground font-medium">{item}</span>
@@ -66,6 +66,13 @@ export default async function Home() {
               </div>
               <h3 className="font-bold mb-2">Performance</h3>
               <p className="text-sm text-muted-foreground">Lightning-fast DAX</p>
+            </div>
+            <div className="glass-panel p-6 rounded-2xl flex flex-col items-center text-center translate-y-8">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4">
+                <CheckCircle2 className="w-6 h-6" />
+              </div>
+              <h3 className="font-bold mb-2">Advisory</h3>
+              <p className="text-sm text-muted-foreground">Strategic data and technology consulting</p>
             </div>
           </div>
         </div>

@@ -47,7 +47,10 @@ export default function Navigation() {
                             alt="ROAR DATA Logo"
                             width={360}
                             height={96}
-                            className="h-20 md:h-24 w-auto object-contain transition-transform group-hover:scale-105"
+                            className={cn(
+                                "w-auto object-contain transition-all duration-300 group-hover:scale-105 h-20 md:h-24",
+                                !hasScrolled && "-translate-y-2 md:-translate-y-3"
+                            )}
                             priority
                         />
                     </Link>

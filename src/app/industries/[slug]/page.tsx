@@ -137,13 +137,13 @@ export default async function IndustryPage({ params }: PageProps) {
 
                         <h2 id="data-sources">{industry.name} Data Integration</h2>
                         <p className="mb-4">Seamlessly connect and analyze data from your core {industry.name} systems.</p>
-                        <div className="flex flex-wrap gap-2 not-prose mb-12 mt-4">
+                        <ul className="flex flex-wrap gap-2 not-prose mb-12 mt-4 p-0 m-0 list-none">
                             {dataSources.map((source: string, i: number) => (
-                                <span key={i} className="px-4 py-2 bg-muted rounded-full text-sm font-medium">
+                                <li key={i} className="px-4 py-2 bg-muted rounded-full text-sm font-medium m-0 flex items-center">
                                     {source}
-                                </span>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
 
                         <h2 id="dashboard">{industry.name} KPI Dashboard Example</h2>
                         <p className="mb-6">Explore interactive visualizations tailored for {industry.name} operations.</p>

@@ -53,7 +53,7 @@ export default function HeroSection({
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                        className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto"
+                        className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto whitespace-pre-wrap"
                     >
                         {subheadline}
                     </motion.p>

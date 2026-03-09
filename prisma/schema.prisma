@@ -16,9 +16,22 @@ model Service {
   heroSubheadline  String
   bodySections     String           // JSON string
   
-  metaTitle        String?
-  metaDescription  String?
-  ogImage          String?
+  metaTitle          String?
+  metaDescription    String?
+  canonicalUrl       String?
+  robotsMeta         String?          @default("index, follow")
+  structuredData     String?          
+  
+  ogTitle            String?
+  ogDescription      String?
+  ogImage            String?
+  
+  twitterTitle       String?
+  twitterDescription String?
+  twitterImage       String?
+  
+  mainImageAlt       String?
+  socialImageAlt     String?
 
   faqs             FAQ[]            @relation("ServiceFAQs")
   industries       Industry[]       @relation("ServiceIndustries")
@@ -38,9 +51,29 @@ model City {
   heroSubheadline  String
   uniqueLocalCopy  String
 
-  metaTitle        String?
-  metaDescription  String?
-  ogImage          String?
+  metaTitle          String?
+  metaDescription    String?
+  canonicalUrl       String?
+  robotsMeta         String?          @default("index, follow")
+  structuredData     String?          
+  
+  ogTitle            String?
+  ogDescription      String?
+  ogImage            String?
+  
+  twitterTitle       String?
+  twitterDescription String?
+  twitterImage       String?
+  
+  mainImageAlt       String?
+  socialImageAlt     String?
+
+  localBusinessName  String?
+  localAddress       String?
+  localPhone         String?
+  localEmail         String?
+  latitude           Float?
+  longitude          Float?
 
   industries       Industry[]       @relation("CityIndustries")
   services         Service[]        @relation("ServiceCities")
@@ -64,9 +97,22 @@ model Industry {
   dataSources      String           // JSON array
   dashboardEmbedCode String?
 
-  metaTitle        String?
-  metaDescription  String?
-  ogImage          String?
+  metaTitle          String?
+  metaDescription    String?
+  canonicalUrl       String?
+  robotsMeta         String?          @default("index, follow")
+  structuredData     String?          
+  
+  ogTitle            String?
+  ogDescription      String?
+  ogImage            String?
+  
+  twitterTitle       String?
+  twitterDescription String?
+  twitterImage       String?
+  
+  mainImageAlt       String?
+  socialImageAlt     String?
 
   services         Service[]        @relation("ServiceIndustries")
   cities           City[]           @relation("CityIndustries")
@@ -86,9 +132,22 @@ model InsightArticle {
   body             String           // JSON string
   publishedAt      DateTime         @default(now())
   
-  metaTitle        String?
-  metaDescription  String?
-  ogImage          String?
+  metaTitle          String?
+  metaDescription    String?
+  canonicalUrl       String?
+  robotsMeta         String?          @default("index, follow")
+  structuredData     String?          
+  
+  ogTitle            String?
+  ogDescription      String?
+  ogImage            String?
+  
+  twitterTitle       String?
+  twitterDescription String?
+  twitterImage       String?
+  
+  mainImageAlt       String?
+  socialImageAlt     String?
 
   authorId         String?
   author           TeamMember?      @relation(fields: [authorId], references: [id])
@@ -108,9 +167,22 @@ model CaseStudy {
   outcomeMetrics   String           // JSON array of metrics
   bodySections     String           // JSON string
   
-  metaTitle        String?
-  metaDescription  String?
-  ogImage          String?
+  metaTitle          String?
+  metaDescription    String?
+  canonicalUrl       String?
+  robotsMeta         String?          @default("index, follow")
+  structuredData     String?          
+  
+  ogTitle            String?
+  ogDescription      String?
+  ogImage            String?
+  
+  twitterTitle       String?
+  twitterDescription String?
+  twitterImage       String?
+  
+  mainImageAlt       String?
+  socialImageAlt     String?
 
   industryId       String?
   industry         Industry?        @relation("IndustryCaseStudies", fields: [industryId], references: [id])

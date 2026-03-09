@@ -23,20 +23,41 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params
-    const industry = await prisma.industry.findUnique({ where: { slug } })
+    const industry: any = await prisma.industry.findUnique({ where: { slug } })
 
     if (!industry) return {}
 
     return {
-        title: industry.metaTitle || `Power BI for ${industry.name} | ROAR DATA`,
+        title: industry.metaTitle || `Power BI for ${industry.name} | Roar Data`,
         description: industry.metaDescription || industry.overview,
+        alternates: {
+            canonical: industry.canonicalUrl || `https://roardata.com.au/industries/${industry.slug}`,
+        },
+        robots: industry.robotsMeta || 'index, follow',
+        openGraph: {
+            title: industry.ogTitle || industry.metaTitle || `Power BI for ${industry.name} | Roar Data`,
+            description: industry.ogDescription || industry.metaDescription || industry.overview,
+            images: industry.ogImage ? [
+                {
+                    url: industry.ogImage,
+                    alt: industry.socialImageAlt || industry.mainImageAlt || industry.name,
+                }
+            ] : undefined,
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: industry.twitterTitle || industry.ogTitle || industry.metaTitle || `Power BI for ${industry.name} | Roar Data`,
+            description: industry.twitterDescription || industry.ogDescription || industry.metaDescription || industry.overview,
+            images: industry.twitterImage || industry.ogImage ? [industry.twitterImage || industry.ogImage!] : undefined,
+        }
     }
 }
 
 export default async function IndustryPage({ params }: PageProps) {
     const { slug } = await params
 
-    const industry = await prisma.industry.findUnique({
+    const industry: any = await prisma.industry.findUnique({
         where: { slug },
         include: {
             services: true,
@@ -72,8 +93,25 @@ export default async function IndustryPage({ params }: PageProps) {
         dataSources = JSON.parse(industry.dataSources || '[]')
     } catch (e) { }
 
+    const safeText = (val: any): string => {
+        if (!val) return '';
+        if (typeof val === 'string') return val;
+        if (typeof val.title === 'string') return val.title;
+        if (typeof val.group === 'string') return val.group;
+        if (typeof val.name === 'string') return val.name;
+        try { return JSON.stringify(val); } catch (e) { return String(val); }
+    };
+
+
     return (
         <>
+            {industry.structuredData && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: industry.structuredData }}
+                />
+            )}
+
             <HeroSection
                 headline={`${industry.name} Analytics and KPI Dashboards in Australia & New Zealand`}
                 subheadline={industry.overview}
@@ -100,7 +138,7 @@ export default async function IndustryPage({ params }: PageProps) {
                         {commonProblems.length > 0 && (
                             <div className="mb-12 space-y-5">
                                 {commonProblems.map((problem: any, i: number) => {
-                                    const text = typeof problem === 'string' ? problem : (problem.title || problem.group || JSON.stringify(problem));
+                                    const text = safeText(problem);
                                     return (
                                         <div key={i} className="flex items-start gap-4 not-prose">
                                             <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
@@ -116,7 +154,7 @@ export default async function IndustryPage({ params }: PageProps) {
                         {useCases.length > 0 && (
                             <div className="mb-12 space-y-5">
                                 {useCases.map((useCase: any, i: number) => {
-                                    const text = typeof useCase === 'string' ? useCase : (useCase.title || useCase.group || JSON.stringify(useCase));
+                                    const text = safeText(useCase);
                                     return (
                                         <div key={i} className="flex items-start gap-4 not-prose">
                                             <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
@@ -130,11 +168,11 @@ export default async function IndustryPage({ params }: PageProps) {
                         <h2 id="kpis">Key {industry.name} KPIs</h2>
                         {Array.isArray(kpis) ? kpis.map((kpiGroup: any, i: number) => (
                             <div key={i} className="mb-6">
-                                <h3 className="text-lg font-bold mt-4 mb-2">{kpiGroup.group}</h3>
+                                <h3 className="text-lg font-bold mt-4 mb-2">{safeText(kpiGroup.group || kpiGroup)}</h3>
                                 <ul className="flex flex-wrap gap-2 not-prose mt-2 p-0 m-0 list-none">
                                     {Array.isArray(kpiGroup.metrics) ? kpiGroup.metrics.map((metric: any, j: number) => (
                                         <li key={j} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-medium m-0 leading-none flex items-center">
-                                            {typeof metric === 'string' ? metric : (metric.title || metric.group || JSON.stringify(metric))}
+                                            {safeText(metric)}
                                         </li>
                                     )) : null}
                                 </ul>
@@ -145,7 +183,7 @@ export default async function IndustryPage({ params }: PageProps) {
                         <p className="mb-4">Seamlessly connect and analyze data from your core {industry.name} systems.</p>
                         <ul className="flex flex-wrap gap-2 not-prose mb-12 mt-4 p-0 m-0 list-none">
                             {dataSources.map((source: any, i: number) => {
-                                const text = typeof source === 'string' ? source : (source.title || source.group || JSON.stringify(source));
+                                const text = safeText(source);
                                 return (
                                     <li key={i} className="px-4 py-2 bg-muted rounded-full text-sm font-medium m-0 flex items-center">
                                         {text}

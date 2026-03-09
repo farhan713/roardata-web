@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createCity, updateCity, deleteCity } from '../actions';
 import { Loader, Save, Trash2 } from 'lucide-react';
+import SeoMetadataFields from '@/components/admin/SeoMetadataFields';
 
 export default function CityForm({
     initialData,
@@ -116,6 +117,8 @@ export default function CityForm({
                 />
                 <p className="text-xs text-black/50 mt-1">Provide specific copy addressing this exact location for SEO.</p>
             </div>
+
+            <SeoMetadataFields initialData={initialData} showLocalFields={true} />
 
             <div className="flex items-center justify-between pt-6 border-t border-border">
                 {isEditing ? (

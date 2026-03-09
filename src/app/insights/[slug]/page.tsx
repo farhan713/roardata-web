@@ -21,20 +21,41 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params
-    const insight = await prisma.insightArticle.findUnique({ where: { slug } })
+    const insight: any = await prisma.insightArticle.findUnique({ where: { slug } })
 
     if (!insight) return {}
 
     return {
         title: insight.metaTitle || `${insight.title} | Insights`,
         description: insight.metaDescription || insight.summary,
+        alternates: {
+            canonical: insight.canonicalUrl || `https://roardata.com.au/insights/${insight.slug}`,
+        },
+        robots: insight.robotsMeta || 'index, follow',
+        openGraph: {
+            title: insight.ogTitle || insight.metaTitle || `${insight.title} | Insights`,
+            description: insight.ogDescription || insight.metaDescription || insight.summary,
+            images: insight.ogImage ? [
+                {
+                    url: insight.ogImage,
+                    alt: insight.socialImageAlt || insight.mainImageAlt || insight.title,
+                }
+            ] : undefined,
+            type: 'article',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: insight.twitterTitle || insight.ogTitle || insight.metaTitle || `${insight.title} | Insights`,
+            description: insight.twitterDescription || insight.ogDescription || insight.metaDescription || insight.summary,
+            images: insight.twitterImage || insight.ogImage ? [insight.twitterImage || insight.ogImage!] : undefined,
+        }
     }
 }
 
 export default async function InsightPage({ params }: PageProps) {
     const { slug } = await params
 
-    const insight = await prisma.insightArticle.findUnique({
+    const insight: any = await prisma.insightArticle.findUnique({
         where: { slug },
         include: {
             author: true,
@@ -68,7 +89,7 @@ export default async function InsightPage({ params }: PageProps) {
             "name": insight.author.name
         } : {
             "@type": "Organization",
-            "name": "ROAR DATA"
+            "name": "Roar Data"
         },
         "datePublished": insight.publishedAt.toISOString(),
         "dateModified": insight.updatedAt.toISOString(),
@@ -88,10 +109,17 @@ export default async function InsightPage({ params }: PageProps) {
                     { label: insight.title }
                 ]} />
 
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-                />
+                {insight.structuredData ? (
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: insight.structuredData }}
+                    />
+                ) : (
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+                    />
+                )}
 
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 relative max-w-6xl mx-auto">
 

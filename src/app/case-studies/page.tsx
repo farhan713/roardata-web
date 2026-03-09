@@ -7,7 +7,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 
 export const metadata = {
-    title: "Case Studies & Proven Results | ROAR DATA",
+    title: "Case Studies & Proven Results | Roar Data",
     description: "Read our case studies to see real-world Power BI transformations.",
 }
 

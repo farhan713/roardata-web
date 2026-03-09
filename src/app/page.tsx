@@ -11,6 +11,7 @@ import CtaModule from '@/components/CtaModule'
 import Link from 'next/link'
 import { CheckCircle2, BarChart, Database, Zap } from 'lucide-react'
 import { getIndustryIcon } from '@/lib/icons'
+import HomeCaseStudies from '@/components/HomeCaseStudies'
 
 export default async function Home() {
   const [services, industries, cities, caseStudies] = await Promise.all([
@@ -18,7 +19,6 @@ export default async function Home() {
     prisma.industry.findMany({ take: 6, orderBy: { name: 'asc' } }),
     prisma.city.findMany({ orderBy: { cityName: 'asc' } }),
     prisma.caseStudy.findMany({
-      take: 2,
       include: { industry: true }
     })
   ])
@@ -32,7 +32,7 @@ export default async function Home() {
       <PageContainer className="py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6 tracking-tight">Why Choose ROAR DATA?</h2>
+            <h2 className="text-3xl font-bold mb-6 tracking-tight">Why Choose Roar Data?</h2>
             <p className="text-lg text-muted-foreground mb-8">
               Established online since 2005. Today, under new ownership, we build robust, scalable analytics engines that become the central nervous system of modern businesses.
             </p>
@@ -115,39 +115,11 @@ export default async function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {caseStudies.map((cs) => {
-              const metrics = JSON.parse(cs.outcomeMetrics || '[]')
-              return (
-                <div key={cs.id} className="glass-panel rounded-2xl overflow-hidden group">
-                  <div className="p-8">
-                    <div className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">
-                      {cs.industry?.name}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-6 group-hover:text-primary transition-colors">
-                      <Link href={`/case-studies/${cs.slug}`}>
-                        {cs.title}
-                      </Link>
-                    </h3>
-                    <div className="grid grid-cols-2 gap-4 pt-6 border-t border-border">
-                      {metrics.slice(0, 2).map((m: any, i: number) => {
-                        return (
-                          <div key={i}>
-                            <div className="text-2xl font-bold text-foreground mb-1">{m.value}</div>
-                            <div className="text-sm text-muted-foreground">{m.label}</div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          <HomeCaseStudies caseStudies={caseStudies} />
         </section>
 
         <section className="py-16 text-center">
-          <h2 className="text-2xl font-bold mb-8">Serving Businesses Across Australia</h2>
+          <h2 className="text-2xl font-bold mb-8">Power BI Consulting Across Australia &amp; New Zealand</h2>
           <div className="flex flex-wrap justify-center gap-4">
             {cities.map(city => (
               <Link

@@ -14,7 +14,7 @@ export default async function AdminCitiesPage() {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold text-black tracking-tight">Cities</h1>
-                    <p className="text-black/70 mt-1">Manage the geographic locations served by ROAR DATA.</p>
+                    <p className="text-black/70 mt-1">Manage the geographic locations served by Roar Data.</p>
                 </div>
                 <Link
                     href="/admin/cities/new"

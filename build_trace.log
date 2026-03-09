@@ -1,0 +1,499 @@
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 7.2s
+  Running TypeScript ...
+  Collecting page data using 3 workers ...
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Service"."id", "public"."Service"."slug" FROM "public"."Service" WHERE 1=1 OFFSET $1
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."slug" FROM "public"."CaseStudy" WHERE 1=1 OFFSET $1
+prisma:query SELECT "public"."InsightArticle"."id", "public"."InsightArticle"."slug" FROM "public"."InsightArticle" WHERE 1=1 OFFSET $1
+prisma:query COMMIT
+prisma:query COMMIT
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."City"."id", "public"."City"."slug" FROM "public"."City" WHERE 1=1 OFFSET $1
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."slug" FROM "public"."Industry" WHERE 1=1 OFFSET $1
+prisma:query COMMIT
+prisma:query COMMIT
+  Generating static pages using 3 workers (0/81) ...
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Service"."id", "public"."Service"."name", "public"."Service"."slug", "public"."Service"."heroHeadline", "public"."Service"."heroSubheadline", "public"."Service"."bodySections", "public"."Service"."metaTitle", "public"."Service"."metaDescription", "public"."Service"."ogImage", "public"."Service"."createdAt", "public"."Service"."updatedAt" FROM "public"."Service" WHERE ("public"."Service"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Service"."id", "public"."Service"."name", "public"."Service"."slug", "public"."Service"."heroHeadline", "public"."Service"."heroSubheadline", "public"."Service"."bodySections", "public"."Service"."metaTitle", "public"."Service"."metaDescription", "public"."Service"."ogImage", "public"."Service"."createdAt", "public"."Service"."updatedAt" FROM "public"."Service" WHERE ("public"."Service"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Service"."id", "public"."Service"."name", "public"."Service"."slug", "public"."Service"."heroHeadline", "public"."Service"."heroSubheadline", "public"."Service"."bodySections", "public"."Service"."metaTitle", "public"."Service"."metaDescription", "public"."Service"."ogImage", "public"."Service"."createdAt", "public"."Service"."updatedAt" FROM "public"."Service" WHERE ("public"."Service"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DEALLOCATE ALL
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."B", "public"."_ServiceIndustries"."A" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."B", "public"."_ServiceIndustries"."A" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Service"."id", "public"."Service"."name", "public"."Service"."slug", "public"."Service"."heroHeadline", "public"."Service"."heroSubheadline", "public"."Service"."bodySections", "public"."Service"."metaTitle", "public"."Service"."metaDescription", "public"."Service"."ogImage", "public"."Service"."createdAt", "public"."Service"."updatedAt" FROM "public"."Service" WHERE ("public"."Service"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."InsightArticle"."id", "public"."InsightArticle"."title", "public"."InsightArticle"."slug", "public"."InsightArticle"."summary", "public"."InsightArticle"."body", "public"."InsightArticle"."publishedAt", "public"."InsightArticle"."metaTitle", "public"."InsightArticle"."metaDescription", "public"."InsightArticle"."ogImage", "public"."InsightArticle"."authorId", "public"."InsightArticle"."createdAt", "public"."InsightArticle"."updatedAt" FROM "public"."InsightArticle" WHERE "public"."InsightArticle"."id" IN ($1) OFFSET $2
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceCities"."B", "public"."_ServiceCities"."A" FROM "public"."_ServiceCities" WHERE "public"."_ServiceCities"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceCities"."B", "public"."_ServiceCities"."A" FROM "public"."_ServiceCities" WHERE "public"."_ServiceCities"."B" IN ($1)
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query DEALLOCATE ALL
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query SELECT "public"."_ServiceCities"."A", "public"."_ServiceCities"."B" FROM "public"."_ServiceCities" WHERE "public"."_ServiceCities"."A" IN ($1)
+prisma:query SELECT "public"."Service"."id", "public"."Service"."name", "public"."Service"."slug", "public"."Service"."heroHeadline", "public"."Service"."heroSubheadline", "public"."Service"."bodySections", "public"."Service"."metaTitle", "public"."Service"."metaDescription", "public"."Service"."ogImage", "public"."Service"."createdAt", "public"."Service"."updatedAt" FROM "public"."Service" WHERE ("public"."Service"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."_ServiceCities"."A", "public"."_ServiceCities"."B" FROM "public"."_ServiceCities" WHERE "public"."_ServiceCities"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceFAQs"."B", "public"."_ServiceFAQs"."A" FROM "public"."_ServiceFAQs" WHERE "public"."_ServiceFAQs"."B" IN ($1)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query SELECT "public"."_ServiceFAQs"."B", "public"."_ServiceFAQs"."A" FROM "public"."_ServiceFAQs" WHERE "public"."_ServiceFAQs"."B" IN ($1)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query SELECT "public"."_CityIndustries"."A", "public"."_CityIndustries"."B" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."A" IN ($1)
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query SELECT "public"."_ServiceIndustries"."B", "public"."_ServiceIndustries"."A" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."FAQ"."id", "public"."FAQ"."question", "public"."FAQ"."answer", "public"."FAQ"."createdAt", "public"."FAQ"."updatedAt" FROM "public"."FAQ" WHERE "public"."FAQ"."id" IN ($1,$2,$3) OFFSET $4
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."FAQ"."id", "public"."FAQ"."question", "public"."FAQ"."answer", "public"."FAQ"."createdAt", "public"."FAQ"."updatedAt" FROM "public"."FAQ" WHERE "public"."FAQ"."id" IN ($1,$2,$3) OFFSET $4
+prisma:query SELECT "public"."_CityIndustries"."A", "public"."_CityIndustries"."B" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DEALLOCATE ALL
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query SELECT "public"."_CityCaseStudies"."B", "public"."_CityCaseStudies"."A" FROM "public"."_CityCaseStudies" WHERE "public"."_CityCaseStudies"."B" IN ($1)
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query SELECT "public"."_ServiceCities"."B", "public"."_ServiceCities"."A" FROM "public"."_ServiceCities" WHERE "public"."_ServiceCities"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceCaseStudies"."B", "public"."_ServiceCaseStudies"."A" FROM "public"."_ServiceCaseStudies" WHERE "public"."_ServiceCaseStudies"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceCaseStudies"."B", "public"."_ServiceCaseStudies"."A" FROM "public"."_ServiceCaseStudies" WHERE "public"."_ServiceCaseStudies"."B" IN ($1)
+prisma:query SELECT "public"."_CityCaseStudies"."B", "public"."_CityCaseStudies"."A" FROM "public"."_CityCaseStudies" WHERE "public"."_CityCaseStudies"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query DEALLOCATE ALL
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query COMMIT
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query BEGIN
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."id" IN ($1) OFFSET $2
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query COMMIT
+prisma:query DEALLOCATE ALL
+prisma:query COMMIT
+prisma:query BEGIN
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."_ServiceFAQs"."B", "public"."_ServiceFAQs"."A" FROM "public"."_ServiceFAQs" WHERE "public"."_ServiceFAQs"."B" IN ($1)
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."_ServiceInsights"."B", "public"."_ServiceInsights"."A" FROM "public"."_ServiceInsights" WHERE "public"."_ServiceInsights"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceInsights"."B", "public"."_ServiceInsights"."A" FROM "public"."_ServiceInsights" WHERE "public"."_ServiceInsights"."B" IN ($1)
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."id" IN ($1) OFFSET $2
+prisma:query DEALLOCATE ALL
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query COMMIT
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Service"."id", "public"."Service"."name", "public"."Service"."slug", "public"."Service"."heroHeadline", "public"."Service"."heroSubheadline", "public"."Service"."bodySections", "public"."Service"."metaTitle", "public"."Service"."metaDescription", "public"."Service"."ogImage", "public"."Service"."createdAt", "public"."Service"."updatedAt" FROM "public"."Service" WHERE ("public"."Service"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."_CityFAQs"."A", "public"."_CityFAQs"."B" FROM "public"."_CityFAQs" WHERE "public"."_CityFAQs"."A" IN ($1)
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."FAQ"."id", "public"."FAQ"."question", "public"."FAQ"."answer", "public"."FAQ"."createdAt", "public"."FAQ"."updatedAt" FROM "public"."FAQ" WHERE "public"."FAQ"."id" IN ($1,$2,$3) OFFSET $4
+prisma:query SELECT "public"."_CityFAQs"."A", "public"."_CityFAQs"."B" FROM "public"."_CityFAQs" WHERE "public"."_CityFAQs"."A" IN ($1)
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query BEGIN
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query COMMIT
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query DEALLOCATE ALL
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query COMMIT
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."FAQ"."id", "public"."FAQ"."question", "public"."FAQ"."answer", "public"."FAQ"."createdAt", "public"."FAQ"."updatedAt" FROM "public"."FAQ" WHERE "public"."FAQ"."id" IN ($1,$2) OFFSET $3
+prisma:query COMMIT
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceCaseStudies"."B", "public"."_ServiceCaseStudies"."A" FROM "public"."_ServiceCaseStudies" WHERE "public"."_ServiceCaseStudies"."B" IN ($1)
+prisma:query SELECT "public"."FAQ"."id", "public"."FAQ"."question", "public"."FAQ"."answer", "public"."FAQ"."createdAt", "public"."FAQ"."updatedAt" FROM "public"."FAQ" WHERE "public"."FAQ"."id" IN ($1,$2) OFFSET $3
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."_ServiceCities"."A", "public"."_ServiceCities"."B" FROM "public"."_ServiceCities" WHERE "public"."_ServiceCities"."A" IN ($1)
+prisma:query COMMIT
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query COMMIT
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query COMMIT
+prisma:query COMMIT
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."id" IN ($1) OFFSET $2
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."_CityIndustries"."A", "public"."_CityIndustries"."B" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."A" IN ($1)
+prisma:query COMMIT
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query COMMIT
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."_ServiceInsights"."B", "public"."_ServiceInsights"."A" FROM "public"."_ServiceInsights" WHERE "public"."_ServiceInsights"."B" IN ($1)
+prisma:query SELECT "public"."_ServiceIndustries"."A", "public"."_ServiceIndustries"."B" FROM "public"."_ServiceIndustries" WHERE "public"."_ServiceIndustries"."A" IN ($1)
+prisma:query SELECT "public"."_CityCaseStudies"."B", "public"."_CityCaseStudies"."A" FROM "public"."_CityCaseStudies" WHERE "public"."_CityCaseStudies"."B" IN ($1)
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query COMMIT
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."_CityIndustries"."B", "public"."_CityIndustries"."A" FROM "public"."_CityIndustries" WHERE "public"."_CityIndustries"."B" IN ($1)
+prisma:query COMMIT
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."id" IN ($1) OFFSET $2
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."title", "public"."CaseStudy"."slug", "public"."CaseStudy"."outcomeMetrics", "public"."CaseStudy"."bodySections", "public"."CaseStudy"."metaTitle", "public"."CaseStudy"."metaDescription", "public"."CaseStudy"."ogImage", "public"."CaseStudy"."industryId", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE "public"."CaseStudy"."industryId" IN ($1) OFFSET $2
+prisma:query SELECT "public"."_CityFAQs"."A", "public"."_CityFAQs"."B" FROM "public"."_CityFAQs" WHERE "public"."_CityFAQs"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query COMMIT
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query SELECT "public"."_IndustryInsights"."A", "public"."_IndustryInsights"."B" FROM "public"."_IndustryInsights" WHERE "public"."_IndustryInsights"."A" IN ($1)
+prisma:query COMMIT
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query SELECT "public"."FAQ"."id", "public"."FAQ"."question", "public"."FAQ"."answer", "public"."FAQ"."createdAt", "public"."FAQ"."updatedAt" FROM "public"."FAQ" WHERE "public"."FAQ"."id" IN ($1,$2) OFFSET $3
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query COMMIT
+prisma:query COMMIT
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+  Generating static pages using 3 workers (20/81) 
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query SELECT "public"."_IndustryFAQs"."B", "public"."_IndustryFAQs"."A" FROM "public"."_IndustryFAQs" WHERE "public"."_IndustryFAQs"."B" IN ($1)
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query COMMIT
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."City"."id", "public"."City"."cityName", "public"."City"."slug", "public"."City"."heroHeadline", "public"."City"."heroSubheadline", "public"."City"."uniqueLocalCopy", "public"."City"."metaTitle", "public"."City"."metaDescription", "public"."City"."ogImage", "public"."City"."createdAt", "public"."City"."updatedAt" FROM "public"."City" WHERE ("public"."City"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query COMMIT
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query COMMIT
+prisma:query COMMIT
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Industry"."id", "public"."Industry"."name", "public"."Industry"."slug", "public"."Industry"."overview", "public"."Industry"."commonProblems", "public"."Industry"."useCases", "public"."Industry"."kpis", "public"."Industry"."dataSources", "public"."Industry"."dashboardEmbedCode", "public"."Industry"."metaTitle", "public"."Industry"."metaDescription", "public"."Industry"."ogImage", "public"."Industry"."createdAt", "public"."Industry"."updatedAt" FROM "public"."Industry" WHERE ("public"."Industry"."slug" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query SELECT "public"."_ServiceCities"."A", "public"."_ServiceCities"."B" FROM "public"."_ServiceCities" WHERE "public"."_ServiceCities"."A" IN ($1)
+Error occurred prerendering page "/industries/continuous-improvement". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: Objects are not valid as a React child (found: object with keys {group, metrics}). If you meant to render a collection of children, use an array instead.
+    at ignore-listed frames {
+  digest: '3262370240'
+}
+Export encountered an error on /industries/[slug]/page: /industries/continuous-improvement, exiting the build.
+prisma:query SELECT "public"."_ServiceCities"."A", "public"."_ServiceCities"."B" FROM "public"."_ServiceCities" WHERE "public"."_ServiceCities"."A" IN ($1)
+⨯ Next.js build worker exited with code: 1 and signal: null

@@ -14,7 +14,7 @@ export default async function AdminServicesPage() {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold text-black tracking-tight">Services</h1>
-                    <p className="text-black/70 mt-1">Manage the core services offered by ROAR DATA.</p>
+                    <p className="text-black/70 mt-1">Manage the core services offered by Roar Data.</p>
                 </div>
                 <Link
                     href="/admin/services/new"

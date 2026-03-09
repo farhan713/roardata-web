@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createInsight, updateInsight, deleteInsight } from '../actions';
 import { Loader, Save, Trash2 } from 'lucide-react';
+import SeoMetadataFields from '@/components/admin/SeoMetadataFields';
 
 export default function InsightForm({
     initialData,
@@ -107,24 +108,7 @@ export default function InsightForm({
                 <p className="text-xs text-black/50">Must be valid JSON array of objects: <code>{`[{"type": "p", "content": "..."}]`}</code></p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-border">
-                <div className="space-y-2">
-                    <label className="text-sm font-medium text-black/60">SEO Meta Title</label>
-                    <input
-                        name="metaTitle"
-                        defaultValue={initialData?.metaTitle}
-                        className="w-full px-4 py-2 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors text-sm"
-                    />
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-medium text-black/60">SEO Meta Description</label>
-                    <input
-                        name="metaDescription"
-                        defaultValue={initialData?.metaDescription}
-                        className="w-full px-4 py-2 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors text-sm"
-                    />
-                </div>
-            </div>
+            <SeoMetadataFields initialData={initialData} />
 
             <div className="flex items-center justify-between pt-6 border-t border-border">
                 {isEditing ? (

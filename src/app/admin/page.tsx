@@ -6,7 +6,7 @@ export default function AdminDashboardPage() {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold text-black tracking-tight">Dashboard</h1>
-                    <p className="text-black/70 mt-1">Welcome to the ROAR DATA content management system.</p>
+                    <p className="text-black/70 mt-1">Welcome to the Roar Data content management system.</p>
                 </div>
             </div>
 

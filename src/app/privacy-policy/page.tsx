@@ -4,8 +4,8 @@ import PageContainer from '@/components/PageContainer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy | ROAR DATA',
-    description: 'ROAR DATA Privacy Policy. Read how we collect, use, and protect your data.',
+    title: 'Privacy Policy | Roar Data',
+    description: 'Roar Data Privacy Policy. Read how we collect, use, and protect your data.',
 }
 
 export default function PrivacyPolicyPage() {
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
 
                 <div className="max-w-3xl mx-auto prose prose-slate dark:prose-invert">
                     <p className="lead">
-                        At ROAR DATA, we are committed to protecting your privacy and ensuring the security of your personal and business information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you visit our website or engage our consulting services.
+                        At Roar Data, we are committed to protecting your privacy and ensuring the security of your personal and business information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you visit our website or engage our consulting services.
                     </p>
 
                     <h2>1. Information We Collect</h2>

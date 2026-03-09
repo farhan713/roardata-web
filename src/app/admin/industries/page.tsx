@@ -14,7 +14,7 @@ export default async function AdminIndustriesPage() {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold text-black tracking-tight">Industries</h1>
-                    <p className="text-black/70 mt-1">Manage the business sectors ROAR DATA specializes in.</p>
+                    <p className="text-black/70 mt-1">Manage the business sectors Roar Data specializes in.</p>
                 </div>
                 <Link
                     href="/admin/industries/new"

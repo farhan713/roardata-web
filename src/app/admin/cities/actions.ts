@@ -2,6 +2,7 @@
 
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
+import { extractSeoFields, extractLocalBusinessFields } from '@/lib/seo-helper';
 
 export async function createCity(data: FormData) {
   try {
@@ -12,6 +13,8 @@ export async function createCity(data: FormData) {
         heroHeadline: data.get('heroHeadline') as string,
         heroSubheadline: data.get('heroSubheadline') as string,
         uniqueLocalCopy: data.get('uniqueLocalCopy') as string,
+        ...extractSeoFields(data),
+        ...extractLocalBusinessFields(data),
       }
     });
     revalidatePath('/admin/cities');
@@ -32,6 +35,8 @@ export async function updateCity(id: string, data: FormData) {
         heroHeadline: data.get('heroHeadline') as string,
         heroSubheadline: data.get('heroSubheadline') as string,
         uniqueLocalCopy: data.get('uniqueLocalCopy') as string,
+        ...extractSeoFields(data),
+        ...extractLocalBusinessFields(data),
       }
     });
     revalidatePath('/admin/cities');

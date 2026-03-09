@@ -20,20 +20,41 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params
-    const caseStudy = await prisma.caseStudy.findUnique({ where: { slug } })
+    const caseStudy: any = await prisma.caseStudy.findUnique({ where: { slug } })
 
     if (!caseStudy) return {}
 
     return {
         title: caseStudy.metaTitle || `${caseStudy.title} | Case Study`,
         description: caseStudy.metaDescription,
+        alternates: {
+            canonical: caseStudy.canonicalUrl || `https://roardata.com.au/case-studies/${caseStudy.slug}`,
+        },
+        robots: caseStudy.robotsMeta || 'index, follow',
+        openGraph: {
+            title: caseStudy.ogTitle || caseStudy.metaTitle || `${caseStudy.title} | Case Study`,
+            description: caseStudy.ogDescription || caseStudy.metaDescription,
+            images: caseStudy.ogImage ? [
+                {
+                    url: caseStudy.ogImage,
+                    alt: caseStudy.socialImageAlt || caseStudy.mainImageAlt || caseStudy.title,
+                }
+            ] : undefined,
+            type: 'article',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: caseStudy.twitterTitle || caseStudy.ogTitle || caseStudy.metaTitle || `${caseStudy.title} | Case Study`,
+            description: caseStudy.twitterDescription || caseStudy.ogDescription || caseStudy.metaDescription,
+            images: caseStudy.twitterImage || caseStudy.ogImage ? [caseStudy.twitterImage || caseStudy.ogImage!] : undefined,
+        }
     }
 }
 
 export default async function CaseStudyPage({ params }: PageProps) {
     const { slug } = await params
 
-    const caseStudy = await prisma.caseStudy.findUnique({
+    const caseStudy: any = await prisma.caseStudy.findUnique({
         where: { slug },
         include: {
             servicesUsed: true,
@@ -47,15 +68,23 @@ export default async function CaseStudyPage({ params }: PageProps) {
     }
 
     let outcomeMetrics = []
-    let bodySections = []
+
+    // The bodySections are now fully HTML across the database
+    const bodySectionsHtml = caseStudy.bodySections || '';
 
     try {
         outcomeMetrics = JSON.parse(caseStudy.outcomeMetrics || '[]')
-        bodySections = JSON.parse(caseStudy.bodySections || '[]')
     } catch (e) { }
 
     return (
         <>
+            {caseStudy.structuredData && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: caseStudy.structuredData }}
+                />
+            )}
+
             <HeroSection
                 headline={caseStudy.title}
                 subheadline="Real outcomes, driven by clean architecture and robust Power BI implementations."
@@ -109,10 +138,11 @@ export default async function CaseStudyPage({ params }: PageProps) {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-3 prose prose-slate dark:prose-invert max-w-none text-lg">
-                        {bodySections.map((block: any, i: number) => (
-                            <p key={i}>{block.content}</p>
-                        ))}
+                    <div className="lg:col-span-3 min-w-0">
+                        <div
+                            className="prose prose-slate dark:prose-invert max-w-none text-lg break-words overflow-hidden"
+                            dangerouslySetInnerHTML={{ __html: bodySectionsHtml }}
+                        />
 
                         <div className="mt-20 not-prose">
                             <CtaModule

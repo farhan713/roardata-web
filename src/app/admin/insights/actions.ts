@@ -2,6 +2,7 @@
 
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
+import { extractSeoFields } from '@/lib/seo-helper';
 
 export async function createInsight(data: FormData) {
   try {
@@ -11,8 +12,7 @@ export async function createInsight(data: FormData) {
         slug: data.get('slug') as string,
         summary: data.get('summary') as string,
         body: data.get('body') as string,
-        metaTitle: data.get('metaTitle') as string,
-        metaDescription: data.get('metaDescription') as string,
+        ...extractSeoFields(data),
       }
     });
     revalidatePath('/admin/insights');
@@ -32,8 +32,7 @@ export async function updateInsight(id: string, data: FormData) {
         slug: data.get('slug') as string,
         summary: data.get('summary') as string,
         body: data.get('body') as string,
-        metaTitle: data.get('metaTitle') as string,
-        metaDescription: data.get('metaDescription') as string,
+        ...extractSeoFields(data),
       }
     });
     revalidatePath('/admin/insights');

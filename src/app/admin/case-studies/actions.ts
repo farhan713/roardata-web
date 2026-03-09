@@ -2,6 +2,7 @@
 
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
+import { extractSeoFields } from '@/lib/seo-helper';
 
 export async function createCaseStudy(data: FormData) {
   try {
@@ -13,6 +14,7 @@ export async function createCaseStudy(data: FormData) {
         bodySections: data.get('bodySections') as string || '[]',
         industryId: (data.get('industryId') as string) || null,
         cities: data.get('cityId') ? { connect: { id: data.get('cityId') as string } } : undefined,
+        ...extractSeoFields(data),
       }
     });
     revalidatePath('/admin/case-studies');
@@ -34,6 +36,7 @@ export async function updateCaseStudy(id: string, data: FormData) {
         bodySections: data.get('bodySections') as string || '[]',
         industryId: (data.get('industryId') as string) || null,
         cities: data.get('cityId') ? { set: [{ id: data.get('cityId') as string }] } : { set: [] },
+        ...extractSeoFields(data),
       }
     });
     revalidatePath('/admin/case-studies');

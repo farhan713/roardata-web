@@ -54,7 +54,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     <Link href="/admin" className="flex items-center gap-3">
                         <Image
                             src="/roarlogo.png"
-                            alt="ROAR DATA Logo"
+                            alt="Roar Data Logo"
                             width={300}
                             height={80}
                             className="object-contain h-16 w-auto"
@@ -102,7 +102,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                         <div className="p-4 border-b border-border flex justify-between items-center bg-white">
                             <Image
                                 src="/roarlogo.png"
-                                alt="ROAR DATA Logo"
+                                alt="Roar Data Logo"
                                 width={240}
                                 height={64}
                                 className="object-contain h-12 w-auto"
@@ -153,7 +153,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                         </button>
                         <Image
                             src="/roarlogo.png"
-                            alt="ROAR DATA Logo"
+                            alt="Roar Data Logo"
                             width={240}
                             height={64}
                             className="object-contain h-12 w-auto"

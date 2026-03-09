@@ -1,0 +1,1788 @@
+[
+  {
+    "exit_code": 0,
+    "node_version": "22.14.0",
+    "versioning": {
+      "type": "git",
+      "url": "https://github.com/urmilGroot/national_transafe_backend.git",
+      "revision": "05ee5618ff7014b3d11758ad51d44c2d3f56a92d",
+      "comment": "changes in bills\n",
+      "unstaged": true,
+      "branch": "main",
+      "remotes": [
+        "origin"
+      ],
+      "remote": "origin",
+      "branch_exists_on_remote": true,
+      "ahead": false,
+      "next_rev": null,
+      "prev_rev": "1174bcfdb51510affa723ce47accfeee8c44c8e9",
+      "update_time": "2026-02-28T06:44:51.614Z",
+      "repo_path": "/root/national_transafe_backend"
+    },
+    "version": "1.0.0",
+    "unstable_restarts": 0,
+    "restart_time": 0,
+    "created_at": 1749729828888,
+    "axm_dynamic": {},
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "http": true,
+        "runtime": true,
+        "eventLoop": true,
+        "network": false,
+        "v8": true
+      },
+      "standalone": false,
+      "module_conf": {},
+      "apm": {
+        "version": "6.0.1",
+        "type": "node"
+      },
+      "module_name": "nationalTransafe8080",
+      "module_version": "5.4.3"
+    },
+    "axm_monitor": {
+      "Used Heap Size": {
+        "value": "43.62",
+        "type": "internal/v8/heap/used",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Heap Usage": {
+        "value": 87.28,
+        "type": "internal/v8/heap/usage",
+        "unit": "%",
+        "historic": true
+      },
+      "Heap Size": {
+        "value": "49.98",
+        "type": "internal/v8/heap/total",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Event Loop Latency p95": {
+        "value": "1.44",
+        "type": "internal/libuv/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "Event Loop Latency": {
+        "value": "0.40",
+        "type": "internal/libuv/latency/p50",
+        "unit": "ms",
+        "historic": true
+      },
+      "Active handles": {
+        "value": 15,
+        "type": "internal/libuv/handles",
+        "historic": true
+      },
+      "Active requests": {
+        "value": 0,
+        "type": "internal/libuv/requests",
+        "historic": true
+      },
+      "HTTP": {
+        "value": 0,
+        "type": "internal/http/builtin/reqs",
+        "unit": "req/min",
+        "historic": true
+      },
+      "HTTP P95 Latency": {
+        "value": 33.79999999999998,
+        "type": "internal/http/builtin/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "HTTP Mean Latency": {
+        "value": 7,
+        "type": "internal/http/builtin/latency/p50",
+        "unit": "ms",
+        "historic": true
+      }
+    },
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "pm_uptime": 1772261091032,
+    "status": "online",
+    "unique_id": "e5b71984-b509-4fc5-8834-758e4418ace4",
+    "PM2_HOME": "/root/.pm2",
+    "PM2_USAGE": "CLI",
+    "OLDPWD": "/root",
+    "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+    "SSH_TTY": "/dev/pts/0",
+    "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "SSH_CLIENT": "122.179.173.180 60475 22",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "XDG_SESSION_ID": "204",
+    "NVM_CD_FLAGS": "",
+    "SHLVL": "1",
+    "USER": "root",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "TERM": "xterm-256color",
+    "XDG_SESSION_CLASS": "user",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "NVM_DIR": "/root/.nvm",
+    "SSH_CONNECTION": "122.179.173.180 60475 147.93.105.187 22",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+    "LANG": "C.UTF-8",
+    "HOME": "/root",
+    "PNPM_HOME": "/root/.local/share/pnpm",
+    "XDG_SESSION_TYPE": "tty",
+    "LOGNAME": "root",
+    "PWD": "/root/national_transafe_backend",
+    "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+    "SHELL": "/bin/bash",
+    "NODE_APP_INSTANCE": 0,
+    "vizion_running": false,
+    "km_link": false,
+    "pm_pid_path": "/root/.pm2/pids/nationalTransafe8080-0.pid",
+    "pm_err_log_path": "/root/.pm2/logs/nationalTransafe8080-error.log",
+    "pm_out_log_path": "/root/.pm2/logs/nationalTransafe8080-out.log",
+    "exec_mode": "fork_mode",
+    "exec_interpreter": "node",
+    "pm_cwd": "/root/national_transafe_backend",
+    "pm_exec_path": "/root/national_transafe_backend/server.js",
+    "node_args": [],
+    "name": "nationalTransafe8080",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "unique_id": "e5b71984-b509-4fc5-8834-758e4418ace4",
+      "nationalTransafe8080": {},
+      "PM2_HOME": "/root/.pm2",
+      "PM2_USAGE": "CLI",
+      "OLDPWD": "/root",
+      "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+      "SSH_TTY": "/dev/pts/0",
+      "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "SSH_CLIENT": "122.179.173.180 60475 22",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "XDG_SESSION_ID": "204",
+      "NVM_CD_FLAGS": "",
+      "SHLVL": "1",
+      "USER": "root",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "TERM": "xterm-256color",
+      "XDG_SESSION_CLASS": "user",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "NVM_DIR": "/root/.nvm",
+      "SSH_CONNECTION": "122.179.173.180 60475 147.93.105.187 22",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+      "LANG": "C.UTF-8",
+      "HOME": "/root",
+      "PNPM_HOME": "/root/.local/share/pnpm",
+      "XDG_SESSION_TYPE": "tty",
+      "LOGNAME": "root",
+      "PWD": "/root/national_transafe_backend",
+      "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+      "SHELL": "/bin/bash"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100
+  },
+  {
+    "exit_code": 0,
+    "node_version": "22.14.0",
+    "versioning": {
+      "type": "git",
+      "url": "https://github.com/urmilGroot/medicos_world_server.git",
+      "revision": "4ac598ad2908e51eb5eb2f914676384f7898c23a",
+      "comment": "made changes in student details module\n",
+      "unstaged": true,
+      "branch": "main",
+      "remotes": [
+        "origin"
+      ],
+      "remote": "origin",
+      "branch_exists_on_remote": true,
+      "ahead": false,
+      "next_rev": null,
+      "prev_rev": "d324e6f75b7d964a170597a2116b18a7aa4a3c2f",
+      "update_time": "2026-02-28T06:44:51.702Z",
+      "repo_path": "/root/medicos_world_server"
+    },
+    "version": "0.0.1",
+    "unstable_restarts": 0,
+    "restart_time": 0,
+    "created_at": 1749016295146,
+    "axm_dynamic": {},
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "http": true,
+        "runtime": true,
+        "eventLoop": true,
+        "network": false,
+        "v8": true
+      },
+      "standalone": false,
+      "module_conf": {},
+      "apm": {
+        "version": "6.0.1",
+        "type": "node"
+      },
+      "module_name": "medicosWorld5000",
+      "module_version": "5.4.3"
+    },
+    "axm_monitor": {
+      "Used Heap Size": {
+        "value": "34.30",
+        "type": "internal/v8/heap/used",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Heap Usage": {
+        "value": 87.65,
+        "type": "internal/v8/heap/usage",
+        "unit": "%",
+        "historic": true
+      },
+      "Heap Size": {
+        "value": "39.13",
+        "type": "internal/v8/heap/total",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Event Loop Latency p95": {
+        "value": "1.15",
+        "type": "internal/libuv/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "Event Loop Latency": {
+        "value": "0.27",
+        "type": "internal/libuv/latency/p50",
+        "unit": "ms",
+        "historic": true
+      },
+      "Active handles": {
+        "value": 4,
+        "type": "internal/libuv/handles",
+        "historic": true
+      },
+      "Active requests": {
+        "value": 0,
+        "type": "internal/libuv/requests",
+        "historic": true
+      },
+      "HTTP": {
+        "value": 0,
+        "type": "internal/http/builtin/reqs",
+        "unit": "req/min",
+        "historic": true
+      },
+      "HTTP P95 Latency": {
+        "value": 28,
+        "type": "internal/http/builtin/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "HTTP Mean Latency": {
+        "value": 1,
+        "type": "internal/http/builtin/latency/p50",
+        "unit": "ms",
+        "historic": true
+      }
+    },
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "pm_uptime": 1772261091034,
+    "status": "online",
+    "unique_id": "cffa348a-8307-4792-b623-53f4d6d9c164",
+    "PM2_HOME": "/root/.pm2",
+    "PM2_USAGE": "CLI",
+    "OLDPWD": "/root/medicos_world_server/src",
+    "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+    "SSH_TTY": "/dev/pts/0",
+    "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "SSH_CLIENT": "122.179.173.180 60475 22",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "XDG_SESSION_ID": "204",
+    "NVM_CD_FLAGS": "",
+    "SHLVL": "1",
+    "USER": "root",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "TERM": "xterm-256color",
+    "XDG_SESSION_CLASS": "user",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "NVM_DIR": "/root/.nvm",
+    "SSH_CONNECTION": "122.179.173.180 60475 147.93.105.187 22",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+    "LANG": "C.UTF-8",
+    "HOME": "/root",
+    "PNPM_HOME": "/root/.local/share/pnpm",
+    "XDG_SESSION_TYPE": "tty",
+    "LOGNAME": "root",
+    "PWD": "/root/medicos_world_server",
+    "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+    "SHELL": "/bin/bash",
+    "NODE_APP_INSTANCE": 0,
+    "vizion_running": false,
+    "km_link": false,
+    "pm_pid_path": "/root/.pm2/pids/medicosWorld5000-1.pid",
+    "pm_err_log_path": "/root/.pm2/logs/medicosWorld5000-error.log",
+    "pm_out_log_path": "/root/.pm2/logs/medicosWorld5000-out.log",
+    "exec_mode": "fork_mode",
+    "exec_interpreter": "node",
+    "pm_cwd": "/root/medicos_world_server",
+    "source_map_support": true,
+    "pm_exec_path": "/root/medicos_world_server/dist/main.js",
+    "node_args": [],
+    "name": "medicosWorld5000",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "unique_id": "cffa348a-8307-4792-b623-53f4d6d9c164",
+      "medicosWorld5000": {},
+      "PM2_HOME": "/root/.pm2",
+      "PM2_USAGE": "CLI",
+      "OLDPWD": "/root/medicos_world_server/src",
+      "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+      "SSH_TTY": "/dev/pts/0",
+      "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "SSH_CLIENT": "122.179.173.180 60475 22",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "XDG_SESSION_ID": "204",
+      "NVM_CD_FLAGS": "",
+      "SHLVL": "1",
+      "USER": "root",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "TERM": "xterm-256color",
+      "XDG_SESSION_CLASS": "user",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "NVM_DIR": "/root/.nvm",
+      "SSH_CONNECTION": "122.179.173.180 60475 147.93.105.187 22",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+      "LANG": "C.UTF-8",
+      "HOME": "/root",
+      "PNPM_HOME": "/root/.local/share/pnpm",
+      "XDG_SESSION_TYPE": "tty",
+      "LOGNAME": "root",
+      "PWD": "/root/medicos_world_server",
+      "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+      "SHELL": "/bin/bash"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100
+  },
+  {
+    "kill_retry_time": 100,
+    "windowsHide": true,
+    "username": "root",
+    "treekill": true,
+    "automation": true,
+    "pmx": true,
+    "instance_var": "NODE_APP_INSTANCE",
+    "watch": false,
+    "autorestart": true,
+    "autostart": true,
+    "vizion": true,
+    "merge_logs": true,
+    "env": {
+      "SHELL": "/bin/bash",
+      "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+      "PWD": "/root/amayra-crystal-server",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "PNPM_HOME": "/root/.local/share/pnpm",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+      "SSH_CONNECTION": "122.164.17.146 62158 147.93.105.187 22",
+      "NVM_DIR": "/root/.nvm",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "SHLVL": "1",
+      "NVM_CD_FLAGS": "",
+      "XDG_SESSION_ID": "7149",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "122.164.17.146 62158 22",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+      "OLDPWD": "/root",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "amayra7000": {},
+      "unique_id": "11bc435d-c0fe-4469-8382-c219fe6d38ac"
+    },
+    "namespace": "default",
+    "filter_env": [],
+    "name": "amayra7000",
+    "node_args": [],
+    "pm_exec_path": "/root/amayra-crystal-server/src/index.js",
+    "pm_cwd": "/root/amayra-crystal-server",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/amayra7000-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/amayra7000-error.log",
+    "pm_pid_path": "/root/.pm2/pids/amayra7000-2.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+    "PWD": "/root/amayra-crystal-server",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "PNPM_HOME": "/root/.local/share/pnpm",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+    "SSH_CONNECTION": "122.164.17.146 62158 147.93.105.187 22",
+    "NVM_DIR": "/root/.nvm",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "SHLVL": "1",
+    "NVM_CD_FLAGS": "",
+    "XDG_SESSION_ID": "7149",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "122.164.17.146 62158 22",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+    "OLDPWD": "/root",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "11bc435d-c0fe-4469-8382-c219fe6d38ac",
+    "status": "online",
+    "pm_uptime": 1772261091047,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Used Heap Size": {
+        "value": "34.10",
+        "type": "internal/v8/heap/used",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Heap Usage": {
+        "value": 86.9,
+        "type": "internal/v8/heap/usage",
+        "unit": "%",
+        "historic": true
+      },
+      "Heap Size": {
+        "value": "39.24",
+        "type": "internal/v8/heap/total",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Event Loop Latency p95": {
+        "value": "1.35",
+        "type": "internal/libuv/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "Event Loop Latency": {
+        "value": "0.34",
+        "type": "internal/libuv/latency/p50",
+        "unit": "ms",
+        "historic": true
+      },
+      "Active handles": {
+        "value": 4,
+        "type": "internal/libuv/handles",
+        "historic": true
+      },
+      "Active requests": {
+        "value": 0,
+        "type": "internal/libuv/requests",
+        "historic": true
+      },
+      "HTTP": {
+        "value": 0,
+        "type": "internal/http/builtin/reqs",
+        "unit": "req/min",
+        "historic": true
+      },
+      "HTTP P95 Latency": {
+        "value": 89,
+        "type": "internal/http/builtin/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "HTTP Mean Latency": {
+        "value": 7,
+        "type": "internal/http/builtin/latency/p50",
+        "unit": "ms",
+        "historic": true
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "http": true,
+        "runtime": true,
+        "eventLoop": true,
+        "network": false,
+        "v8": true
+      },
+      "standalone": false,
+      "module_conf": {},
+      "apm": {
+        "version": "6.0.1",
+        "type": "node"
+      },
+      "module_name": "amayra7000",
+      "module_version": "5.4.3"
+    },
+    "axm_dynamic": {},
+    "created_at": 1758180183857,
+    "restart_time": 0,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "versioning": {
+      "type": "git",
+      "url": "https://github.com/urmilGroot/amayra-crystal-server.git",
+      "revision": "dd68b4599e5f13110526b0dfe9f8aafc43e3c0db",
+      "comment": "changed status code\n",
+      "unstaged": true,
+      "branch": "main",
+      "remotes": [
+        "origin"
+      ],
+      "remote": "origin",
+      "branch_exists_on_remote": true,
+      "ahead": false,
+      "next_rev": null,
+      "prev_rev": "9cf9b778ffebf6bad69e6a970acaad9cfeaf5bf1",
+      "update_time": "2026-02-28T06:44:51.836Z",
+      "repo_path": "/root/amayra-crystal-server"
+    },
+    "node_version": "22.14.0",
+    "exit_code": 0
+  },
+  {
+    "kill_retry_time": 100,
+    "windowsHide": true,
+    "username": "root",
+    "treekill": true,
+    "automation": true,
+    "pmx": true,
+    "instance_var": "NODE_APP_INSTANCE",
+    "watch": false,
+    "autorestart": true,
+    "autostart": true,
+    "vizion": true,
+    "merge_logs": true,
+    "env": {
+      "SHELL": "/bin/bash",
+      "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+      "PWD": "/root/creators-cube-server",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "PNPM_HOME": "/root/.local/share/pnpm",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+      "SSH_CONNECTION": "103.250.137.170 16169 147.93.105.187 22",
+      "NVM_DIR": "/root/.nvm",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "SHLVL": "1",
+      "NVM_CD_FLAGS": "",
+      "XDG_SESSION_ID": "18838",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "103.250.137.170 16169 22",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+      "SSH_TTY": "/dev/pts/0",
+      "OLDPWD": "/root",
+      "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "creatorsCube8000": {},
+      "unique_id": "279a23d9-381b-47a8-8ce3-9f70f2330385"
+    },
+    "args": [
+      "start"
+    ],
+    "namespace": "default",
+    "filter_env": [],
+    "name": "creatorsCube8000",
+    "node_args": [],
+    "pm_exec_path": "/root/.nvm/versions/node/v22.14.0/bin/npm",
+    "pm_cwd": "/root/creators-cube-server",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/creatorsCube8000-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/creatorsCube8000-error.log",
+    "pm_pid_path": "/root/.pm2/pids/creatorsCube8000-3.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+    "PWD": "/root/creators-cube-server",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "PNPM_HOME": "/root/.local/share/pnpm",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+    "SSH_CONNECTION": "103.250.137.170 16169 147.93.105.187 22",
+    "NVM_DIR": "/root/.nvm",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "SHLVL": "1",
+    "NVM_CD_FLAGS": "",
+    "XDG_SESSION_ID": "18838",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "103.250.137.170 16169 22",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+    "SSH_TTY": "/dev/pts/0",
+    "OLDPWD": "/root",
+    "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "279a23d9-381b-47a8-8ce3-9f70f2330385",
+    "status": "online",
+    "pm_uptime": 1772261091060,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Used Heap Size": {
+        "value": "10.61",
+        "type": "internal/v8/heap/used",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Heap Usage": {
+        "value": 78.42,
+        "type": "internal/v8/heap/usage",
+        "unit": "%",
+        "historic": true
+      },
+      "Heap Size": {
+        "value": "13.53",
+        "type": "internal/v8/heap/total",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Event Loop Latency p95": {
+        "value": "1.18",
+        "type": "internal/libuv/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "Event Loop Latency": {
+        "value": "0.32",
+        "type": "internal/libuv/latency/p50",
+        "unit": "ms",
+        "historic": true
+      },
+      "Active handles": {
+        "value": 5,
+        "type": "internal/libuv/handles",
+        "historic": true
+      },
+      "Active requests": {
+        "value": 0,
+        "type": "internal/libuv/requests",
+        "historic": true
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "http": true,
+        "runtime": true,
+        "eventLoop": true,
+        "network": false,
+        "v8": true
+      },
+      "standalone": false,
+      "module_conf": {},
+      "apm": {
+        "version": "6.0.1",
+        "type": "node"
+      },
+      "module_name": "creatorsCube8000",
+      "module_version": "5.4.3"
+    },
+    "axm_dynamic": {},
+    "created_at": 1754890630868,
+    "restart_time": 0,
+    "unstable_restarts": 0,
+    "version": "0.40.1",
+    "versioning": {
+      "type": "git",
+      "url": "https://github.com/nvm-sh/nvm.git",
+      "revision": "179d45050be0a71fd57591b0ed8aedf9b177ba10",
+      "comment": "v0.40.1\n",
+      "unstaged": false,
+      "branch": "HEAD",
+      "remotes": [
+        "origin"
+      ],
+      "remote": "origin",
+      "branch_exists_on_remote": true,
+      "ahead": true,
+      "next_rev": null,
+      "prev_rev": null,
+      "update_time": "2026-02-28T06:44:52.060Z",
+      "tags": [
+        "v0.40.1"
+      ],
+      "repo_path": "/root/.nvm"
+    },
+    "node_version": "22.14.0",
+    "exit_code": 0
+  },
+  {
+    "exit_code": 0,
+    "node_version": "22.14.0",
+    "versioning": {
+      "type": "git",
+      "url": "https://github.com/urmilGroot/three60-backend.git",
+      "revision": "d56ccfd58e0db1e80ea9113227c30b1a9dd1da14",
+      "comment": "Merge pull request #10 from urmilGroot/dev_khushali\n\nproduct banner changes limit 8 to 12",
+      "unstaged": true,
+      "branch": "main",
+      "remotes": [
+        "origin"
+      ],
+      "remote": "origin",
+      "branch_exists_on_remote": true,
+      "ahead": false,
+      "next_rev": null,
+      "prev_rev": "8680624f4f45cc0f73422aeb7855537f443d0366",
+      "update_time": "2026-02-28T06:44:51.836Z",
+      "repo_path": "/root/three60-backend"
+    },
+    "version": "1.0.0",
+    "unstable_restarts": 0,
+    "restart_time": 0,
+    "created_at": 1768220454737,
+    "axm_dynamic": {},
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "http": true,
+        "runtime": true,
+        "eventLoop": true,
+        "network": false,
+        "v8": true
+      },
+      "standalone": false,
+      "module_conf": {},
+      "apm": {
+        "version": "6.0.1",
+        "type": "node"
+      },
+      "module_name": "three604000",
+      "module_version": "5.4.3"
+    },
+    "axm_monitor": {
+      "Used Heap Size": {
+        "value": "36.26",
+        "type": "internal/v8/heap/used",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Heap Usage": {
+        "value": 90.93,
+        "type": "internal/v8/heap/usage",
+        "unit": "%",
+        "historic": true
+      },
+      "Heap Size": {
+        "value": "39.88",
+        "type": "internal/v8/heap/total",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Event Loop Latency p95": {
+        "value": "1.35",
+        "type": "internal/libuv/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "Event Loop Latency": {
+        "value": "0.36",
+        "type": "internal/libuv/latency/p50",
+        "unit": "ms",
+        "historic": true
+      },
+      "Active handles": {
+        "value": 4,
+        "type": "internal/libuv/handles",
+        "historic": true
+      },
+      "Active requests": {
+        "value": 0,
+        "type": "internal/libuv/requests",
+        "historic": true
+      },
+      "HTTP": {
+        "value": 0,
+        "type": "internal/http/builtin/reqs",
+        "unit": "req/min",
+        "historic": true
+      },
+      "HTTP P95 Latency": {
+        "value": 2016.55,
+        "type": "internal/http/builtin/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "HTTP Mean Latency": {
+        "value": 716.5,
+        "type": "internal/http/builtin/latency/p50",
+        "unit": "ms",
+        "historic": true
+      }
+    },
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "pm_uptime": 1772261091177,
+    "status": "online",
+    "unique_id": "f5b63701-4ec5-4f90-946b-9afc1a2f7f4e",
+    "PM2_HOME": "/root/.pm2",
+    "PM2_USAGE": "CLI",
+    "OLDPWD": "/root",
+    "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+    "SSH_TTY": "/dev/pts/0",
+    "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "SSH_CLIENT": "122.177.94.133 61511 22",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "XDG_SESSION_ID": "49310",
+    "NVM_CD_FLAGS": "",
+    "SHLVL": "1",
+    "USER": "root",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "TERM": "xterm-256color",
+    "XDG_SESSION_CLASS": "user",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "NVM_DIR": "/root/.nvm",
+    "SSH_CONNECTION": "122.177.94.133 61511 147.93.105.187 22",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+    "LANG": "C.UTF-8",
+    "HOME": "/root",
+    "PNPM_HOME": "/root/.local/share/pnpm",
+    "XDG_SESSION_TYPE": "tty",
+    "LOGNAME": "root",
+    "PWD": "/root/three60-backend",
+    "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+    "SHELL": "/bin/bash",
+    "NODE_APP_INSTANCE": 0,
+    "vizion_running": false,
+    "km_link": false,
+    "pm_pid_path": "/root/.pm2/pids/three604000-4.pid",
+    "pm_err_log_path": "/root/.pm2/logs/three604000-error.log",
+    "pm_out_log_path": "/root/.pm2/logs/three604000-out.log",
+    "exec_mode": "fork_mode",
+    "exec_interpreter": "node",
+    "pm_cwd": "/root/three60-backend",
+    "pm_exec_path": "/root/three60-backend/app.js",
+    "node_args": [],
+    "name": "three604000",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "unique_id": "f5b63701-4ec5-4f90-946b-9afc1a2f7f4e",
+      "three604000": {},
+      "PM2_HOME": "/root/.pm2",
+      "PM2_USAGE": "CLI",
+      "OLDPWD": "/root",
+      "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+      "SSH_TTY": "/dev/pts/0",
+      "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "SSH_CLIENT": "122.177.94.133 61511 22",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "XDG_SESSION_ID": "49310",
+      "NVM_CD_FLAGS": "",
+      "SHLVL": "1",
+      "USER": "root",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "TERM": "xterm-256color",
+      "XDG_SESSION_CLASS": "user",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "NVM_DIR": "/root/.nvm",
+      "SSH_CONNECTION": "122.177.94.133 61511 147.93.105.187 22",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+      "LANG": "C.UTF-8",
+      "HOME": "/root",
+      "PNPM_HOME": "/root/.local/share/pnpm",
+      "XDG_SESSION_TYPE": "tty",
+      "LOGNAME": "root",
+      "PWD": "/root/three60-backend",
+      "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+      "SHELL": "/bin/bash"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100
+  },
+  {
+    "kill_retry_time": 100,
+    "windowsHide": true,
+    "username": "root",
+    "treekill": true,
+    "automation": true,
+    "pmx": true,
+    "instance_var": "NODE_APP_INSTANCE",
+    "watch": false,
+    "autorestart": true,
+    "autostart": true,
+    "vizion": true,
+    "merge_logs": true,
+    "env": {
+      "SHELL": "/bin/bash",
+      "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+      "PWD": "/root/shrim-seeds-backend",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "PNPM_HOME": "/root/.local/share/pnpm",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+      "SSH_CONNECTION": "223.177.118.21 49284 147.93.105.187 22",
+      "NVM_DIR": "/root/.nvm",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "SHLVL": "1",
+      "NVM_CD_FLAGS": "",
+      "XDG_SESSION_ID": "36796",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "223.177.118.21 49284 22",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+      "OLDPWD": "/root",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "shrim-seeds-backend": {},
+      "unique_id": "994dcc82-db47-43b9-9f04-5d32db0d2917"
+    },
+    "namespace": "default",
+    "filter_env": [],
+    "name": "shrim-seeds-backend",
+    "node_args": [],
+    "pm_exec_path": "/root/shrim-seeds-backend/app.js",
+    "pm_cwd": "/root/shrim-seeds-backend",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/shrim-seeds-backend-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/shrim-seeds-backend-error.log",
+    "pm_pid_path": "/root/.pm2/pids/shrim-seeds-backend-5.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+    "PWD": "/root/shrim-seeds-backend",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "PNPM_HOME": "/root/.local/share/pnpm",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+    "SSH_CONNECTION": "223.177.118.21 49284 147.93.105.187 22",
+    "NVM_DIR": "/root/.nvm",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "SHLVL": "1",
+    "NVM_CD_FLAGS": "",
+    "XDG_SESSION_ID": "36796",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "223.177.118.21 49284 22",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+    "OLDPWD": "/root",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "994dcc82-db47-43b9-9f04-5d32db0d2917",
+    "status": "online",
+    "pm_uptime": 1772474596363,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {},
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "http": true,
+        "runtime": true,
+        "eventLoop": true,
+        "network": false,
+        "v8": true
+      },
+      "standalone": false,
+      "module_conf": {},
+      "apm": {
+        "version": "6.0.1",
+        "type": "node"
+      },
+      "module_name": "shrim-seeds-backend",
+      "module_version": "5.4.3"
+    },
+    "axm_dynamic": {},
+    "created_at": 1762419870108,
+    "restart_time": 481785,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "node_version": "22.14.0",
+    "versioning": {
+      "type": "git",
+      "url": "https://github.com/urmilGroot/shrim-seeds-backend.git",
+      "revision": "839ed193107a18d3f155ea8b7b73e8842fbea91a",
+      "comment": "product_changes\n",
+      "unstaged": true,
+      "branch": "main",
+      "remotes": [
+        "origin"
+      ],
+      "remote": "origin",
+      "branch_exists_on_remote": true,
+      "ahead": false,
+      "next_rev": null,
+      "prev_rev": "2a1e54f225684faef6c3c42dcbb558de4d501bbf",
+      "update_time": "2026-03-02T18:03:16.371Z",
+      "repo_path": "/root/shrim-seeds-backend"
+    },
+    "exit_code": 1
+  },
+  {
+    "exit_code": 0,
+    "versioning": {
+      "type": "git",
+      "url": "https://github.com/urmilGroot/hrms_server.git",
+      "revision": "78e4b1dca5703cb2774f2fe9858477e524b4c987",
+      "comment": "commit\n",
+      "unstaged": true,
+      "branch": "main",
+      "remotes": [
+        "origin"
+      ],
+      "remote": "origin",
+      "branch_exists_on_remote": true,
+      "ahead": false,
+      "next_rev": null,
+      "prev_rev": "7a21f86c050acc13910bf1773297f364c37235ca",
+      "update_time": "2026-02-28T06:44:52.025Z",
+      "repo_path": "/root/hrms_server"
+    },
+    "node_version": "22.14.0",
+    "version": "1.0.0",
+    "unstable_restarts": 0,
+    "restart_time": 0,
+    "created_at": 1765256958143,
+    "axm_dynamic": {},
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "http": true,
+        "runtime": true,
+        "eventLoop": true,
+        "network": false,
+        "v8": true
+      },
+      "standalone": false,
+      "module_conf": {},
+      "apm": {
+        "version": "6.0.1",
+        "type": "node"
+      },
+      "module_name": "hrms_server",
+      "module_version": "5.4.3"
+    },
+    "axm_monitor": {
+      "Used Heap Size": {
+        "value": "77.32",
+        "type": "internal/v8/heap/used",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Heap Usage": {
+        "value": 88.64,
+        "type": "internal/v8/heap/usage",
+        "unit": "%",
+        "historic": true
+      },
+      "Heap Size": {
+        "value": "87.23",
+        "type": "internal/v8/heap/total",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Event Loop Latency p95": {
+        "value": "1.09",
+        "type": "internal/libuv/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "Event Loop Latency": {
+        "value": "0.30",
+        "type": "internal/libuv/latency/p50",
+        "unit": "ms",
+        "historic": true
+      },
+      "Active handles": {
+        "value": 4,
+        "type": "internal/libuv/handles",
+        "historic": true
+      },
+      "Active requests": {
+        "value": 0,
+        "type": "internal/libuv/requests",
+        "historic": true
+      },
+      "HTTP": {
+        "value": 0,
+        "type": "internal/http/builtin/reqs",
+        "unit": "req/min",
+        "historic": true
+      },
+      "HTTP P95 Latency": {
+        "value": 40,
+        "type": "internal/http/builtin/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "HTTP Mean Latency": {
+        "value": 2,
+        "type": "internal/http/builtin/latency/p50",
+        "unit": "ms",
+        "historic": true
+      }
+    },
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "pm_uptime": 1772261091234,
+    "status": "online",
+    "unique_id": "110ccb3e-34f0-48e7-9752-9fa8b3ecbaa7",
+    "PM2_HOME": "/root/.pm2",
+    "PM2_USAGE": "CLI",
+    "OLDPWD": "/root",
+    "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+    "SSH_TTY": "/dev/pts/0",
+    "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "SSH_CLIENT": "106.203.218.221 54090 22",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "XDG_SESSION_ID": "39204",
+    "NVM_CD_FLAGS": "",
+    "SHLVL": "1",
+    "USER": "root",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "TERM": "xterm-256color",
+    "XDG_SESSION_CLASS": "user",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "NVM_DIR": "/root/.nvm",
+    "SSH_CONNECTION": "106.203.218.221 54090 147.93.105.187 22",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+    "LANG": "C.UTF-8",
+    "HOME": "/root",
+    "PNPM_HOME": "/root/.local/share/pnpm",
+    "XDG_SESSION_TYPE": "tty",
+    "LOGNAME": "root",
+    "PWD": "/root/hrms_server",
+    "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+    "SHELL": "/bin/bash",
+    "NODE_APP_INSTANCE": 0,
+    "vizion_running": false,
+    "km_link": false,
+    "pm_pid_path": "/root/.pm2/pids/hrms-server-6.pid",
+    "pm_err_log_path": "/root/.pm2/logs/hrms-server-error.log",
+    "pm_out_log_path": "/root/.pm2/logs/hrms-server-out.log",
+    "exec_mode": "fork_mode",
+    "exec_interpreter": "node",
+    "pm_cwd": "/root/hrms_server",
+    "pm_exec_path": "/root/hrms_server/app.js",
+    "node_args": [],
+    "name": "hrms_server",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "unique_id": "110ccb3e-34f0-48e7-9752-9fa8b3ecbaa7",
+      "hrms_server": {},
+      "PM2_HOME": "/root/.pm2",
+      "PM2_USAGE": "CLI",
+      "OLDPWD": "/root",
+      "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+      "SSH_TTY": "/dev/pts/0",
+      "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "SSH_CLIENT": "106.203.218.221 54090 22",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "XDG_SESSION_ID": "39204",
+      "NVM_CD_FLAGS": "",
+      "SHLVL": "1",
+      "USER": "root",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "TERM": "xterm-256color",
+      "XDG_SESSION_CLASS": "user",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "NVM_DIR": "/root/.nvm",
+      "SSH_CONNECTION": "106.203.218.221 54090 147.93.105.187 22",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+      "LANG": "C.UTF-8",
+      "HOME": "/root",
+      "PNPM_HOME": "/root/.local/share/pnpm",
+      "XDG_SESSION_TYPE": "tty",
+      "LOGNAME": "root",
+      "PWD": "/root/hrms_server",
+      "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+      "SHELL": "/bin/bash"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100
+  },
+  {
+    "kill_retry_time": 100,
+    "windowsHide": true,
+    "username": "root",
+    "treekill": true,
+    "automation": true,
+    "pmx": true,
+    "instance_var": "NODE_APP_INSTANCE",
+    "watch": false,
+    "autorestart": true,
+    "autostart": true,
+    "vizion": true,
+    "merge_logs": true,
+    "env": {
+      "SHELL": "/bin/bash",
+      "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+      "PWD": "/root/propvista-server",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "PNPM_HOME": "/root/.local/share/pnpm",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+      "SSH_CONNECTION": "122.175.93.23 52519 147.93.105.187 22",
+      "NVM_DIR": "/root/.nvm",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "SHLVL": "1",
+      "NVM_CD_FLAGS": "",
+      "XDG_SESSION_ID": "53515",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "122.175.93.23 52519 22",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+      "OLDPWD": "/root",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "propvista-backend": {},
+      "unique_id": "4c979461-9f76-4628-81ea-a35c00fb863b"
+    },
+    "namespace": "default",
+    "filter_env": [],
+    "name": "propvista-backend",
+    "node_args": [],
+    "pm_exec_path": "/root/propvista-server/src/server.js",
+    "pm_cwd": "/root/propvista-server",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/propvista-backend-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/propvista-backend-error.log",
+    "pm_pid_path": "/root/.pm2/pids/propvista-backend-7.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "NVM_INC": "/root/.nvm/versions/node/v22.14.0/include/node",
+    "PWD": "/root/propvista-server",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "PNPM_HOME": "/root/.local/share/pnpm",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:",
+    "SSH_CONNECTION": "122.175.93.23 52519 147.93.105.187 22",
+    "NVM_DIR": "/root/.nvm",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "SHLVL": "1",
+    "NVM_CD_FLAGS": "",
+    "XDG_SESSION_ID": "53515",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "122.175.93.23 52519 22",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "PATH": "/root/.local/share/pnpm:/root/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "NVM_BIN": "/root/.nvm/versions/node/v22.14.0/bin",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/root/.nvm/versions/node/v22.14.0/bin/pm2",
+    "OLDPWD": "/root",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "4c979461-9f76-4628-81ea-a35c00fb863b",
+    "status": "online",
+    "pm_uptime": 1772261091235,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Used Heap Size": {
+        "value": "27.02",
+        "type": "internal/v8/heap/used",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Heap Usage": {
+        "value": 90.13,
+        "type": "internal/v8/heap/usage",
+        "unit": "%",
+        "historic": true
+      },
+      "Heap Size": {
+        "value": "29.98",
+        "type": "internal/v8/heap/total",
+        "unit": "MiB",
+        "historic": true
+      },
+      "Event Loop Latency p95": {
+        "value": "1.26",
+        "type": "internal/libuv/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "Event Loop Latency": {
+        "value": "0.27",
+        "type": "internal/libuv/latency/p50",
+        "unit": "ms",
+        "historic": true
+      },
+      "Active handles": {
+        "value": 4,
+        "type": "internal/libuv/handles",
+        "historic": true
+      },
+      "Active requests": {
+        "value": 0,
+        "type": "internal/libuv/requests",
+        "historic": true
+      },
+      "HTTP": {
+        "value": 0,
+        "type": "internal/http/builtin/reqs",
+        "unit": "req/min",
+        "historic": true
+      },
+      "HTTP P95 Latency": {
+        "value": 48,
+        "type": "internal/http/builtin/latency/p95",
+        "unit": "ms",
+        "historic": true
+      },
+      "HTTP Mean Latency": {
+        "value": 6,
+        "type": "internal/http/builtin/latency/p50",
+        "unit": "ms",
+        "historic": true
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "http": true,
+        "runtime": true,
+        "eventLoop": true,
+        "network": false,
+        "v8": true
+      },
+      "standalone": false,
+      "module_conf": {},
+      "apm": {
+        "version": "6.0.1",
+        "type": "node"
+      },
+      "module_name": "propvista-backend",
+      "module_version": "5.4.3"
+    },
+    "axm_dynamic": {},
+    "created_at": 1769175989632,
+    "restart_time": 0,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "versioning": {
+      "type": "git",
+      "url": "https://github.com/urmilGroot/propvista-server.git",
+      "revision": "ca2bc26074f709bb1125736fdffc283ab9544429",
+      "comment": "Merge branch 'main' of https://github.com/urmilGroot/propvista-server\n",
+      "unstaged": true,
+      "branch": "main",
+      "remotes": [
+        "origin"
+      ],
+      "remote": "origin",
+      "branch_exists_on_remote": true,
+      "ahead": true,
+      "next_rev": null,
+      "prev_rev": null,
+      "update_time": "2026-02-28T06:44:52.115Z",
+      "repo_path": "/root/propvista-server"
+    },
+    "node_version": "22.14.0",
+    "exit_code": 0
+  }
+]

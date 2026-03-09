@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createService, updateService, deleteService } from '../actions';
 import { Loader, Save, Trash2 } from 'lucide-react';
+import RichTextEditor from '@/components/RichTextEditor';
+import SeoMetadataFields from '@/components/admin/SeoMetadataFields';
 
 export default function ServiceForm({
     initialData,
@@ -16,6 +18,24 @@ export default function ServiceForm({
     const [isSaving, setIsSaving] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    // Helper to convert legacy JSON into HTML for the Quill editor
+    const getInitialHtml = (body?: string) => {
+        if (!body) return '';
+        if (body.trim().startsWith('[')) {
+            try {
+                const parsed = JSON.parse(body);
+                if (Array.isArray(parsed)) {
+                    return parsed.map((block: any) => `<p>${block.content || ''}</p>`).join('');
+                }
+            } catch (e) {
+                // Return as is if parsing fails
+            }
+        }
+        return body;
+    };
+
+    const [bodySections, setBodySections] = useState(getInitialHtml(initialData?.bodySections));
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -106,16 +126,18 @@ export default function ServiceForm({
             </div>
 
             <div className="space-y-2">
-                <label className="text-sm font-medium text-black/80">Body Sections (JSON Format)</label>
-                <textarea
-                    name="bodySections"
-                    defaultValue={initialData?.bodySections || '[]'}
-                    required
-                    rows={10}
-                    className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
-                />
-                <p className="text-xs text-black/50 mt-1">Must be valid JSON string array of section objects.</p>
+                <label className="text-sm font-medium text-black/80">Full Service Body</label>
+                <input type="hidden" name="bodySections" value={bodySections} />
+                <div className="border border-border rounded-lg bg-white overflow-hidden min-h-[350px]">
+                    <RichTextEditor
+                        value={bodySections}
+                        onChange={setBodySections}
+                        placeholder="Write your service content here. Use the toolbar to add headings, bold text, lists, and colors..."
+                    />
+                </div>
             </div>
+
+            <SeoMetadataFields initialData={initialData} />
 
             <div className="flex items-center justify-between pt-6 border-t border-border">
                 {isEditing ? (

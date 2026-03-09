@@ -78,7 +78,7 @@ export default function Chatbot() {
                                 <MessageSquare size={16} />
                             </div>
                             <div>
-                                <h3 className="font-bold text-sm">ROAR DATA</h3>
+                                <h3 className="font-bold text-sm">Roar Data</h3>
                                 <p className="text-[10px] text-white/70">Power BI Assistant</p>
                             </div>
                         </div>

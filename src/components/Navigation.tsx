@@ -44,7 +44,7 @@ export default function Navigation() {
                     <Link href="/" className="flex items-center group">
                         <Image
                             src="/roarlogo.png"
-                            alt="ROAR DATA Logo"
+                            alt="Roar Data Logo"
                             width={360}
                             height={96}
                             className={cn(

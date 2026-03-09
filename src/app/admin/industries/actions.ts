@@ -2,6 +2,7 @@
 
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
+import { extractSeoFields } from '@/lib/seo-helper';
 
 export async function createIndustry(data: FormData) {
   try {
@@ -15,6 +16,7 @@ export async function createIndustry(data: FormData) {
         kpis: data.get('kpis') as string || '[]',
         dataSources: data.get('dataSources') as string || '[]',
         dashboardEmbedCode: data.get('dashboardEmbedCode') as string || null,
+        ...extractSeoFields(data),
       }
     });
     revalidatePath('/admin/industries');
@@ -38,6 +40,7 @@ export async function updateIndustry(id: string, data: FormData) {
         kpis: data.get('kpis') as string || '[]',
         dataSources: data.get('dataSources') as string || '[]',
         dashboardEmbedCode: data.get('dashboardEmbedCode') as string || null,
+        ...extractSeoFields(data),
       }
     });
     revalidatePath('/admin/industries');

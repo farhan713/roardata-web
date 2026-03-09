@@ -6,8 +6,8 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | ROAR DATA",
-    default: "ROAR DATA - National Organic Power BI Domination",
+    template: "%s | Roar Data",
+    default: "Roar Data - National Organic Power BI Domination",
   },
   description: "Power BI Consulting Specialists in Australia. We build fast, scalable, and intuitive dashboards.",
   metadataBase: new URL("https://roardata.com.au"),
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "ROAR DATA - National Organic Power BI Domination",
+    title: "Roar Data - National Organic Power BI Domination",
     description: "Power BI Consulting Specialists in Australia.",
     url: "https://roardata.com.au",
-    siteName: "ROAR DATA",
+    siteName: "Roar Data",
     locale: "en_AU",
     type: "website",
   },
@@ -40,7 +40,7 @@ export default function RootLayout({
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "ROAR DATA",
+    "name": "Roar Data",
     "url": "https://roardata.com.au",
     "logo": "https://roardata.com.au/logo.png",
     "sameAs": []

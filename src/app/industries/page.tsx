@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import RelatedModules from '@/components/RelatedModules'
 
 export const metadata = {
-    title: "Industry Specific Power BI Solutions | ROAR DATA",
+    title: "Industry Specific Power BI Solutions | Roar Data",
     description: "Explore how we transform data operations across various industries.",
 }
 

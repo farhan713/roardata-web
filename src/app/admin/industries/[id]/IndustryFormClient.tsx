@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createIndustry, updateIndustry, deleteIndustry } from '../actions';
 import { Loader, Save, Trash2 } from 'lucide-react';
+import SeoMetadataFields from '@/components/admin/SeoMetadataFields';
 
 export default function IndustryForm({
     initialData,
@@ -160,6 +161,8 @@ export default function IndustryForm({
                     className="w-full px-4 py-3 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm h-32"
                 />
             </div>
+
+            <SeoMetadataFields initialData={initialData} />
 
             <div className="flex items-center justify-between pt-6 border-t border-border">
                 {isEditing ? (

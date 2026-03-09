@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params
-    let item = null
+    let item: any = null
 
     if (slug.startsWith('power-bi-consultant-')) {
         item = await prisma.city.findUnique({ where: { slug } })
@@ -42,9 +42,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title: item.metaTitle || item.heroHeadline,
         description: item.metaDescription || item.heroSubheadline,
+        alternates: {
+            canonical: item.canonicalUrl || `https://roardata.com.au/${item.slug}`,
+        },
+        robots: item.robotsMeta || 'index, follow',
         openGraph: {
-            title: item.metaTitle || item.heroHeadline,
-            description: item.metaDescription || item.heroSubheadline,
+            title: item.ogTitle || item.metaTitle || item.heroHeadline,
+            description: item.ogDescription || item.metaDescription || item.heroSubheadline,
+            images: item.ogImage ? [
+                {
+                    url: item.ogImage,
+                    alt: item.socialImageAlt || item.mainImageAlt || item.heroHeadline,
+                }
+            ] : undefined,
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: item.twitterTitle || item.ogTitle || item.metaTitle || item.heroHeadline,
+            description: item.twitterDescription || item.ogDescription || item.metaDescription || item.heroSubheadline,
+            images: item.twitterImage || item.ogImage ? [item.twitterImage || item.ogImage!] : undefined,
         }
     }
 }
@@ -122,45 +139,49 @@ export default async function DynamicSlugPage({ params }: PageProps) {
 
     const tocItems = buildTocItems()
 
-    // Pre-parse the bodySections for the Service page
-    let bodySections = []
-    if (!isCityPage && pageData.bodySections) {
-        try {
-            bodySections = JSON.parse(pageData.bodySections)
-        } catch (e) { }
-    }
+    // The bodySections are now fully HTML across the database
+    const bodySectionsHtml = pageData.bodySections || '';
 
     return (
         <>
-            {pageData.className !== undefined && slug === 'power-bi-consulting-australia' && (
-                <SchemaOrg schema={{
-                    "@context": "https://schema.org",
-                    "@type": "Service",
-                    "serviceType": "Power BI Consulting",
-                    "provider": {
-                        "@type": "Organization",
-                        "name": "ROAR DATA"
-                    },
-                    "areaServed": {
-                        "@type": "Country",
-                        "name": "Australia"
-                    }
-                }} />
-            )}
+            {pageData.structuredData ? (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: pageData.structuredData }}
+                />
+            ) : (
+                <>
+                    {pageData.className !== undefined && slug === 'power-bi-consulting-australia' && (
+                        <SchemaOrg schema={{
+                            "@context": "https://schema.org",
+                            "@type": "Service",
+                            "serviceType": "Power BI Consulting",
+                            "provider": {
+                                "@type": "Organization",
+                                "name": "Roar Data"
+                            },
+                            "areaServed": {
+                                "@type": "Country",
+                                "name": "Australia"
+                            }
+                        }} />
+                    )}
 
-            {isCityPage && pageData.cityName === 'Brisbane' && (
-                <SchemaOrg schema={{
-                    "@context": "https://schema.org",
-                    "@type": "LocalBusiness",
-                    "name": "ROAR DATA Brisbane",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressLocality": "Brisbane",
-                        "addressRegion": "QLD",
-                        "addressCountry": "AU"
-                    },
-                    "url": "https://roardata.com.au/power-bi-consultant-brisbane"
-                }} />
+                    {isCityPage && pageData.cityName === 'Brisbane' && (
+                        <SchemaOrg schema={{
+                            "@context": "https://schema.org",
+                            "@type": "LocalBusiness",
+                            "name": "Roar Data Brisbane",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "addressLocality": "Brisbane",
+                                "addressRegion": "QLD",
+                                "addressCountry": "AU"
+                            },
+                            "url": "https://roardata.com.au/power-bi-consultant-brisbane"
+                        }} />
+                    )}
+                </>
             )}
 
             <HeroSection
@@ -177,7 +198,7 @@ export default async function DynamicSlugPage({ params }: PageProps) {
                         <TableOfContents items={tocItems} />
                     </div>
 
-                    <div className="lg:col-span-3 prose prose-slate dark:prose-invert max-w-none prose-headings:scroll-mt-32">
+                    <div className="lg:col-span-3 min-w-0 prose prose-slate dark:prose-invert max-w-none prose-headings:scroll-mt-32 break-words overflow-hidden">
 
                         {/* The Main Content based on Type */}
                         {isCityPage ? (
@@ -214,9 +235,8 @@ export default async function DynamicSlugPage({ params }: PageProps) {
                                         <p className="text-xl">
                                             We embed deeply into your operations, connecting raw SQL pipelines directly into robust DAX semantic models.
                                         </p>
-                                        {bodySections.map((block: any, i: number) => (
-                                            <p key={i}>{block.content}</p>
-                                        ))}
+
+                                        <div dangerouslySetInnerHTML={{ __html: bodySectionsHtml }} className="pt-4" />
 
                                         <h2 id="services">Our Expertise</h2>
                                         <p>From complex data modelling to visually stunning dashboards, we are the industry benchmark.</p>
@@ -239,9 +259,7 @@ export default async function DynamicSlugPage({ params }: PageProps) {
                                 ) : (
                                     <>
                                         <h2 id="overview">Overview</h2>
-                                        {bodySections.map((block: any, i: number) => (
-                                            <p key={i} className="text-lg">{block.content}</p>
-                                        ))}
+                                        <div dangerouslySetInnerHTML={{ __html: bodySectionsHtml }} className="pt-4" />
 
                                         <h2 id="deliverables">What to Expect</h2>
                                         <p>Comprehensive, robust reporting structures tailored to specific analytical requirements.</p>

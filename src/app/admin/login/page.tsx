@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
                         <Lock className="w-8 h-8 text-primary" />
                     </div>
                     <h1 className="text-3xl font-bold text-black mb-2 tracking-tight">
-                        ROAR DATA Admin
+                        Roar Data Admin
                     </h1>
                     <p className="text-black/70">
                         Enter the secure password to manage content

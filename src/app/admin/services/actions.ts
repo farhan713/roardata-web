@@ -2,6 +2,7 @@
 
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
+import { extractSeoFields } from '@/lib/seo-helper';
 
 // SERVICES
 export async function createService(data: FormData) {
@@ -13,6 +14,7 @@ export async function createService(data: FormData) {
         heroHeadline: data.get('heroHeadline') as string,
         heroSubheadline: data.get('heroSubheadline') as string,
         bodySections: data.get('bodySections') as string,
+        ...extractSeoFields(data),
       }
     });
     revalidatePath('/admin/services');
@@ -33,6 +35,7 @@ export async function updateService(id: string, data: FormData) {
         heroHeadline: data.get('heroHeadline') as string,
         heroSubheadline: data.get('heroSubheadline') as string,
         bodySections: data.get('bodySections') as string,
+        ...extractSeoFields(data),
       }
     });
     revalidatePath('/admin/services');

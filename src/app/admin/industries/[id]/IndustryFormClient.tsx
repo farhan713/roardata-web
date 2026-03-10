@@ -10,7 +10,7 @@ export default function IndustryForm({
     initialData,
     isEditing
 }: {
-    initialData: { id?: string; name?: string; slug?: string; overview?: string; commonProblems?: string; useCases?: string; kpis?: string; dataSources?: string; dashboardEmbedCode?: string | null } | null,
+    initialData: { id?: string; name?: string; slug?: string; overview?: string; whoIsItFor?: string; commonProblems?: string; useCases?: string; kpis?: string; dataSources?: string; dashboardEmbedCode?: string | null } | null,
     isEditing: boolean
 }) {
     const router = useRouter();
@@ -87,6 +87,17 @@ export default function IndustryForm({
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
+                    <label className="text-sm font-medium text-black/80">Who This Solution Is For (JSON Array)</label>
+                    <textarea
+                        name="whoIsItFor"
+                        defaultValue={initialData?.whoIsItFor || '[]'}
+                        required
+                        rows={4}
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
+                    />
+                </div>
+
+                <div className="space-y-2">
                     <label className="text-sm font-medium text-black/80">Common Problems (JSON Array)</label>
                     <textarea
                         name="commonProblems"
@@ -96,7 +107,9 @@ export default function IndustryForm({
                         className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                     />
                 </div>
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                     <label className="text-sm font-medium text-black/80">Use Cases (JSON Array)</label>
                     <textarea

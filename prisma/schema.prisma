@@ -91,6 +91,7 @@ model Industry {
   name             String
   slug             String           @unique
   overview         String
+  whoIsItFor       String           @default("[]") // JSON array
   commonProblems   String           // JSON array
   useCases         String           // JSON array
   kpis             String           // JSON array

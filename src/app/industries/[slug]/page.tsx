@@ -73,6 +73,7 @@ export default async function IndustryPage({ params }: PageProps) {
     }
 
     const tocItems = [
+        { id: 'who-is-it-for', title: 'Who This Solution Is For', level: 2 },
         { id: 'common-problems', title: `Common ${industry.name} Reporting Challenges`, level: 2 },
         { id: 'power-bi-use-cases', title: `${industry.name} Analytics Use Cases`, level: 2 },
         { id: 'kpis', title: `Key ${industry.name} KPIs`, level: 2 },
@@ -82,12 +83,14 @@ export default async function IndustryPage({ params }: PageProps) {
     ]
 
     let commonProblems = []
+    let whoIsItFor = []
     let useCases = []
     let kpis = []
     let dataSources = []
 
     try {
         commonProblems = JSON.parse(industry.commonProblems || '[]')
+        whoIsItFor = JSON.parse(industry.whoIsItFor || '[]')
         useCases = JSON.parse(industry.useCases || '[]')
         kpis = JSON.parse(industry.kpis || '[]')
         dataSources = JSON.parse(industry.dataSources || '[]')
@@ -132,6 +135,22 @@ export default async function IndustryPage({ params }: PageProps) {
                     <div className="lg:col-span-3 prose prose-slate dark:prose-invert max-w-none prose-headings:scroll-mt-32">
 
                         {/* Removed the extra Overview H2 as it's repetitive with HeroSection */}
+
+                        <h2 id="who-is-it-for" className="!mb-4" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>Who This Solution Is For</h2>
+                        <div className="h-[2px] bg-slate-400 dark:bg-slate-500 w-3/4 max-w-[350px] mb-8"></div>
+                        {whoIsItFor.length > 0 && (
+                            <div className="mb-12 space-y-5">
+                                {whoIsItFor.map((item: any, i: number) => {
+                                    const text = safeText(item);
+                                    return (
+                                        <div key={i} className="flex items-start gap-4 not-prose">
+                                            <div className="w-[6px] h-[22px] shrink-0 mt-0.5 dark:bg-white" style={{ backgroundColor: 'var(--fallback-textColor, #0f172a)' }} aria-hidden="true"></div>
+                                            <h3 className="text-lg font-semibold m-0 leading-snug" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>{text}</h3>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        )}
 
                         <h2 id="common-problems" className="!mb-4" style={{ color: 'var(--fallback-textColor, #0f172a)' }}>Common {industry.name} Reporting Challenges</h2>
                         <div className="h-[2px] bg-slate-400 dark:bg-slate-500 w-3/4 max-w-[350px] mb-8"></div>

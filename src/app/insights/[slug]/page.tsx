@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!insight) return {}
 
     return {
-        title: insight.metaTitle || `${insight.title} | Insights`,
+        title: insight.metaTitle ? { absolute: insight.metaTitle } : `${insight.title} | Insights`,
         description: insight.metaDescription || insight.summary,
         alternates: {
             canonical: insight.canonicalUrl || `https://roardata.com.au/insights/${insight.slug}`,

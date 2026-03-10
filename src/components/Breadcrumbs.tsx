@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { ChevronRight, Home } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -16,6 +17,8 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ items, className }: BreadcrumbsProps) {
+    const pathname = usePathname()
+
     if (!items || items.length === 0) return null
 
     const breadcrumbSchema = {
@@ -28,12 +31,17 @@ export default function Breadcrumbs({ items, className }: BreadcrumbsProps) {
                 "name": "Home",
                 "item": "https://roardata.com.au/"
             },
-            ...items.map((item, index) => ({
-                "@type": "ListItem",
-                "position": index + 2,
-                "name": item.label,
-                "item": item.href ? `https://roardata.com.au${item.href}` : undefined
-            }))
+            ...items.map((item, index) => {
+                const isLast = index === items.length - 1
+                const itemHref = item.href || (isLast ? pathname : undefined)
+
+                return {
+                    "@type": "ListItem",
+                    "position": index + 2,
+                    "name": item.label,
+                    "item": itemHref ? `https://roardata.com.au${itemHref}` : undefined
+                }
+            })
         ]
     }
 

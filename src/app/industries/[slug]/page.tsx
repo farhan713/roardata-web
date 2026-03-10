@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!industry) return {}
 
     return {
-        title: industry.metaTitle || `Power BI for ${industry.name} | Roar Data`,
+        title: industry.metaTitle ? { absolute: industry.metaTitle } : `Power BI for ${industry.name} | Roar Data`,
         description: industry.metaDescription || industry.overview,
         alternates: {
             canonical: industry.canonicalUrl || `https://roardata.com.au/industries/${industry.slug}`,

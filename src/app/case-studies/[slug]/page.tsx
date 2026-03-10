@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!caseStudy) return {}
 
     return {
-        title: caseStudy.metaTitle || `${caseStudy.title} | Case Study`,
+        title: caseStudy.metaTitle ? { absolute: caseStudy.metaTitle } : `${caseStudy.title} | Case Study`,
         description: caseStudy.metaDescription,
         alternates: {
             canonical: caseStudy.canonicalUrl || `https://roardata.com.au/case-studies/${caseStudy.slug}`,

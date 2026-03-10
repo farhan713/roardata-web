@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!item) return {}
 
     return {
-        title: item.metaTitle || item.heroHeadline,
+        title: item.metaTitle ? { absolute: item.metaTitle } : item.heroHeadline,
         description: item.metaDescription || item.heroSubheadline,
         alternates: {
             canonical: item.canonicalUrl || `https://roardata.com.au/${item.slug}`,

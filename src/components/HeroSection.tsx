@@ -34,7 +34,7 @@ export default function HeroSection({
             </div>
 
             <PageContainer>
-                <div className="mx-auto max-w-4xl text-center">
+                <div className="mx-auto max-w-6xl text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function HeroSection({
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                        className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto whitespace-pre-wrap"
+                        className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 max-w-5xl mx-auto whitespace-pre-wrap"
                     >
                         {subheadline}
                     </motion.p>

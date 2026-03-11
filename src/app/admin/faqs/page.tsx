@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 export default async function AdminFAQsPage() {
     const faqs = await prisma.fAQ.findMany({
         orderBy: { createdAt: 'desc' },
-        include: { services: true, cities: true }
+        include: { services: true, cities: true, industries: true }
     });
 
     return (
@@ -31,9 +31,10 @@ export default async function AdminFAQsPage() {
                     <table className="w-full text-left text-sm text-black/70">
                         <thead className="text-xs uppercase bg-secondary text-black/60 border-b border-border">
                             <tr>
-                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider w-1/2">Question</th>
+                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider w-1/3">Question</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider hidden lg:table-cell">Linked Service</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider hidden lg:table-cell">Linked City</th>
+                                <th scope="col" className="px-6 py-4 font-semibold tracking-wider hidden lg:table-cell">Linked Industry</th>
                                 <th scope="col" className="px-6 py-4 font-semibold tracking-wider text-right">Actions</th>
                             </tr>
                         </thead>
@@ -57,6 +58,13 @@ export default async function AdminFAQsPage() {
                                             </span>
                                         ) : '-'}
                                     </td>
+                                    <td className="px-6 py-4 hidden lg:table-cell">
+                                        {faq.industries && faq.industries.length > 0 ? (
+                                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                                                {faq.industries[0].name}
+                                            </span>
+                                        ) : '-'}
+                                    </td>
                                     <td className="px-6 py-4 text-right">
                                         <div className="flex items-center justify-end gap-3">
                                             <Link
@@ -76,7 +84,7 @@ export default async function AdminFAQsPage() {
                             ))}
                             {faqs.length === 0 && (
                                 <tr>
-                                    <td colSpan={4} className="px-6 py-8 text-center text-black/50">
+                                    <td colSpan={5} className="px-6 py-8 text-center text-black/50">
                                         No FAQs found. Click &apos;Add FAQ&apos; to create one.
                                     </td>
                                 </tr>

@@ -9,11 +9,13 @@ export default function FAQForm({
     initialData,
     services,
     cities,
+    industries,
     isEditing
 }: {
-    initialData: { id?: string; question?: string; answer?: string; serviceId?: string | null; cityId?: string | null } | null,
+    initialData: { id?: string; question?: string; answer?: string; serviceId?: string | null; cityId?: string | null; industryId?: string | null } | null,
     services: { id: string; name: string }[],
     cities: { id: string; cityName: string }[],
+    industries: { id: string; name: string }[],
     isEditing: boolean
 }) {
     const router = useRouter();
@@ -87,9 +89,9 @@ export default function FAQForm({
                 />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-border">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-border">
                 <p className="col-span-full text-sm text-black/60">
-                    Link this FAQ to a specific Service or City page (optional). If unlinked, it will be global.
+                    Link this FAQ to a specific Service, City, or Industry page (optional). If unlinked, it will be global.
                 </p>
 
                 <div className="space-y-2">
@@ -116,6 +118,20 @@ export default function FAQForm({
                         <option value="">-- No City --</option>
                         {cities.map(city => (
                             <option key={city.id} value={city.id}>{city.cityName}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm font-medium text-black/80">Link to Industry</label>
+                    <select
+                        name="industryId"
+                        defaultValue={initialData?.industryId || ''}
+                        className="w-full px-4 py-2.5 bg-white border border-border rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
+                    >
+                        <option value="">-- No Industry --</option>
+                        {industries.map(ind => (
+                            <option key={ind.id} value={ind.id}>{ind.name}</option>
                         ))}
                     </select>
                 </div>

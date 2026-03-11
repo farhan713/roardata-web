@@ -9,11 +9,12 @@ export default async function FAQEditPage({ params }: { params: Promise<{ id: st
     let faq = null;
     let services = [];
     let cities = [];
+    let industries = [];
 
     if (!isNew) {
         const faqData = await prisma.fAQ.findUnique({
             where: { id: id },
-            include: { services: true, cities: true }
+            include: { services: true, cities: true, industries: true }
         });
 
         if (!faqData) {
@@ -23,13 +24,15 @@ export default async function FAQEditPage({ params }: { params: Promise<{ id: st
         faq = {
             ...faqData,
             serviceId: faqData.services[0]?.id || null,
-            cityId: faqData.cities[0]?.id || null
+            cityId: faqData.cities[0]?.id || null,
+            industryId: faqData.industries[0]?.id || null
         };
     }
 
-    // Fetch relations for dropdowns
-    services = await prisma.service.findMany({ select: { id: true, name: true } });
-    cities = await prisma.city.findMany({ select: { id: true, cityName: true } });
+    // Fetch relations for dropdowns and sort alphabetically
+    services = await prisma.service.findMany({ select: { id: true, name: true }, orderBy: { name: 'asc' } });
+    cities = await prisma.city.findMany({ select: { id: true, cityName: true }, orderBy: { cityName: 'asc' } });
+    industries = await prisma.industry.findMany({ select: { id: true, name: true }, orderBy: { name: 'asc' } });
 
     return (
         <div className="max-w-4xl">
@@ -43,7 +46,7 @@ export default async function FAQEditPage({ params }: { params: Promise<{ id: st
             </div>
 
             <div className="bg-white border border-border rounded-2xl p-6 md:p-8 shadow-sm">
-                <FAQForm initialData={faq} services={services} cities={cities} isEditing={!isNew} />
+                <FAQForm initialData={faq} services={services} cities={cities} industries={industries} isEditing={!isNew} />
             </div>
         </div>
     );

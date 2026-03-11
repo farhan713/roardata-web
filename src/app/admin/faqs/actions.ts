@@ -11,6 +11,7 @@ export async function createFAQ(data: FormData) {
         answer: data.get('answer') as string,
         services: data.get('serviceId') ? { connect: { id: data.get('serviceId') as string } } : undefined,
         cities: data.get('cityId') ? { connect: { id: data.get('cityId') as string } } : undefined,
+        industries: data.get('industryId') ? { connect: { id: data.get('industryId') as string } } : undefined,
       }
     });
     revalidatePath('/admin/faqs');
@@ -30,6 +31,7 @@ export async function updateFAQ(id: string, data: FormData) {
         answer: data.get('answer') as string,
         services: data.get('serviceId') ? { set: [{ id: data.get('serviceId') as string }] } : { set: [] },
         cities: data.get('cityId') ? { set: [{ id: data.get('cityId') as string }] } : { set: [] },
+        industries: data.get('industryId') ? { set: [{ id: data.get('industryId') as string }] } : { set: [] },
       }
     });
     revalidatePath('/admin/faqs');

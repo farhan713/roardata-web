@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import { Metadata } from 'next'
 import { getIndustryIcon } from '@/lib/icons'
 
 export const revalidate = 3600;
@@ -7,12 +8,24 @@ import PageContainer from '@/components/PageContainer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import RelatedModules from '@/components/RelatedModules'
 
-export const metadata = {
-    title: "Industry Specific Power BI Solutions | Roar Data",
-    description: "Explore how we transform data operations across various industries.",
-    alternates: {
-        canonical: '/industries',
-    },
+export async function generateMetadata(): Promise<Metadata> {
+    const seo = await prisma.pageSeo.findUnique({ where: { pageKey: 'industries' } });
+    return {
+        title: seo?.metaTitle || "Industry Specific Power BI Solutions | Roar Data",
+        description: seo?.metaDescription || "Explore how we transform data operations across various industries.",
+        alternates: { canonical: seo?.canonicalUrl || '/industries' },
+        openGraph: {
+            title: seo?.ogTitle || seo?.metaTitle || "Industry Specific Power BI Solutions | Roar Data",
+            description: seo?.ogDescription || seo?.metaDescription || "Explore how we transform data operations across various industries.",
+            images: seo?.ogImage ? [{ url: seo.ogImage }] : undefined,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: seo?.twitterTitle || seo?.ogTitle || seo?.metaTitle || "Industry Specific Power BI Solutions | Roar Data",
+            description: seo?.twitterDescription || seo?.ogDescription || seo?.metaDescription || "Explore how we transform data operations across various industries.",
+            images: seo?.twitterImage || seo?.ogImage ? [seo?.twitterImage || seo?.ogImage!] : undefined,
+        },
+    };
 }
 
 export default async function IndustriesIndex() {

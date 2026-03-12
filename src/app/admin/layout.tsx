@@ -14,7 +14,8 @@ import {
     MessageCircleQuestion,
     LogOut,
     Menu,
-    X
+    X,
+    Settings
 } from 'lucide-react';
 import { logoutAdmin } from './actions';
 
@@ -43,6 +44,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         { name: 'Case Studies', href: '/admin/case-studies', icon: Trophy },
         { name: 'Insights', href: '/admin/insights', icon: FileText },
         { name: 'FAQs', href: '/admin/faqs', icon: MessageCircleQuestion },
+        { name: 'Site Settings', href: '/admin/site-settings', icon: Settings },
     ];
 
     return (

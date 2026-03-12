@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import { Metadata } from 'next'
 
 export const revalidate = 3600;
 import HeroSection from '@/components/HeroSection'
@@ -6,12 +7,24 @@ import PageContainer from '@/components/PageContainer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 
-export const metadata = {
-    title: "Power BI Insights & Articles | Roar Data",
-    description: "Expert tips, DAX strategies, and Power BI thought leadership.",
-    alternates: {
-        canonical: '/insights',
-    },
+export async function generateMetadata(): Promise<Metadata> {
+    const seo = await prisma.pageSeo.findUnique({ where: { pageKey: 'insights' } });
+    return {
+        title: seo?.metaTitle || "Power BI Insights & Articles | Roar Data",
+        description: seo?.metaDescription || "Expert tips, DAX strategies, and Power BI thought leadership.",
+        alternates: { canonical: seo?.canonicalUrl || '/insights' },
+        openGraph: {
+            title: seo?.ogTitle || seo?.metaTitle || "Power BI Insights & Articles | Roar Data",
+            description: seo?.ogDescription || seo?.metaDescription || "Expert tips, DAX strategies, and Power BI thought leadership.",
+            images: seo?.ogImage ? [{ url: seo.ogImage }] : undefined,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: seo?.twitterTitle || seo?.ogTitle || seo?.metaTitle || "Power BI Insights & Articles | Roar Data",
+            description: seo?.twitterDescription || seo?.ogDescription || seo?.metaDescription || "Expert tips, DAX strategies, and Power BI thought leadership.",
+            images: seo?.twitterImage || seo?.ogImage ? [seo?.twitterImage || seo?.ogImage!] : undefined,
+        },
+    };
 }
 
 export default async function InsightsIndex() {

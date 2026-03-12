@@ -233,3 +233,19 @@ model ChatbotLead {
   updatedAt        DateTime         @updatedAt
 }
 
+model PageSeo {
+  id                 String   @id @default(cuid())
+  pageKey            String   @unique
+  metaTitle          String?
+  metaDescription    String?
+  canonicalUrl       String?
+  robotsMeta         String?  @default("index, follow")
+  ogTitle            String?
+  ogDescription      String?
+  ogImage            String?
+  twitterTitle       String?
+  twitterDescription String?
+  twitterImage       String?
+  updatedAt          DateTime @updatedAt
+}
+

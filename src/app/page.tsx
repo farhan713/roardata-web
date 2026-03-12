@@ -1,13 +1,26 @@
 import React from 'react'
 import { prisma } from '@/lib/prisma'
+import { Metadata } from 'next'
 
-export const metadata = {
-  title: "Roar Data - National Organic Power BI Domination",
-  description: "Power BI Consulting Specialists in Australia. We build fast, scalable, and intuitive dashboards.",
-  alternates: {
-    canonical: "/",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await prisma.pageSeo.findUnique({ where: { pageKey: 'home' } });
+  return {
+    title: seo?.metaTitle || "Roar Data - National Organic Power BI Domination",
+    description: seo?.metaDescription || "Power BI Consulting Specialists in Australia. We build fast, scalable, and intuitive dashboards.",
+    alternates: { canonical: seo?.canonicalUrl || "/" },
+    openGraph: {
+      title: seo?.ogTitle || seo?.metaTitle || "Roar Data - National Organic Power BI Domination",
+      description: seo?.ogDescription || seo?.metaDescription || "Power BI Consulting Specialists in Australia.",
+      images: seo?.ogImage ? [{ url: seo.ogImage }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo?.twitterTitle || seo?.ogTitle || seo?.metaTitle || "Roar Data - National Organic Power BI Domination",
+      description: seo?.twitterDescription || seo?.ogDescription || seo?.metaDescription || "Power BI Consulting Specialists in Australia.",
+      images: seo?.twitterImage || seo?.ogImage ? [seo?.twitterImage || seo?.ogImage!] : undefined,
+    },
+  };
+}
 
 export const revalidate = 3600; // Cache for 1 hour on Vercel CDN
 import HomeHero from '@/components/HomeHero'

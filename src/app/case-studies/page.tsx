@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import { Metadata } from 'next'
 
 export const revalidate = 3600;
 import HeroSection from '@/components/HeroSection'
@@ -6,12 +7,24 @@ import PageContainer from '@/components/PageContainer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 
-export const metadata = {
-    title: "Case Studies & Proven Results | Roar Data",
-    description: "Read our case studies to see real-world Power BI transformations.",
-    alternates: {
-        canonical: '/case-studies',
-    },
+export async function generateMetadata(): Promise<Metadata> {
+    const seo = await prisma.pageSeo.findUnique({ where: { pageKey: 'case-studies' } });
+    return {
+        title: seo?.metaTitle || "Case Studies & Proven Results | Roar Data",
+        description: seo?.metaDescription || "Read our case studies to see real-world Power BI transformations.",
+        alternates: { canonical: seo?.canonicalUrl || '/case-studies' },
+        openGraph: {
+            title: seo?.ogTitle || seo?.metaTitle || "Case Studies & Proven Results | Roar Data",
+            description: seo?.ogDescription || seo?.metaDescription || "Read our case studies to see real-world Power BI transformations.",
+            images: seo?.ogImage ? [{ url: seo.ogImage }] : undefined,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: seo?.twitterTitle || seo?.ogTitle || seo?.metaTitle || "Case Studies & Proven Results | Roar Data",
+            description: seo?.twitterDescription || seo?.ogDescription || seo?.metaDescription || "Read our case studies to see real-world Power BI transformations.",
+            images: seo?.twitterImage || seo?.ogImage ? [seo?.twitterImage || seo?.ogImage!] : undefined,
+        },
+    };
 }
 
 export default async function CaseStudiesIndex() {

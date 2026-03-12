@@ -10,6 +10,9 @@ import RelatedModules from '@/components/RelatedModules'
 export const metadata = {
     title: "Industry Specific Power BI Solutions | Roar Data",
     description: "Explore how we transform data operations across various industries.",
+    alternates: {
+        canonical: '/industries',
+    },
 }
 
 export default async function IndustriesIndex() {

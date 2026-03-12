@@ -1,6 +1,14 @@
 import React from 'react'
 import { prisma } from '@/lib/prisma'
 
+export const metadata = {
+  title: "Roar Data - National Organic Power BI Domination",
+  description: "Power BI Consulting Specialists in Australia. We build fast, scalable, and intuitive dashboards.",
+  alternates: {
+    canonical: "/",
+  },
+};
+
 export const revalidate = 3600; // Cache for 1 hour on Vercel CDN
 import HomeHero from '@/components/HomeHero'
 import ClientLogos from '@/components/ClientLogos'

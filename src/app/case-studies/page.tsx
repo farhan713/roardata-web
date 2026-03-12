@@ -9,6 +9,9 @@ import Link from 'next/link'
 export const metadata = {
     title: "Case Studies & Proven Results | Roar Data",
     description: "Read our case studies to see real-world Power BI transformations.",
+    alternates: {
+        canonical: '/case-studies',
+    },
 }
 
 export default async function CaseStudiesIndex() {

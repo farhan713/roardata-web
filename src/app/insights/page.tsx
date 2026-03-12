@@ -9,6 +9,9 @@ import Link from 'next/link'
 export const metadata = {
     title: "Power BI Insights & Articles | Roar Data",
     description: "Expert tips, DAX strategies, and Power BI thought leadership.",
+    alternates: {
+        canonical: '/insights',
+    },
 }
 
 export default async function InsightsIndex() {

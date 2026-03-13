@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         title: seo?.metaTitle || "Power BI Insights & Articles | Roar Data",
         description: seo?.metaDescription || "Expert tips, DAX strategies, and Power BI thought leadership.",
-        alternates: { canonical: seo?.canonicalUrl || '/insights' },
+        alternates: { canonical: seo?.canonicalUrl ? seo.canonicalUrl.replace(/\/$/, '') : '/insights' },
         openGraph: {
             title: seo?.ogTitle || seo?.metaTitle || "Power BI Insights & Articles | Roar Data",
             description: seo?.ogDescription || seo?.metaDescription || "Expert tips, DAX strategies, and Power BI thought leadership.",

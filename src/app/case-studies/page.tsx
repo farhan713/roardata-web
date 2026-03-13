@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         title: seo?.metaTitle || "Case Studies & Proven Results | Roar Data",
         description: seo?.metaDescription || "Read our case studies to see real-world Power BI transformations.",
-        alternates: { canonical: seo?.canonicalUrl || '/case-studies' },
+        alternates: { canonical: seo?.canonicalUrl ? seo.canonicalUrl.replace(/\/$/, '') : '/case-studies' },
         openGraph: {
             title: seo?.ogTitle || seo?.metaTitle || "Case Studies & Proven Results | Roar Data",
             description: seo?.ogDescription || seo?.metaDescription || "Read our case studies to see real-world Power BI transformations.",

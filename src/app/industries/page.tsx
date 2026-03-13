@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         title: seo?.metaTitle || "Industry Specific Power BI Solutions | Roar Data",
         description: seo?.metaDescription || "Explore how we transform data operations across various industries.",
-        alternates: { canonical: seo?.canonicalUrl || '/industries' },
+        alternates: { canonical: seo?.canonicalUrl ? seo.canonicalUrl.replace(/\/$/, '') : '/industries' },
         openGraph: {
             title: seo?.ogTitle || seo?.metaTitle || "Industry Specific Power BI Solutions | Roar Data",
             description: seo?.ogDescription || seo?.metaDescription || "Explore how we transform data operations across various industries.",

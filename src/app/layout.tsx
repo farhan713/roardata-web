@@ -5,7 +5,10 @@ import Navigation from "@/components/Navigation";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Roar Data - National Organic Power BI Domination",
+  title: {
+    default: "Roar Data - National Organic Power BI Domination",
+    template: "%s | Roar Data",
+  },
   description: "Power BI Consulting Specialists in Australia. We build fast, scalable, and intuitive dashboards.",
   metadataBase: new URL("https://roardata.com.au"),
   alternates: {

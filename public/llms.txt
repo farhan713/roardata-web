@@ -1,0 +1,56 @@
+# Roar Data
+
+> Roar Data is an Australian Power BI consulting firm specialising in building fast, scalable, and intuitive business intelligence dashboards. Established online since 2005 and under new ownership, we embed deeply into enterprise operations to deliver robust analytics solutions.
+
+## Services
+
+- [Power BI Consulting Australia](https://roardata.com.au/power-bi-consulting-australia): End-to-end Power BI consulting services across Australia, from data modelling to dashboard visualisation.
+- [Power BI Dashboard Development](https://roardata.com.au/power-bi-dashboard-development): Custom dashboard design and development with stunning, intuitive reports.
+- [Power BI Data Modelling](https://roardata.com.au/power-bi-data-modelling): Robust star schema data models and DAX semantic layers for self-service analytics.
+- [Power BI Training](https://roardata.com.au/power-bi-training): Professional Power BI training for internal teams and stakeholders.
+
+## Industries
+
+We provide tailored Power BI analytics solutions across multiple industries:
+
+- [Healthcare](https://roardata.com.au/industries/healthcare)
+- [Financial Services](https://roardata.com.au/industries/financial-services)
+- [Construction](https://roardata.com.au/industries/construction)
+- [Government & Public Sector](https://roardata.com.au/industries/government-and-public-sector)
+- [Manufacturing](https://roardata.com.au/industries/manufacturing)
+- [Retail](https://roardata.com.au/industries/retail)
+- [Mining & Natural Resources](https://roardata.com.au/industries/mining-and-natural-resources)
+- [Logistics & Supply Chain](https://roardata.com.au/industries/logistics-and-supply-chain)
+- [Education](https://roardata.com.au/industries/education)
+- [Real Estate](https://roardata.com.au/industries/real-estate)
+- [Technology](https://roardata.com.au/industries/technology)
+
+## Locations
+
+Power BI consulting available across major Australian cities:
+
+- [Sydney](https://roardata.com.au/power-bi-consultant-sydney)
+- [Melbourne](https://roardata.com.au/power-bi-consultant-melbourne)
+- [Brisbane](https://roardata.com.au/power-bi-consultant-brisbane)
+- [Perth](https://roardata.com.au/power-bi-consultant-perth)
+- [Adelaide](https://roardata.com.au/power-bi-consultant-adelaide)
+- [Canberra](https://roardata.com.au/power-bi-consultant-canberra)
+
+## Resources
+
+- [Insights & Articles](https://roardata.com.au/insights): Expert tips, DAX strategies, and Power BI thought leadership.
+- [Case Studies](https://roardata.com.au/case-studies): Real-world Power BI transformation case studies with proven results.
+
+## About
+
+Roar Data provides Australian-based certified data experts with no vendor lock-in and clean, future-proof architecture. We focus on measurable business outcomes through:
+
+- Data Visualisation: Stunning, intuitive reports
+- Data Modelling: Robust star schemas
+- Performance: Lightning-fast DAX
+- Advisory: Strategic data and technology consulting
+
+## Contact
+
+- Website: https://roardata.com.au
+- Email: contact@roardata.com.au

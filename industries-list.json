@@ -1,0 +1,217 @@
+[
+  {
+    "id": "cmma9xaf90001l3042gbc9zrv",
+    "name": "Private Equity Portfolio Performance Analytics",
+    "slug": "private-equity-portfolio-performance"
+  },
+  {
+    "id": "cmlxr687h0001wgck0k7p4mj8",
+    "name": "Agriculture",
+    "slug": "agriculture"
+  },
+  {
+    "id": "cmlv14wfj0006wgg4gv8fot5c",
+    "name": "Healthcare Analytics",
+    "slug": "healthcare"
+  },
+  {
+    "id": "cmlxr6bjx0006wgckywekgzzc",
+    "name": "Energy & Utilities Data Analytics & Infrastructure Intelligence",
+    "slug": "energy-and-utilities"
+  },
+  {
+    "id": "cmmaa35ge0000jq041pu43fk4",
+    "name": "CFO Performance & Financial Intelligence",
+    "slug": "cfo"
+  },
+  {
+    "id": "cmlxr6lxj000mwgckv86i7exf",
+    "name": "Real Estate Analytics",
+    "slug": "real-estate"
+  },
+  {
+    "id": "cmma9onrb0001i604gdaiov4w",
+    "name": "Commercial Real Estate & Property Portfolio Analytics",
+    "slug": "commercial"
+  },
+  {
+    "id": "cmlxr6cuc0008wgckedui6l4g",
+    "name": "Event Management & Event Performance Analytics",
+    "slug": "event-management"
+  },
+  {
+    "id": "cmlxr6fcw000cwgck1x4v6rph",
+    "name": "Hospitality Analytics",
+    "slug": "hospitality"
+  },
+  {
+    "id": "cmlxr6o5r000pwgckgnagd3h6",
+    "name": "Technology Analytics",
+    "slug": "technology"
+  },
+  {
+    "id": "cmlxr6kjj000kwgckyyqj83tf",
+    "name": "Pharmaceutical Analytics",
+    "slug": "pharmaceuticals"
+  },
+  {
+    "id": "cmlxr67cb0000wgck37chc24a",
+    "name": "Aerospace & Defence",
+    "slug": "aerospace-and-defence"
+  },
+  {
+    "id": "cmlxr6ozq000qwgckrz94mieo",
+    "name": "Telecommunications Analytics",
+    "slug": "telecommunications"
+  },
+  {
+    "id": "cmma9zbvv0002l304x7zlhc2q",
+    "name": "CEO Performance & Executive Decision Intelligence",
+    "slug": "ceo"
+  },
+  {
+    "id": "cmlxr6qkx000swgck89sqwrch",
+    "name": "Travel & Tourism Analytics",
+    "slug": "travel-and-tourism"
+  },
+  {
+    "id": "cmlxr6dgl0009wgckqyjjckw4",
+    "name": "Financial Services Analytics & Banking Intelligence",
+    "slug": "financial-services"
+  },
+  {
+    "id": "cmlxr69120002wgckg3wyk3cc",
+    "name": "Automotive",
+    "slug": "automotive"
+  },
+  {
+    "id": "cmmm7sseb0016jmaz6c0qqmbq",
+    "name": "COO Operational Performance & Business Operations Intelligence",
+    "slug": "coo"
+  },
+  {
+    "id": "cmmm8189s001ejmazrc7l12uz",
+    "name": "CIO Data Strategy & Enterprise Technology Intelligence",
+    "slug": "cio"
+  },
+  {
+    "id": "cmmm8a69e001mjmazpl7036c0",
+    "name": "CMO Marketing Performance & Revenue Intelligence",
+    "slug": "cmo"
+  },
+  {
+    "id": "cmlxr6ne8000owgckqyku62pf",
+    "name": "Sports & Recreation Analytics",
+    "slug": "sports-and-recreation"
+  },
+  {
+    "id": "cmlxr6eqm000bwgck0akonrkt",
+    "name": "Government & Public Sector Analytics",
+    "slug": "government-and-public-sector"
+  },
+  {
+    "id": "cmmm8ifu5001ujmaznnko02cj",
+    "name": "CTO Technology Strategy & Engineering Intelligence",
+    "slug": "cto"
+  },
+  {
+    "id": "cmma9s4230001l5045d32plfn",
+    "name": "Engineering Project & Design Analytics",
+    "slug": "engineering"
+  },
+  {
+    "id": "cmma9lqgj0000l504nvy43k4j",
+    "name": "Continuous Improvement & Operational Excellence Analytics",
+    "slug": "continuous-improvement"
+  },
+  {
+    "id": "cmlxr69nu0003wgckwkm8xqbt",
+    "name": "Banking",
+    "slug": "banking"
+  },
+  {
+    "id": "cmlxr6e4b000awgckkfxclf60",
+    "name": "FMCG & Consumer Goods Analytics",
+    "slug": "fmcg-fast-moving-consumer-goods"
+  },
+  {
+    "id": "cmlxr6gmu000ewgckayiamg1a",
+    "name": "Legal Services Analytics",
+    "slug": "legal-services"
+  },
+  {
+    "id": "cmlxr6ijq000hwgckylwngivr",
+    "name": "Media & Entertainment Analytics",
+    "slug": "media-and-entertainment"
+  },
+  {
+    "id": "cmlxr6ab50004wgckly16dk24",
+    "name": "Construction Project & Portfolio Analytics",
+    "slug": "construction"
+  },
+  {
+    "id": "cmlxr6h9j000fwgckq2saosac",
+    "name": "Logistics & Supply Chain Analytics",
+    "slug": "logistics-and-supply-chain"
+  },
+  {
+    "id": "cmlxr6axr0005wgckt346y4u5",
+    "name": "Education Data Analytics & Institutional Performance Intelligence",
+    "slug": "education"
+  },
+  {
+    "id": "cmlxr6ptg000rwgck2jexe203",
+    "name": "Transportation Analytics",
+    "slug": "transportation"
+  },
+  {
+    "id": "cmlxr6g0o000dwgck1qt3kwh4",
+    "name": "Insurance Analytics",
+    "slug": "insurance"
+  },
+  {
+    "id": "cmlxr6mjt000nwgckk6tuishg",
+    "name": "Retail Analytics",
+    "slug": "retail"
+  },
+  {
+    "id": "cmlxr6l6b000lwgck9ereq2bg",
+    "name": "Professional Services Analytics",
+    "slug": "professional-services"
+  },
+  {
+    "id": "cmma9uq1j0000l304m35uc5b6",
+    "name": "Aged Care",
+    "slug": "aged-care"
+  },
+  {
+    "id": "cmlv14x240007wgg4gt3fbv8p",
+    "name": "Finance & Financial Performance Analytics",
+    "slug": "finance"
+  },
+  {
+    "id": "cmlxr6jax000iwgckh6142xt4",
+    "name": "Mining & Natural Resources Analytics",
+    "slug": "mining-and-natural-resources"
+  },
+  {
+    "id": "cmlxr6c6n0007wgckmlourg9k",
+    "name": "Environmental Services & Waste Management Analytics",
+    "slug": "environmental-services-and-waste-management"
+  },
+  {
+    "id": "cmlxr6jxa000jwgckf2e0qkjy",
+    "name": "Nonprofit & NGO Analytics",
+    "slug": "nonprofit-and-ngos"
+  },
+  {
+    "id": "cmma9fksh0000i604axigkmxs",
+    "name": "Human Resources Analytics",
+    "slug": "human-resources"
+  },
+  {
+    "id": "cmlxr6hvn000gwgck5glzrite",
+    "name": "Manufacturing Analytics",
+    "slug": "manufacturing"
+  }
+]

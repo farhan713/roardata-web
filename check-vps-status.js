@@ -1,27 +1,41 @@
 const { NodeSSH } = require('node-ssh');
+
 const ssh = new NodeSSH();
 
-async function run() {
+async function checkVPS() {
     try {
-        await ssh.connect({ host: '147.93.105.187', username: 'root', password: 'gr00tVPS@123' });
+        await ssh.connect({
+            host: '147.93.105.187',
+            username: 'root',
+            password: 'gr00tVPS@123'
+        });
+        
+        console.log('--- Checking VPS Deployment Status ---\n');
 
-        console.log('Checking PM2 Status:');
-        const pm2Res = await ssh.execCommand('. ~/.nvm/nvm.sh && pm2 list');
-        console.log(pm2Res.stdout);
+        // Check git status in /var/www/roardata (or wherever it's deployed)
+        const dirsToCheck = ['/var/www/roardata', '/var/www/roardata/roardata-web'];
+        
+        for (const dir of dirsToCheck) {
+            console.log(`Checking directory: ${dir}`);
+            const isGit = await ssh.execCommand(`cd ${dir} && git status`);
+            if (!isGit.stderr.includes('not a git repository')) {
+                const log = await ssh.execCommand(`cd ${dir} && git log -n 1`);
+                console.log('Latest Commit:\n', log.stdout || log.stderr);
+            } else {
+                console.log('Not a git repository or directory does not exist.');
+            }
+            console.log('---');
+        }
 
-        console.log('\nChecking Memory:');
-        const freeRes = await ssh.execCommand('free -m');
-        console.log(freeRes.stdout);
-
-        // Also check dmesg for OOM killer
-        const oomRes = await ssh.execCommand('dmesg -T | grep -i "out of memory" | tail -n 5');
-        console.log('\nOOM Killer logs:');
-        console.log(oomRes.stdout);
+        // Check PM2 status to see what's running
+        console.log('\nPM2 Status:');
+        const pm2Status = await ssh.execCommand('pm2 status');
+        console.log(pm2Status.stdout);
 
         process.exit(0);
-    } catch (e) {
-        console.error(e);
+    } catch (error) {
+        console.error('Failed:', error);
         process.exit(1);
     }
 }
-run();
+checkVPS();
